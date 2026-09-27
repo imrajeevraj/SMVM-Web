@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
+import { Chatbot } from '../chat/Chatbot';
 
 interface LayoutProps {
   children: ReactNode;
@@ -32,6 +33,7 @@ export function Layout({ children }: LayoutProps) {
         {children}
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
