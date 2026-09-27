@@ -196,7 +196,7 @@
 
   .service-card {
     --service-rgb: 57 153 255;
-    @apply relative flex min-h-[350px] flex-col overflow-hidden rounded-[26px] border bg-white/90 transition-all duration-500;
+    @apply relative flex min-h-[410px] flex-col overflow-hidden rounded-[26px] border bg-white/90 transition-all duration-500;
     border-color: rgb(var(--service-rgb) / .68);
     box-shadow: 0 18px 48px rgba(29, 68, 121, .12), inset 0 0 36px rgb(var(--service-rgb) / .035);
   }
@@ -216,7 +216,7 @@
   .service-card-teal { --service-rgb: 22 210 184; }
   .service-card-orange { --service-rgb: 255 139 63; }
   .service-card-magenta { --service-rgb: 205 72 255; }
-  .service-card-visual { @apply relative h-[155px] shrink-0 overflow-hidden; background: radial-gradient(circle at 50% 76%, rgb(var(--service-rgb) / .3), transparent 48%), linear-gradient(180deg, #07162f, #071a36); }
+  .service-card-visual { @apply relative h-[195px] shrink-0 overflow-hidden sm:h-[205px] xl:h-[215px]; background: radial-gradient(circle at 50% 76%, rgb(var(--service-rgb) / .3), transparent 48%), linear-gradient(180deg, #07162f, #071a36); }
   .service-card-visual::after { content: ''; @apply absolute bottom-3 left-[14%] right-[14%] h-8 rounded-[50%] blur-md; background: rgb(var(--service-rgb) / .28); }
   .service-icon-badge { @apply absolute left-4 top-4 z-20 grid h-11 w-11 place-items-center rounded-2xl border text-white shadow-xl backdrop-blur-md transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-110; border-color: rgb(var(--service-rgb) / .55); background: rgb(var(--service-rgb) / .22); box-shadow: 0 10px 26px rgb(var(--service-rgb) / .24), inset 0 0 18px rgb(var(--service-rgb) / .14); }
   .service-card-art { @apply absolute inset-0 z-10 h-full w-full max-w-none transition-transform duration-700 group-hover:scale-[1.04]; filter: drop-shadow(0 12px 18px rgba(0, 5, 18, .38)); }
