@@ -95,12 +95,14 @@
     background-image:
       linear-gradient(rgba(132, 177, 255, .065) 1px, transparent 1px),
       linear-gradient(90deg, rgba(132, 177, 255, .065) 1px, transparent 1px),
-      radial-gradient(circle at 74% 32%, rgba(22, 119, 255, .28), transparent 34%),
+      radial-gradient(circle at 74% 32%, rgba(22, 119, 255, .2), transparent 34%),
       radial-gradient(circle at 90% 0%, rgba(124, 58, 237, .24), transparent 27%),
       linear-gradient(135deg, #06152f 0%, #081c44 60%, #071633 100%);
     background-size: 44px 44px, 44px 44px, auto, auto, auto;
-    mask-image: linear-gradient(to bottom, black 76%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 84%, transparent 100%);
   }
+  .hero-store-scene { opacity: .72; filter: saturate(.92) contrast(1.05); mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.22) 16%, black 42%); }
+  .hero-store-shade { background: linear-gradient(90deg, #06152f 0%, rgba(6,21,47,.97) 30%, rgba(6,21,47,.46) 57%, rgba(4,13,31,.12) 100%), linear-gradient(0deg, rgba(4,13,31,.66), transparent 55%); }
   .hero-orb { @apply pointer-events-none absolute -z-10 rounded-full blur-[90px]; }
   .hero-orb-one { @apply -left-28 top-36 h-80 w-80 bg-blue-500/20; }
   .hero-orb-two { @apply -right-24 bottom-12 h-96 w-96 bg-violet-600/15; }
@@ -108,7 +110,7 @@
 
   .device-monitor {
     filter: drop-shadow(0 30px 34px rgba(1, 7, 20, .46));
-    @apply mx-auto w-[94%] rounded-[18px] border-[5px] border-[#15253e] bg-[#15253e] shadow-[inset_0_0_0_1px_rgba(255,255,255,.12)];
+    @apply mx-auto w-[88%] rounded-[18px] border-[5px] border-[#15253e] bg-[#15253e] shadow-[inset_0_0_0_1px_rgba(255,255,255,.12)];
   }
   .device-topbar { @apply flex h-9 items-center justify-between rounded-t-[12px] bg-[#111e33] px-3 text-[9px] font-semibold text-slate-400; }
   .device-topbar i { @apply block h-1.5 w-1.5 rounded-full; }
@@ -117,25 +119,35 @@
   .device-topbar i:nth-child(3) { @apply bg-emerald-400; }
   .monitor-neck { @apply absolute -bottom-8 left-1/2 h-9 w-20 -translate-x-1/2 bg-gradient-to-b from-[#22344e] to-[#0e192a]; clip-path: polygon(24% 0,76% 0,100% 100%,0 100%); }
   .monitor-base { @apply absolute -bottom-10 left-1/2 h-3 w-40 -translate-x-1/2 rounded-full bg-[#263a55] shadow-lg; }
-  .device-tablet { @apply absolute -bottom-8 -left-1 z-20 w-[40%] overflow-hidden rounded-[15px] border-[5px] border-[#17263c] bg-[#17263c] shadow-2xl sm:-left-4 sm:w-[42%]; transform: rotate(-3deg); }
+  .device-tablet { @apply absolute -bottom-8 left-2 z-20 w-[37%] overflow-hidden rounded-[15px] border-[5px] border-[#17263c] bg-[#17263c] shadow-2xl sm:left-0 sm:w-[39%]; transform: rotate(-3deg); }
   .device-tablet img { @apply aspect-[1.28] w-full object-cover object-left-top; }
-  .device-phone { @apply absolute -bottom-10 right-2 z-30 w-[19%] rounded-[18px] border-[5px] border-[#142238] bg-[#142238] p-1 shadow-2xl sm:right-0; transform: rotate(4deg); }
+  .device-phone { @apply absolute -bottom-10 right-5 z-30 w-[17%] rounded-[18px] border-[5px] border-[#142238] bg-[#142238] p-1 shadow-2xl sm:right-3; transform: rotate(4deg); }
   .device-phone img { @apply aspect-[.68] w-full rounded-[9px] object-cover object-left-top; }
   .device-status-card { @apply absolute -right-2 -top-8 z-30 hidden items-center gap-3 rounded-2xl border border-white/15 bg-[#0b1c38]/90 px-4 py-3 text-white shadow-2xl backdrop-blur-xl sm:flex; }
   .device-status-card strong { @apply block text-xs; }
   .device-status-card span { @apply mt-1 block text-[10px] text-slate-400; }
 
-  .product-card { @apply relative min-h-[410px] overflow-hidden rounded-[26px] border border-border bg-surface p-6 shadow-[0_16px_45px_rgba(17,43,83,.06)] transition-all duration-500 hover:-translate-y-2 hover:border-brand/30 hover:shadow-[0_24px_60px_rgba(22,119,255,.14)]; }
+  .product-card { @apply relative min-h-[490px] overflow-hidden rounded-[24px] border border-border p-5 shadow-[0_16px_45px_rgba(17,43,83,.06)] transition-all duration-500 hover:-translate-y-1.5 hover:border-brand/30 hover:shadow-[0_24px_60px_rgba(22,119,255,.14)]; }
   .product-card::before { content: ''; @apply absolute -right-12 -top-12 h-44 w-44 rounded-full opacity-20 blur-3xl transition-transform duration-500; }
   .product-card:hover::before { transform: scale(1.35); }
+  .product-card-blue { background: linear-gradient(145deg, rgba(219,237,255,.92), var(--color-surface) 60%); }
+  .product-card-violet { background: linear-gradient(145deg, rgba(237,229,255,.9), var(--color-surface) 60%); }
+  .product-card-cyan { background: linear-gradient(145deg, rgba(214,249,239,.94), var(--color-surface) 60%); }
+  .product-card-indigo { background: linear-gradient(145deg, rgba(241,227,255,.94), var(--color-surface) 60%); }
+  .dark .product-card-blue, .dark .product-card-violet, .dark .product-card-cyan, .dark .product-card-indigo { background: linear-gradient(145deg, rgba(22,119,255,.12), var(--color-surface) 65%); }
   .product-card-blue::before { @apply bg-blue-500; }
   .product-card-violet::before { @apply bg-violet-500; }
-  .product-card-cyan::before { @apply bg-cyan-400; }
-  .product-card-indigo::before { @apply bg-indigo-500; }
+  .product-card-cyan::before { @apply bg-emerald-400; }
+  .product-card-indigo::before { @apply bg-violet-500; }
   .product-icon { @apply grid h-14 w-14 place-items-center rounded-2xl bg-brand/10 text-brand ring-1 ring-brand/15; }
   .feature-chip { @apply rounded-full border border-border bg-background px-3 py-1.5 text-xs font-bold text-text-muted; }
+  .product-preview { @apply mt-auto overflow-hidden rounded-2xl border border-white/70 bg-white shadow-[0_12px_28px_rgba(14,38,75,.12)]; }
+  .product-preview img { @apply aspect-[1.72] w-full object-cover object-top; }
+  .product-preview-placeholder { @apply flex aspect-[1.72] w-full flex-col items-center justify-center gap-3 bg-[radial-gradient(circle_at_50%_30%,rgba(22,119,255,.18),transparent_55%),linear-gradient(135deg,#f7fbff,#edf4ff)] text-brand; }
+  .dark .product-preview-placeholder { background: radial-gradient(circle at 50% 30%, rgba(69,148,255,.22), transparent 55%), linear-gradient(135deg,#0a1930,#0e2344); }
+  .product-preview-placeholder span { @apply text-[10px] font-extrabold uppercase tracking-[.13em] text-text-muted; }
 
-  .service-card { @apply min-h-[290px] bg-surface p-7 transition-colors duration-300 hover:bg-background sm:p-8; }
+  .service-card { @apply flex min-h-[260px] flex-col bg-surface p-6 transition-colors duration-300 hover:bg-background; }
   .service-icon { @apply grid h-12 w-12 place-items-center rounded-2xl bg-brand/10 text-brand transition-all duration-300 group-hover:rotate-3 group-hover:scale-110; }
 
   .company-visual { @apply absolute inset-0 rounded-[32px] bg-[radial-gradient(circle_at_30%_20%,rgba(32,217,255,.26),transparent_30%),linear-gradient(145deg,#071936,#0d3371)] p-5 sm:p-9; }
@@ -152,6 +164,8 @@
   .trust-strip { @apply grid gap-6 rounded-[28px] border border-border bg-surface p-6 shadow-[0_16px_45px_rgba(17,43,83,.05)] sm:grid-cols-3 sm:p-8; }
   .cta-panel { @apply relative isolate bg-[#06152f] shadow-[0_30px_80px_rgba(6,21,47,.28)]; }
   .cta-grid { @apply absolute inset-0 -z-10; background-image: radial-gradient(circle at 20% 0%, rgba(32,217,255,.25), transparent 30%), radial-gradient(circle at 85% 100%, rgba(124,58,237,.28), transparent 34%), linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg,rgba(255,255,255,.04) 1px, transparent 1px); background-size: auto, auto, 46px 46px, 46px 46px; }
+  .cta-screen-frame { @apply overflow-hidden rounded-[22px] border-[5px] border-[#142846] bg-[#142846] shadow-2xl; transform: perspective(900px) rotateY(-5deg) rotateX(2deg); }
+  .cta-screen-frame img { @apply aspect-[1.78] w-full object-cover object-top; }
 }
 
 @media (max-width: 639px) {

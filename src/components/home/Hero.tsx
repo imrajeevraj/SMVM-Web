@@ -46,32 +46,39 @@ export function Hero() {
   }, [tourOpen, tourSlides.length]);
 
   return (
-    <section className="hero-shell relative isolate overflow-hidden pb-16 pt-28 sm:pt-32 lg:min-h-[820px] lg:pb-20 lg:pt-36">
+    <section className="hero-shell relative isolate overflow-hidden pb-14 pt-28 sm:pt-32 lg:min-h-[650px] lg:pb-16 lg:pt-32">
       <div className="hero-grid absolute inset-0 -z-20" />
+      <img
+        src="/images/brand/hero-retail-showroom.png"
+        alt=""
+        aria-hidden="true"
+        className="hero-store-scene absolute inset-y-0 right-0 -z-[15] hidden h-full w-[72%] object-cover object-right lg:block"
+      />
+      <div className="hero-store-shade absolute inset-0 -z-10 hidden lg:block" />
       <div className="hero-orb hero-orb-one" />
       <div className="hero-orb hero-orb-two" />
 
-      <div className="site-container grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
+      <div className="site-container grid items-center gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-7">
         <motion.div
           initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
           className="relative z-10"
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-blue-300/10 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.16em] text-cyan-100 backdrop-blur-md sm:text-xs">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-300/25 bg-blue-300/10 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-cyan-100 backdrop-blur-md sm:text-[11px]">
             <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(32,217,255,.9)]" />
             Powering businesses with smart software
           </div>
 
-          <h1 className="max-w-3xl text-5xl font-extrabold leading-[0.98] tracking-[-0.045em] text-white sm:text-6xl lg:text-[4.1rem] xl:text-[4.45rem]">
+          <h1 className="max-w-3xl text-5xl font-extrabold leading-[0.98] tracking-[-0.045em] text-white sm:text-6xl lg:text-[3.65rem] xl:text-[4rem]">
             <span className="block sm:whitespace-nowrap">Where Creativity</span>
             <span className="mt-1 block sm:whitespace-nowrap">Meets <span className="hero-gradient-text">Innovation</span></span>
           </h1>
-          <p className="mt-7 max-w-xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
             We build modern software solutions to simplify business, power growth and create a smarter digital future.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <Link className="button-primary group" to="/products">
               Explore Our Products
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -84,7 +91,7 @@ export function Hero() {
             </button>
           </div>
 
-          <div className="mt-10 grid grid-cols-2 gap-x-5 gap-y-4 border-t border-white/10 pt-7 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-x-5 gap-y-3 border-t border-white/10 pt-5 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
             {highlights.map(({ title, icon: Icon }) => (
               <div key={title} className="flex items-center gap-2.5 text-xs font-medium text-slate-300">
                 <Icon className="h-4 w-4 shrink-0 text-cyan-300" aria-hidden="true" />
@@ -98,7 +105,7 @@ export function Hero() {
           initial={false}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
-          className="relative mx-auto w-full max-w-[760px] lg:translate-x-8"
+          className="relative mx-auto w-full max-w-[760px] lg:translate-x-10 lg:translate-y-3"
           aria-label="CamStore POS interface displayed across desktop, tablet, and mobile devices"
         >
           <div className="absolute left-[12%] top-[8%] h-[72%] w-[72%] rounded-full bg-blue-500/25 blur-[100px]" />
@@ -113,7 +120,6 @@ export function Hero() {
                 src="/images/products/cambill-pos/dashboard.png"
                 alt="CamStore POS dashboard showing sales, inventory and reporting panels"
                 className="aspect-[1.78] w-full object-cover object-top"
-                fetchPriority="high"
               />
             </div>
             <div className="monitor-neck" /><div className="monitor-base" />

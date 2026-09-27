@@ -14,7 +14,7 @@ const serviceLinks = ['Web Development', 'Custom Software', 'Business Automation
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#040d20] text-slate-300">
-      <div className="site-container py-16 sm:py-20">
+      <div className="site-container py-12 sm:py-14">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_.7fr_.8fr_1fr]">
           <div className="max-w-sm">
             <Link to="/" className="inline-flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
@@ -36,7 +36,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-4 border-t border-white/10 pt-7 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} SMVM Softwares. All rights reserved.</p>
           <div className="flex gap-6"><Link to="/privacy" className="hover:text-slate-200">Privacy Policy</Link><Link to="/terms" className="hover:text-slate-200">Terms of Service</Link></div>
         </div>
