@@ -1,25 +1,34 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { services } from '@/data/site';
-import { SectionHeading } from './SectionHeading';
 
 export function ServicesSection() {
   return (
-    <section id="services" className="relative overflow-hidden bg-surface py-14 scroll-mt-20 sm:py-16 lg:py-20">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      <div className="site-container">
+    <section id="services" className="services-showcase scroll-mt-20">
+      <div className="services-showcase-grid" aria-hidden="true" />
+      <div className="services-showcase-wave" aria-hidden="true" />
+
+      <div className="site-container relative z-10">
         <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-end">
-          <SectionHeading
-            align="left"
-            eyebrow="What we do"
-            title="Beyond products — complete software solutions"
-            description="From the first idea to an evolving digital system, we help businesses turn technology into useful, well-designed tools."
-          />
-          <Link to="/contact" className="button-outline w-fit">Discuss your project <ArrowUpRight className="h-4 w-4" /></Link>
+          <div className="max-w-[820px]">
+            <p className="flex items-center gap-3 text-xs font-extrabold uppercase tracking-[.24em] text-[#56b6ff]">
+              What we do <span className="h-px w-10 bg-[#56b6ff]" />
+            </p>
+            <h2 className="mt-4 max-w-[780px] text-balance text-4xl font-extrabold leading-[1.04] tracking-[-.045em] text-white sm:text-5xl lg:text-[58px]">
+              Beyond products — complete <span className="services-gradient-title">software solutions</span>
+            </h2>
+            <p className="mt-5 max-w-[780px] text-base leading-7 text-[#b7c7e3] sm:text-lg">
+              From the first idea to an evolving digital system, we help businesses turn technology into useful, well-designed tools.
+            </p>
+          </div>
+
+          <Link to="/contact" className="services-project-button">
+            Discuss your project <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
 
-        <div className="mt-9 grid gap-px overflow-hidden rounded-[24px] border border-border bg-border sm:grid-cols-2 xl:grid-cols-5">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -27,16 +36,33 @@ export function ServicesSection() {
                 key={service.title}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.07 }}
-                className="service-card group"
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ delay: index * 0.07, duration: 0.46 }}
+                className={`service-card service-card-${service.tone} group`}
               >
-                <span className="service-icon"><Icon className="h-6 w-6" /></span>
-                <h3 className="mt-5 text-base font-bold text-text">{service.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-text-muted">{service.description}</p>
-                <Link to="/contact" className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-brand" aria-label={`Discuss ${service.title}`}>
-                  Discuss this service <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-                </Link>
+                <div className="service-card-visual">
+                  <span className="service-icon-badge"><Icon className="h-6 w-6" /></span>
+                  <img
+                    src={service.image}
+                    alt={`${service.title} technology illustration`}
+                    loading="lazy"
+                    decoding="async"
+                    className={`service-card-art service-card-art-${service.tone}`}
+                  />
+                </div>
+
+                <div className="service-card-content">
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="text-[17px] font-extrabold leading-6 text-white">{service.title}</h3>
+                    <Link to="/contact" className="service-card-arrow" aria-label={`Discuss ${service.title}`}>
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                  <p className="mt-3 text-sm leading-6 text-[#b8c7df]">{service.description}</p>
+                  <div className="mt-auto flex flex-nowrap gap-1.5 pt-5">
+                    {service.features.map((feature) => <span key={feature} className="service-chip">{feature}</span>)}
+                  </div>
+                </div>
               </motion.article>
             );
           })}
