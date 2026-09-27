@@ -198,12 +198,21 @@ export function Chatbot() {
           ref={launcherRef}
           type="button"
           onClick={() => setOpen((value) => !value)}
-          className="group relative grid h-[68px] w-[68px] place-items-center rounded-full bg-[linear-gradient(135deg,#126fff,#20d9ff)] shadow-[0_16px_36px_rgba(22,119,255,.38)] transition hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30"
+          className="group relative grid h-[92px] w-[92px] place-items-center bg-transparent transition hover:-translate-y-1 focus-visible:rounded-full focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand/30"
           aria-label={open ? 'Close SMVM Assistant' : 'Open SMVM Assistant'}
           aria-expanded={open}
         >
-          <span className="absolute inset-0 rounded-full ring-1 ring-white/35" />
-          {open ? <X className="h-7 w-7 text-white" /> : <img src="/images/icons/Live chatbot.svg" alt="" className="h-[62px] w-[62px] object-contain transition-transform group-hover:scale-105" />}
+          {open ? (
+            <span className="grid h-16 w-16 place-items-center rounded-full bg-brand/95 shadow-[0_14px_32px_rgba(22,119,255,.32)]">
+              <X className="h-7 w-7 text-white" />
+            </span>
+          ) : (
+            <img
+              src="/images/icons/Live chatbot.svg"
+              alt=""
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[160px] w-[160px] max-w-none -translate-x-1/2 -translate-y-1/2 object-contain drop-shadow-[0_14px_18px_rgba(8,43,89,.28)] transition-transform group-hover:scale-105"
+            />
+          )}
         </button>
       </div>
     </div>
