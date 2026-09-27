@@ -41,9 +41,9 @@ function answerFor(input: string): Omit<ChatMessage, 'id' | 'role'> {
     };
   }
 
-  if (text.includes('service') || text.includes('website') || text.includes('web development') || text.includes('custom') || text.includes('automation')) {
+  if (text.includes('service') || text.includes('website') || text.includes('web development') || text.includes('custom') || text.includes('mobile') || text.includes('android')) {
     return {
-      text: 'SMVM provides web development, custom software, business automation, UI/UX design, and consulting and support.',
+      text: 'SMVM provides web development, custom software, mobile and Android app development, and consulting and support.',
       actions: [{ label: 'Explore services', to: '/#services' }],
     };
   }
@@ -63,7 +63,7 @@ function answerFor(input: string): Omit<ChatMessage, 'id' | 'role'> {
   }
 
   return {
-    text: 'I can guide you through SMVM POS products, web and custom software services, business automation, or the contact page. Try mentioning your business type or what you want to improve.',
+    text: 'I can guide you through SMVM POS products, web and custom software services, mobile app development, or the contact page. Try mentioning your business type or what you want to improve.',
     actions: [{ label: 'Browse products', to: '/products' }],
   };
 }

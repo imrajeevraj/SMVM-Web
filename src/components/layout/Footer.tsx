@@ -9,7 +9,7 @@ const productLinks = [
   ['CamStore POS', '/products/camstore-pos'], ['CamBill POS', '/products/cambill-pos'], ['MediBill POS', '/products/medibill-pos'], ['MediBill Pro', '/products/medibill-pro'],
 ] as const;
 
-const serviceLinks = ['Web Development', 'Custom Software', 'Business Automation', 'Consulting & Support'];
+const serviceLinks = ['Web Development', 'Custom Software', 'Mobile App Development', 'Consulting & Support'];
 
 export function Footer() {
   return (
