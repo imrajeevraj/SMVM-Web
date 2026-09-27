@@ -24,9 +24,10 @@ export const products = [
     audience: 'For single stores and small shops',
     description: 'A focused POS workspace that keeps billing, inventory, customers, and reports easy to manage.',
     features: ['Inventory', 'Billing', 'Customers'],
+    tag: 'Small business',
     icon: Store,
     tone: 'blue',
-    image: '/images/products/cambill-pos/dashboard.png',
+    image: '/images/products/camstore-pos-card.png',
   },
   {
     slug: 'cambill-pos',
@@ -34,9 +35,10 @@ export const products = [
     audience: 'For large stores and enterprises',
     description: 'An advanced retail platform for multi-store operations, deeper reporting, and structured user access.',
     features: ['Multi-store', 'Analytics', 'User roles'],
+    tag: 'Multi-store',
     icon: Building2,
     tone: 'violet',
-    image: '/images/products/cambill-pos/reports.png',
+    image: '/images/products/cambill-pos-card.png',
   },
   {
     slug: 'medibill-pos',
@@ -44,9 +46,10 @@ export const products = [
     audience: 'For medical stores',
     description: 'Purpose-built pharmacy workflows for medicine inventory, billing, batch handling, and expiry tracking.',
     features: ['Medicine stock', 'Batch tracking', 'Billing'],
+    tag: 'Pharmacy',
     icon: HeartPulse,
     tone: 'cyan',
-    image: undefined,
+    image: '/images/products/medibill-pos-card.png',
   },
   {
     slug: 'medibill-pro',
@@ -54,9 +57,10 @@ export const products = [
     audience: 'For large-scale medical businesses',
     description: 'A scalable pharmacy management platform for multi-branch visibility, controls, and enterprise reporting.',
     features: ['Multi-branch', 'Expiry control', 'Reporting'],
+    tag: 'Enterprise',
     icon: BarChart3,
     tone: 'indigo',
-    image: undefined,
+    image: '/images/products/medibill-pro-card.png',
   },
 ] as const;
 
