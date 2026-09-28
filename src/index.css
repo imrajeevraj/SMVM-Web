@@ -270,22 +270,30 @@
 
   .why-card {
     --why-rgb: 52 160 255;
-    @apply relative min-h-[340px] overflow-hidden rounded-[24px] border bg-white/90 transition-all duration-500;
-    border-color: rgb(var(--why-rgb) / .55);
-    box-shadow: 0 18px 50px rgba(18, 56, 105, .12), inset 0 0 44px rgb(var(--why-rgb) / .035);
+    @apply relative min-h-[360px] overflow-hidden rounded-[24px] border bg-white/90 transition-all duration-500;
+    border-color: rgb(var(--why-rgb) / .68);
+    box-shadow: 0 18px 50px rgba(18, 56, 105, .12), 0 0 24px rgb(var(--why-rgb) / .16), inset 0 0 48px rgb(var(--why-rgb) / .08);
   }
-  .dark .why-card { @apply bg-[#061833]/95; box-shadow: 0 20px 54px rgba(0, 7, 24, .3), inset 0 0 42px rgb(var(--why-rgb) / .055); }
+  .why-card::after {
+    content: '';
+    @apply pointer-events-none absolute inset-0 z-0 rounded-[inherit] opacity-70 transition-all duration-500;
+    background:
+      radial-gradient(circle at 72% 15%, rgb(var(--why-rgb) / .2), transparent 37%),
+      radial-gradient(circle at 4% 96%, rgb(var(--why-rgb) / .1), transparent 34%);
+  }
+  .dark .why-card { @apply bg-[#061833]/95; box-shadow: 0 20px 54px rgba(0, 7, 24, .3), 0 0 28px rgb(var(--why-rgb) / .14), inset 0 0 48px rgb(var(--why-rgb) / .09); }
   .why-card-blue { --why-rgb: 42 157 255; }
   .why-card-teal { --why-rgb: 16 208 185; }
   .why-card-violet { --why-rgb: 133 76 255; }
   .why-card-orange { --why-rgb: 255 124 39; }
-  .why-card:hover { transform: translateY(-7px); border-color: rgb(var(--why-rgb) / .95); box-shadow: 0 26px 68px rgba(7, 27, 66, .23), 0 0 30px rgb(var(--why-rgb) / .18), inset 0 0 52px rgb(var(--why-rgb) / .06); }
-  .why-card-glow { @apply pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full blur-3xl transition-opacity duration-500; background: rgb(var(--why-rgb) / .2); }
-  .why-card:hover .why-card-glow { opacity: .95; }
+  .why-card:hover { transform: translateY(-7px); border-color: rgb(var(--why-rgb) / 1); box-shadow: 0 28px 72px rgba(7, 27, 66, .24), 0 0 42px rgb(var(--why-rgb) / .34), inset 0 0 64px rgb(var(--why-rgb) / .16); }
+  .why-card:hover::after { opacity: 1; transform: scale(1.025); }
+  .why-card-glow { @apply pointer-events-none absolute -right-12 -top-12 z-0 h-52 w-52 rounded-full opacity-70 blur-3xl transition-all duration-500; background: rgb(var(--why-rgb) / .26); }
+  .why-card:hover .why-card-glow { @apply scale-125 opacity-100; background: rgb(var(--why-rgb) / .42); }
   .why-card-icon { @apply absolute left-5 top-5 z-30 grid h-12 w-12 place-items-center rounded-2xl border text-white shadow-xl backdrop-blur-md transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-110; border-color: rgb(var(--why-rgb) / .52); background: rgb(var(--why-rgb) / .86); box-shadow: 0 12px 28px rgb(var(--why-rgb) / .28), inset 0 0 16px rgba(255, 255, 255, .17); }
   .why-card-visual { @apply pointer-events-none absolute right-0 top-0 z-10 h-[58%] w-[76%] overflow-hidden; }
   .why-card-art { @apply h-full w-full object-contain object-right-top transition-transform duration-700 group-hover:scale-[1.045]; filter: drop-shadow(0 16px 22px rgba(0, 8, 24, .32)); }
-  .why-card-content { @apply relative z-20 flex min-h-[340px] flex-col p-5 pt-[156px]; }
+  .why-card-content { @apply relative z-20 flex min-h-[360px] flex-col p-5 pt-[180px]; }
   .why-card-title { @apply max-w-[82%] text-[20px] font-extrabold leading-[1.15] tracking-[-.025em] text-[#081a35]; }
   .dark .why-card-title { @apply text-white; }
   .why-card-copy { @apply mt-2.5 max-w-[92%] text-sm leading-[1.55] text-[#5a6d88]; }
