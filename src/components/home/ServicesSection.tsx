@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import type { CSSProperties } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { services } from '@/data/site';
@@ -38,7 +39,8 @@ export function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: index * 0.07, duration: 0.46 }}
-                className={`service-card service-card-${service.tone} group`}
+                className="service-card group"
+                style={{ '--service-rgb': service.accent } as CSSProperties}
               >
                 <div className="service-card-visual">
                   <span className="service-icon-badge"><Icon className="h-6 w-6" /></span>

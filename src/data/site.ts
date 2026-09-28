@@ -25,6 +25,7 @@ export const products = [
     tag: 'Small business',
     icon: Store,
     tone: 'blue',
+    accent: '217 119 6',
     image: '/images/products/camstore-pos-card.png',
   },
   {
@@ -36,6 +37,7 @@ export const products = [
     tag: 'Multi-store',
     icon: Building2,
     tone: 'violet',
+    accent: '43 139 255',
     image: '/images/products/cambill-pos-card.png',
   },
   {
@@ -47,6 +49,7 @@ export const products = [
     tag: 'Pharmacy',
     icon: HeartPulse,
     tone: 'cyan',
+    accent: '5 150 105',
     image: '/images/products/medibill-pos-card.png',
   },
   {
@@ -58,6 +61,7 @@ export const products = [
     tag: 'Enterprise',
     icon: BarChart3,
     tone: 'indigo',
+    accent: '157 78 221',
     image: '/images/products/medibill-pro-card.png',
   },
 ] as const;
@@ -71,6 +75,7 @@ export const services = [
     artMode: 'cover',
     features: ['Responsive', 'Modern', 'Scalable'],
     tone: 'blue',
+    accent: '52 167 255',
   },
   {
     title: 'Custom Software Development',
@@ -80,6 +85,7 @@ export const services = [
     artMode: 'cover',
     features: ['Tailored', 'Scalable', 'Secure'],
     tone: 'violet',
+    accent: '138 88 255',
   },
   {
     title: 'Mobile & Android App Development',
@@ -89,6 +95,7 @@ export const services = [
     artMode: 'contain',
     features: ['Android', 'Cross-Platform', 'Modern UI'],
     tone: 'teal',
+    accent: '22 210 184',
   },
   {
     title: 'Consulting & Support',
@@ -98,6 +105,7 @@ export const services = [
     artMode: 'cover',
     features: ['Guidance', 'Support', 'Growth'],
     tone: 'orange',
+    accent: '255 139 63',
   },
 ] as const;
 
@@ -117,6 +125,7 @@ export const reasons = [
     imageAlt: 'Laptop, glowing lightbulb, and software interface illustration',
     features: ['Modern', 'Practical', 'Impactful'],
     tone: 'blue',
+    accent: '42 157 255',
   },
   {
     title: 'Reliable & Secure',
@@ -126,6 +135,7 @@ export const reasons = [
     imageAlt: 'Security shield, cloud, lock, and connected server illustration',
     features: ['Secure', 'Trusted', 'Stable'],
     tone: 'teal',
+    accent: '16 208 185',
   },
   {
     title: 'User-Centric Design',
@@ -135,6 +145,7 @@ export const reasons = [
     imageAlt: 'Desktop and mobile user interface design illustration',
     features: ['Intuitive', 'Accessible', 'Efficient'],
     tone: 'violet',
+    accent: '133 76 255',
   },
   {
     title: 'Scalable for Growth',
@@ -144,6 +155,7 @@ export const reasons = [
     imageAlt: 'Rising analytics chart and connected business growth illustration',
     features: ['Flexible', 'Scalable', 'Future Ready'],
     tone: 'orange',
+    accent: '255 124 39',
   },
 ] as const;
 

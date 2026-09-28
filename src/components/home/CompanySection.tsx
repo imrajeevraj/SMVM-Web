@@ -7,7 +7,7 @@ export function CompanySection() {
   return (
       <section className="overflow-hidden bg-surface py-14 sm:py-16 lg:py-20">
         <div className="site-container grid gap-6 lg:grid-cols-[1.15fr_.85fr]">
-          <motion.div id="about" initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="grid gap-8 rounded-[28px] border border-border bg-background p-6 scroll-mt-24 sm:p-8 md:grid-cols-[.9fr_1.1fr] md:items-center">
+          <motion.div id="about" initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="company-info-card grid gap-8 rounded-[28px] border border-border bg-background p-6 scroll-mt-24 sm:p-8 md:grid-cols-[.9fr_1.1fr] md:items-center">
             <div className="relative min-h-[300px]">
             <div className="company-visual">
               <div className="company-screen">

@@ -166,7 +166,7 @@ export function Hero() {
             >
               <div className="flex items-center justify-between border-b border-white/10 px-5 py-4 text-white">
                 <div><p className="text-xs font-bold uppercase tracking-widest text-cyan-300">Product tour</p><h2 id="tour-title" className="mt-1 font-bold">A closer look at the SMVM POS workspace</h2></div>
-                <button type="button" onClick={() => setTourOpen(false)} className="rounded-full p-2 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300" aria-label="Close product tour"><X /></button>
+                <button type="button" onClick={() => setTourOpen(false)} className="home-icon-button rounded-full p-2 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300" aria-label="Close product tour"><X /></button>
               </div>
               <div className="relative bg-slate-950">
                 <AnimatePresence mode="wait">
@@ -180,13 +180,13 @@ export function Hero() {
                     className="aspect-[1.75] w-full object-cover object-top"
                   />
                 </AnimatePresence>
-                <button type="button" onClick={() => setTourStep((tourStep - 1 + tourSlides.length) % tourSlides.length)} className="absolute left-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-[#06152f]/85 text-white backdrop-blur hover:bg-[#0b2a66]" aria-label="Previous product view"><ChevronLeft /></button>
-                <button type="button" onClick={() => setTourStep((tourStep + 1) % tourSlides.length)} className="absolute right-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-[#06152f]/85 text-white backdrop-blur hover:bg-[#0b2a66]" aria-label="Next product view"><ChevronRight /></button>
+                <button type="button" onClick={() => setTourStep((tourStep - 1 + tourSlides.length) % tourSlides.length)} className="tour-nav-button absolute left-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-[#06152f]/85 text-white backdrop-blur hover:bg-[#0b2a66]" aria-label="Previous product view"><ChevronLeft /></button>
+                <button type="button" onClick={() => setTourStep((tourStep + 1) % tourSlides.length)} className="tour-nav-button absolute right-3 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-[#06152f]/85 text-white backdrop-blur hover:bg-[#0b2a66]" aria-label="Next product view"><ChevronRight /></button>
               </div>
               <div className="flex flex-col gap-3 border-t border-white/10 px-5 py-4 text-white sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-sm font-semibold">{tourSlides[tourStep].title}</p>
                 <div className="flex gap-2" aria-label={`View ${tourStep + 1} of ${tourSlides.length}`}>
-                  {tourSlides.map((slide, index) => <button type="button" key={slide.src} onClick={() => setTourStep(index)} className={`h-2.5 rounded-full transition-all ${index === tourStep ? 'w-8 bg-cyan-300' : 'w-2.5 bg-white/30 hover:bg-white/60'}`} aria-label={`Show ${slide.title}`} aria-current={index === tourStep ? 'true' : undefined} />)}
+                  {tourSlides.map((slide, index) => <button type="button" key={slide.src} onClick={() => setTourStep(index)} className={`tour-dot h-2.5 rounded-full transition-all ${index === tourStep ? 'w-8 bg-cyan-300' : 'w-2.5 bg-white/30 hover:bg-white/60'}`} aria-label={`Show ${slide.title}`} aria-current={index === tourStep ? 'true' : undefined} />)}
                 </div>
               </div>
             </motion.div>

@@ -8,7 +8,7 @@ import { WhyChooseSection } from '@/components/home/WhyChooseSection';
 
 export function Home() {
   return (
-    <div className="w-full overflow-hidden">
+    <div className="home-page w-full overflow-hidden">
       <Hero />
       <ProductsSection />
       <ServicesSection />

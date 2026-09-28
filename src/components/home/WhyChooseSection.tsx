@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import type { CSSProperties } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { reasons } from '@/data/site';
@@ -17,7 +18,8 @@ function WhyChooseCard({ reason, index }: WhyChooseCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}
       transition={{ delay: index * 0.07, duration: 0.5 }}
-      className={`why-card why-card-${reason.tone} group`}
+      className="why-card group"
+      style={{ '--why-rgb': reason.accent } as CSSProperties}
     >
       <div className="why-card-glow" aria-hidden="true" />
       <span className="why-card-icon" aria-hidden="true">

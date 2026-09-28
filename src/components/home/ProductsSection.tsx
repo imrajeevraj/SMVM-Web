@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import type { CSSProperties } from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { products } from '@/data/site';
@@ -10,7 +11,7 @@ export function ProductsSection() {
       <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <SectionHeading align="left" eyebrow="Our products" title="POS solutions for every business" description="Powerful, easy-to-use and future-ready POS software tailored for your business needs." />
-          <Link to="/products" className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-brand">View all products <ArrowRight className="h-4 w-4" /></Link>
+          <Link to="/products" className="home-text-action inline-flex shrink-0 items-center gap-2 text-sm font-bold text-brand">View all products <ArrowRight className="h-4 w-4" /></Link>
         </div>
 
         <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -23,7 +24,8 @@ export function ProductsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: index * 0.08, duration: 0.55 }}
-                className={`product-card product-card-${product.tone} group`}
+                className="product-card group"
+                style={{ '--product-rgb': product.accent } as CSSProperties}
               >
                 <div className="relative z-10 flex h-full flex-col">
                   <div className="relative flex items-center gap-3 pr-20">
@@ -33,7 +35,7 @@ export function ProductsSection() {
                     </div>
                     <span className="product-badge">{product.tag}</span>
                   </div>
-                  <p className="mt-2 text-[11px] font-bold uppercase tracking-[0.1em] text-brand">{product.audience}</p>
+                  <p className="product-audience mt-2 text-[11px] font-bold uppercase tracking-[0.1em]">{product.audience}</p>
 
                   <div className="product-card-body">
                     <p className="product-card-copy">{product.description}</p>
