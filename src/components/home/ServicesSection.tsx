@@ -47,7 +47,8 @@ export function ServicesSection() {
                     alt={`${service.title} technology illustration`}
                     loading="lazy"
                     decoding="async"
-                    className={`service-card-art service-card-art-${service.tone} service-card-art-${service.artMode}`}
+                    className={`service-card-art service-card-art-${service.tone}`}
+                    style={{ objectFit: service.artMode }}
                   />
                 </div>
 

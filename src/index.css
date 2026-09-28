@@ -216,12 +216,10 @@
   .service-card-teal { --service-rgb: 22 210 184; }
   .service-card-orange { --service-rgb: 255 139 63; }
   .service-card-magenta { --service-rgb: 205 72 255; }
-  .service-card-visual { @apply relative h-[195px] shrink-0 overflow-hidden sm:h-[205px] xl:h-[215px]; background: radial-gradient(circle at 50% 76%, rgb(var(--service-rgb) / .3), transparent 48%), linear-gradient(180deg, #07162f, #071a36); }
+  .service-card-visual { @apply relative aspect-[3/2] shrink-0 overflow-hidden; background: radial-gradient(circle at 50% 76%, rgb(var(--service-rgb) / .3), transparent 48%), linear-gradient(180deg, #07162f, #071a36); }
   .service-card-visual::after { content: ''; @apply absolute bottom-3 left-[14%] right-[14%] h-8 rounded-[50%] blur-md; background: rgb(var(--service-rgb) / .28); }
   .service-icon-badge { @apply absolute left-4 top-4 z-20 grid h-11 w-11 place-items-center rounded-2xl border text-white shadow-xl backdrop-blur-md transition-transform duration-500 group-hover:-rotate-3 group-hover:scale-110; border-color: rgb(var(--service-rgb) / .55); background: rgb(var(--service-rgb) / .22); box-shadow: 0 10px 26px rgb(var(--service-rgb) / .24), inset 0 0 18px rgb(var(--service-rgb) / .14); }
   .service-card-art { @apply absolute inset-0 z-10 h-full w-full max-w-none transition-transform duration-700 group-hover:scale-[1.04]; filter: drop-shadow(0 12px 18px rgba(0, 5, 18, .38)); }
-  .service-card-art-cover { @apply object-cover object-center; }
-  .service-card-art-contain { @apply scale-[1.06] object-contain object-center group-hover:scale-[1.1]; }
   .service-card-art-violet { filter: hue-rotate(24deg) saturate(1.2) drop-shadow(0 14px 22px rgba(0, 5, 18, .42)); }
   .service-card-art-orange { filter: hue-rotate(158deg) saturate(1.28) drop-shadow(0 14px 22px rgba(0, 5, 18, .42)); }
   .service-card-content { @apply relative z-20 flex flex-1 flex-col border-t border-slate-200 bg-[linear-gradient(180deg,rgba(255,255,255,.98),#f8fbff)] p-4; }
