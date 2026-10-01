@@ -1,51 +1,156 @@
-import { ArrowUpRight, Mail } from 'lucide-react';
+import {
+  ArrowUp,
+  BarChart3,
+  ChevronRight,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  Package,
+  Settings,
+  ShieldCheck,
+  Users,
+  Youtube,
+  Zap,
+  type LucideIcon,
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const quickLinks = [
-  ['Home', '/'], ['Products', '/products'], ['Services', '/#services'], ['About Us', '/about'], ['Our Vision', '/vision'], ['Contact Us', '/contact'],
+  ['Home', '/'],
+  ['Products', '/#products'],
+  ['Services', '/#services'],
+  ['About Us', '/about'],
+  ['Our Vision', '/vision'],
+  ['Contact Us', '/contact'],
 ] as const;
 
 const productLinks = [
-  ['CamStore POS', '/products/camstore-pos'], ['CamBill POS', '/products/cambill-pos'], ['MediBill POS', '/products/medibill-pos'], ['MediBill Pro', '/products/medibill-pro'],
+  ['CamStore POS', '/products/camstore-pos'],
+  ['CamBill POS', '/products/cambill-pos'],
+  ['MediBill POS', '/products/medibill-pos'],
+  ['MediBill Pro', '/products/medibill-pro'],
 ] as const;
 
-const serviceLinks = ['Web Development', 'Custom Software', 'Mobile App Development', 'Consulting & Support'];
+const serviceLinks = [
+  ['Web Development', '/#service-web-development'],
+  ['Custom Software', '/#service-custom-software-development'],
+  ['Mobile App Development', '/#service-mobile-android-app-development'],
+  ['Consulting & Support', '/#service-consulting-support'],
+] as const;
+
+const socialLinks = [
+  { label: 'Facebook', href: 'https://www.facebook.com', icon: Facebook },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com', icon: Linkedin },
+  { label: 'Instagram', href: 'https://www.instagram.com', icon: Instagram },
+  { label: 'YouTube', href: 'https://www.youtube.com', icon: Youtube },
+] as const;
 
 export function Footer() {
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   return (
-    <footer className="border-t border-white/10 bg-[#040d20] text-slate-300">
-      <div className="site-container py-12 sm:py-14">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_.7fr_.8fr_1fr]">
-          <div className="max-w-sm">
-            <Link to="/" className="inline-flex items-center gap-3 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
-              <img src="/images/brand/smvm-mark-3d-smooth.png" alt="" className="h-12 w-12 object-contain" />
-              <span><strong className="block text-xl font-extrabold tracking-[.08em] text-white">SMVM</strong><small className="block text-[10px] font-bold uppercase tracking-[.25em] text-slate-400">Softwares</small></span>
+    <footer id="site-footer" className="site-footer scroll-mt-24">
+      <div className="footer-grid-pattern" aria-hidden="true" />
+      <div className="footer-wave footer-wave-left" aria-hidden="true" />
+      <div className="footer-wave footer-wave-right" aria-hidden="true" />
+
+      <div className="site-container relative z-10 py-10 sm:py-12 lg:py-14">
+        <div className="footer-topline" aria-hidden="true">
+          <span className="footer-topline-beam" />
+          <span className="footer-topline-label">Modern software <i /> Smarter businesses</span>
+          <span className="footer-topline-beam" />
+        </div>
+
+        <div className="footer-main-grid">
+          <div className="footer-brand-block">
+            <Link to="/" className="footer-logo" aria-label="SMVM Softwares home">
+              <img src="/images/brand/smvm-mark-3d-smooth.png" alt="" />
+              <span>
+                <strong>SMVM</strong>
+                <small>Softwares</small>
+              </span>
             </Link>
-            <p className="mt-6 text-lg font-semibold text-white">Where Creativity Meets Innovation</p>
-            <p className="mt-3 text-sm leading-6 text-slate-400">Modern software products and technology services for businesses ready to work smarter.</p>
-            <Link to="/contact" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-cyan-300 hover:text-white"><Mail className="h-4 w-4" /> Send an enquiry <ArrowUpRight className="h-4 w-4" /></Link>
+
+            <h2>Where Creativity Meets Innovation</h2>
+            <p>Modern software products and technology services for businesses ready to work smarter.</p>
+
+            <div className="footer-feature-row" aria-label="SMVM strengths">
+              <FooterFeature icon={Zap} label="Innovative Solutions" />
+              <FooterFeature icon={ShieldCheck} label="Reliable Technology" />
+              <FooterFeature icon={BarChart3} label="Business Growth" />
+            </div>
+
+            <Link to="/contact" className="footer-enquiry-button">
+              <Mail className="h-5 w-5" />
+              <span>Send an enquiry</span>
+              <ChevronRight className="h-5 w-5" />
+            </Link>
           </div>
 
-          <FooterColumn title="Quick links" links={quickLinks} />
-          <FooterColumn title="Products" links={productLinks} />
-          <div>
-            <h2 className="text-sm font-bold text-white">Services</h2>
-            <ul className="mt-5 space-y-3.5">
-              {serviceLinks.map((label) => <li key={label}><Link to="/#services" className="text-sm text-slate-400 transition-colors hover:text-cyan-300">{label}</Link></li>)}
-            </ul>
+          <FooterColumn title="Quick links" icon={Users} links={quickLinks} />
+          <FooterColumn title="Products" icon={Package} links={productLinks} />
+          <FooterColumn title="Services" icon={Settings} links={serviceLinks} />
+
+          <div className="footer-brand-visual" aria-hidden="true">
+            <span className="footer-visual-halo" />
+            <span className="footer-glass-plate footer-glass-plate-back" />
+            <span className="footer-glass-plate footer-glass-plate-mid" />
+            <span className="footer-glass-plate footer-glass-plate-front">
+              <img src="/images/brand/smvm-mark-3d-smooth.png" alt="" />
+            </span>
+            <span className="footer-visual-orbit" />
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} SMVM Softwares. All rights reserved.</p>
-          <div className="flex gap-6"><Link to="/privacy" className="hover:text-slate-200">Privacy Policy</Link><Link to="/terms" className="hover:text-slate-200">Terms of Service</Link></div>
+        <div className="footer-bottom-bar">
+          <div className="footer-legal-row">
+            <p>© {new Date().getFullYear()} SMVM Softwares. All rights reserved.</p>
+            <span aria-hidden="true" />
+            <Link to="/privacy">Privacy Policy</Link>
+            <span aria-hidden="true" />
+            <Link to="/terms">Terms of Service</Link>
+            <span aria-hidden="true" />
+            <Link to="/cookies">Cookie Policy</Link>
+          </div>
+
+          <div className="footer-social-row">
+            {socialLinks.map(({ label, href, icon: Icon }) => (
+              <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={`Open SMVM ${label} page`}>
+                <Icon className="h-5 w-5" />
+              </a>
+            ))}
+            <span className="footer-social-divider" aria-hidden="true" />
+            <button type="button" onClick={scrollToTop} className="footer-back-to-top" aria-label="Back to top">
+              <ArrowUp className="h-5 w-5" />
+            </button>
+          </div>
         </div>
       </div>
     </footer>
   );
 }
 
-function FooterColumn({ title, links }: { title: string; links: readonly (readonly [string, string])[] }) {
-  return <div><h2 className="text-sm font-bold text-white">{title}</h2><ul className="mt-5 space-y-3.5">{links.map(([label, href]) => <li key={label}><Link to={href} className="text-sm text-slate-400 transition-colors hover:text-cyan-300">{label}</Link></li>)}</ul></div>;
+function FooterFeature({ icon: Icon, label }: { icon: LucideIcon; label: string }) {
+  return (
+    <span className="footer-feature">
+      <span><Icon className="h-5 w-5" /></span>
+      {label}
+    </span>
+  );
 }
 
+function FooterColumn({ title, icon: Icon, links }: { title: string; icon: LucideIcon; links: readonly (readonly [string, string])[] }) {
+  return (
+    <nav className="footer-link-column" aria-label={`${title} footer navigation`}>
+      <h2><span><Icon className="h-5 w-5" /></span>{title}</h2>
+      <ul>
+        {links.map(([label, href]) => (
+          <li key={label}>
+            <Link to={href}><span>{label}</span><ChevronRight className="h-4 w-4" /></Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}

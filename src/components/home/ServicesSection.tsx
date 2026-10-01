@@ -35,11 +35,12 @@ export function ServicesSection() {
             return (
               <motion.article
                 key={service.title}
+                id={`service-${service.title.toLowerCase().replace(/&/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`}
                 initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: index * 0.07, duration: 0.46 }}
-                className="service-card group"
+                className="service-card group scroll-mt-24"
                 style={{ '--service-rgb': service.accent } as CSSProperties}
               >
                 <div className="service-card-visual">

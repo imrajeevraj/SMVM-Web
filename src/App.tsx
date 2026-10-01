@@ -25,6 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Legal type="privacy" />} />
         <Route path="/terms" element={<Legal type="terms" />} />
+        <Route path="/cookies" element={<Legal type="cookies" />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>
