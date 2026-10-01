@@ -2,8 +2,11 @@ import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import { products } from '@/data/site';
 
-export function ProductOverview() {
-  const { slug } = useParams();
+type ProductSlug = (typeof products)[number]['slug'];
+
+export function ProductOverview({ productSlug }: { productSlug?: ProductSlug }) {
+  const { slug: routeSlug } = useParams();
+  const slug = productSlug ?? routeSlug;
   const product = products.find((item) => item.slug === slug);
   if (!product) return <Navigate to="/products" replace />;
   const Icon = product.icon;

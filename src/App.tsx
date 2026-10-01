@@ -17,9 +17,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/cambill-pos" element={<ProductDetail />} />
-        <Route path="/products/camstore-pos" element={<ProductOverview />} />
-        <Route path="/products/medibill-pos" element={<ProductOverview />} />
-        <Route path="/products/medibill-pro" element={<ProductOverview />} />
+        <Route path="/products/camstore-pos" element={<ProductOverview productSlug="camstore-pos" />} />
+        <Route path="/products/medibill-pos" element={<ProductOverview productSlug="medibill-pos" />} />
+        <Route path="/products/medibill-pro" element={<ProductOverview productSlug="medibill-pro" />} />
         <Route path="/about" element={<About />} />
         <Route path="/vision" element={<Vision />} />
         <Route path="/contact" element={<Contact />} />
