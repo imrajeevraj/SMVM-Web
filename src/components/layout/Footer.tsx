@@ -60,7 +60,7 @@ export function Footer() {
       <div className="footer-wave footer-wave-left" aria-hidden="true" />
       <div className="footer-wave footer-wave-right" aria-hidden="true" />
 
-      <div className="site-container relative z-10 py-10 sm:py-12 lg:py-14">
+      <div className="footer-shell site-container relative z-10 py-10 sm:py-12 lg:py-14">
         <div className="footer-topline" aria-hidden="true">
           <span className="footer-topline-beam" />
           <span className="footer-topline-label">Modern software <i /> Smarter businesses</span>

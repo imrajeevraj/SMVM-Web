@@ -1,0 +1,537 @@
+
+
+<!DOCTYPE html>
+<html xmlns:wb="https://open.weibo.com/wb">
+<head>
+    <title>Virtual Judge</title>
+    <meta property="og:type" content="webpage"/>
+    <meta property="og:url" content="https://vjudge.net"/>
+    <meta property="og:title" content="Virtual Judge"/>
+    <meta property="og:description" content="Virtual-Judge vjudge ICPC OnlineJudge JudgeOnline OJ Coding Algorithm Competitive-Programming 竞赛 算法"/>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  (function () {
+    try {
+      const storedTheme = localStorage.getItem('theme') || 'auto';
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const effectiveTheme = storedTheme === 'auto'
+          ? (prefersDark ? 'dark' : 'light')
+          : storedTheme;
+      document.documentElement.setAttribute('data-bs-theme', effectiveTheme);
+      document.documentElement.style.setProperty('color-scheme', effectiveTheme);
+    } catch (e) {
+    }
+  })();
+</script>
+
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-374JLX1715"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-374JLX1715', {
+      
+    });
+  </script>
+
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="keywords" content="Online Judge, vjudge, OJ, Virtual Judge, ICPC, OnlineJudge"/>
+<meta name="robots" content="index, follow"/>
+<link rel="icon" type="image/x-icon" href="/static/favicon.ico"/>
+
+<script defer src="/static/bundle/044edcc7261708529ee7.js"></script><script defer src="/static/bundle/bffdc083c0e0f74a7130.js"></script><script defer src="/static/bundle/643bf3b96b4e8d857b47.js"></script><script defer src="/static/bundle/1e8f2b2680617715eecf.js"></script><script defer src="/static/bundle/16ec07196c43ae853183.js"></script><script defer src="/static/bundle/67a7947749aa070e5b36.js"></script><script defer src="/static/bundle/0e4b20513da8bdef1e8a.js"></script><script defer src="/static/bundle/5b94294d2c29a21d649c.js"></script><script defer src="/static/bundle/35766fdc11a2f16e374b.js"></script><script defer src="/static/bundle/01fe8200228522d76212.js"></script><script defer src="/static/bundle/c397ae00e7ebdd2afe39.js"></script><script defer src="/static/bundle/e3de8fe9e6fec628ff30.js"></script><link href="/static/bundle/c60e0db28afb551bd5d1.css" rel="stylesheet"><link href="/static/bundle/cae864dbe41bf5199b11.css" rel="stylesheet"><link href="/static/bundle/b3afce6b97c0e801b6bb.css" rel="stylesheet"><link href="/static/bundle/3e549ae485bcf200d1bc.css" rel="stylesheet"></head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark prod" id="top-nav">
+    <button class="navbar-toggler d-sm-none" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <a class="navbar-brand" href="/">
+            <img src="/static/bundle/11b24ab2156955d8f3fa.ico" height="30"/>
+            <span data-i18n="top.nav.home"></span>
+        </a>
+        <ul class="navbar-nav top-nav-primary">
+            <li class="nav-item" id="nav-problem">
+                <a class="nav-link" href="/problem" data-i18n="top.nav.problem"></a>
+            </li>
+            <li class="nav-item" id="nav-status">
+                <a class="nav-link" href="/status" data-i18n="top.nav.status"></a>
+            </li>
+            <li class="nav-item" id="nav-contest">
+                <a class="nav-link" href="/contest" data-i18n="top.nav.contest"></a>
+            </li>
+            <li class="nav-item" id="nav-workbook">
+                <a class="nav-link" href="/workbook" data-i18n="top.nav.workbook"></a>
+            </li>
+            <li class="nav-item" id="nav-user">
+                <a class="nav-link" href="/user" data-i18n="top.nav.user"></a>
+            </li>
+            <li class="nav-item" id="nav-group">
+                <a class="nav-link" href="/group" data-i18n="top.nav.group"></a>
+            </li>
+            <li class="nav-item" id="nav-article">
+                <a class="nav-link" href="/article" data-i18n="top.nav.article"></a>
+            </li>
+            <li class="nav-item" id="nav-comment">
+                <a class="nav-link" href="/comment" data-i18n="top.nav.forum"></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="helpDropdown" data-bs-toggle="dropdown" data-i18n="top.nav.help"></a>
+                <div class="dropdown-menu dropdown-menu-start">
+                    <a class="dropdown-item" href="/article/2771">
+                        <i class="fa fa-question-circle-o"></i>
+                        <span data-i18n="top.nav.faq"></span>
+                    </a>
+                    <a class="dropdown-item" href="/article/97">
+                        <i class="fa fa-bug"></i>
+                        <span data-i18n="top.nav.bf"></span>
+                    </a>
+                    <a class="dropdown-item" href="/article/96">
+                        <i class="fa fa-lightbulb-o"></i>
+                        <span data-i18n="top.nav.suggestions"></span>
+                    </a>
+                    <a class="dropdown-item" href="javascript:void(0)" id="contact-us">
+                        <i class="fa fa-headphones"></i>
+                        <span data-i18n="top.nav.contact"></span>
+                    </a>
+                </div>
+            </li>
+            
+        </ul>
+        <ul class="navbar-nav top-nav-secondary ms-sm-auto">
+            <li class="nav-item top-nav-theme-item">
+                <a class="nav-link" href="javascript:void(0)" id="switchTheme"></a>
+            </li>
+            <li class="nav-item dropdown top-nav-locale-item">
+                <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="switchLocale" data-bs-toggle="dropdown" data-i18n="top.nav.locale"></a>
+                <div class="dropdown-menu dropdown-menu-end switch-locale-dropdown"></div>
+            </li>
+            
+                
+                
+                    <li class="nav-item top-nav-login-item">
+                        <a class="nav-link login" href="javascript:void(0)" data-i18n="top.nav.login"></a>
+                    </li>
+                    <li class="nav-item top-nav-register-item">
+                        <a class="nav-link register" href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#registerModal" data-i18n="top.nav.register"></a>
+                    </li>
+                
+            
+        </ul>
+    </div>
+</nav>
+<div id="page-panel-toggle-slot"></div>
+
+<div id="fb-root"></div>
+
+<div class="container" id="index-intro">
+    <h1 id="index-title">Virtual Judge</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <p style="line-height:22px;" data-i18n="index.intro_html"></p>
+            <div id="ojs" class="card" style="line-height:22px;">
+                <div class="card-body remote-oj-list">
+                    <span class="" title="2010-05-23 ~ ">
+                        <a href="http://poj.org/" target="_blank">
+                            <img src="/static/bundle/a3a137580388fd8ebace.ico"/>POJ
+                        </a>
+                    </span>
+                    <span class="dead" title="2010-06-02 ~ 2025.08.05">
+                        <a href="https://pintia.cn/problem-sets/91827364500" target="_blank">
+                            <img src="/static/bundle/82dd100dc5ab2a91c05a.ico"/>ZOJ
+                        </a>
+                    </span>
+                    <span class="dead" title="2010-07-18 ~ 2022.05.04">
+                        <a href="http://livearchive.onlinejudge.org/index.php" target="_blank">
+                            <img src="/static/bundle/4b67f78de220633fd18a.ico"/>UVALive
+                        </a>
+                    </span>
+                    <span title="2010-05-28 ~ ">
+                        <a href="https://codeforces.com/problemsets/acmsguru" target="_blank">
+                            <img src="/static/bundle/150071ef43ace6b8a0cf.ico"/>SGU
+                        </a>
+                    </span>
+                    <span title="2010-07-23 ~ ">
+                        <a href="http://acm.timus.ru/" target="_blank">
+                            <img src="/static/bundle/4365153ee3c7a254da01.ico"/>URAL
+                        </a>
+                    </span>
+                    <span class="dead" title="2010-05-23 ~ 2025-04-05">
+                        <a href="http://www.hustoj.org/" target="_blank">
+                            <img src="/static/bundle/a3ffd4e897e9c08baa20.jpg"/>HUST
+                        </a>
+                    </span>
+                    <span title="2010-05-26 ~ ">
+                        <a href="http://www.spoj.com/" target="_blank">
+                            <img src="/static/bundle/7ca10a33e9e8213fa737.png"/>SPOJ
+                        </a>
+                    </span>
+                    <span class="" title="2010-06-27">
+                        <a href="http://acm.hdu.edu.cn/" target="_blank">
+                            <img src="/static/bundle/73d8facc9c2896e38f19.png"/>HDU
+                        </a>
+                    </span>
+                    <span class="dead" title="2010-10-21 ~ 2020-06-12">
+                        <a href="http://www.lydsy.com/JudgeOnline/" target="_blank">
+                          <img src="/static/bundle/f0046ccc6572230d2390.png"/>HYSBZ
+                        </a>
+                    </span>
+                    <span title="2011-04-04 ~ ">
+                        <a href="https://onlinejudge.org/" target="_blank">
+                            <img src="/static/bundle/4b67f78de220633fd18a.ico"/>UVA
+                        </a>
+                    </span>
+                    <span title="2011-06-19 ~ ">
+                        <a href="http://codeforces.com/" target="_blank">
+                            <img src="/static/bundle/9e471d950278bb99d90b.png"/>CodeForces
+                        </a>
+                    </span>
+                    <span class="dead" title="2011-08-07 ~ 2023-01-09">
+                        <a href="http://www.codah.club/" target="_blank">
+                            <img src="/static/bundle/a1ebf61afd6229844ae2.ico"/>Z-Trening
+                        </a>
+                    </span>
+                    <span title="2011-08-19 ~ ">
+                        <a href="http://judge.u-aizu.ac.jp/" target="_blank">
+                            <img src="/static/bundle/72c318000fd40d15a16e.ico"/>Aizu
+                        </a>
+                    </span>
+                    <span class="" title="2011-11-25 ~">
+                        <a href="http://lightoj.com/" target="_blank">
+                            <img src="/static/bundle/01f0e52b64c44c1ae211.png"/>LightOJ
+                        </a>
+                    </span>
+                    <span class="" title="2012-06-07 ~ ">
+                        <a href="https://cdoj.site/d/lutece/" target="_blank">
+                            <img src="/static/bundle/eb05969527c589a81e25.png"/>UESTC
+                        </a>
+                    </span>
+                    <span title="2012-07-01 ~ ">
+                        <a href="https://ac.2333.moe/" target="_blank">
+                            <img src="/static/bundle/afb9e20655d616ee85c2.jpg"/>NBUT
+                        </a>
+                    </span>
+                    <span class="dead" title="2012-07-03 ~ 2021-05-10">
+                        <a href="http://acm.fzu.edu.cn/" target="_blank">
+                            <img src="/static/bundle/32f1c4c1b0d48ac81f68.gif"/>FZU
+                        </a>
+                    </span>
+                    <span class="dead" title="2012-07-22 ~ 2020-06-16">
+                        <a href="http://acm.csu.edu.cn/OnlineJudge/" target="_blank">
+                            <img src="/static/bundle/1cf95a7d5db47f5bfda8.ico"/>CSU
+                        </a>
+                    </span>
+                    <span class="dead" title="2013-06-19 ~ 2023.01.04">
+                        <a href="https://acm.scu.edu.cn/" target="_blank">
+                            <img src="/static/bundle/cb9b6884c5d048b76b54.ico"/>SCU
+                        </a>
+                    </span>
+                    <span class="dead" title="2014-11-06 ~ 2018-04-04">
+                        <a href="http://acdream.info/" target="_blank">
+                            <img src="/static/bundle/a5863beba6b8749fb835.ico"/>ACdream
+                        </a>
+                    </span>
+                    <span title="2014-12-07 ~ ">
+                        <a href="http://www.codechef.com/" target="_blank">
+                            <img src="/static/bundle/d730e6df854b00193b35.ico"/>CodeChef
+                        </a>
+                    </span>
+                    <span title="2015-08-18 ~ ">
+                        <a href="http://openjudge.cn/" target="_blank">
+                            <img src="/static/bundle/a3a137580388fd8ebace.ico"/>OpenJudge
+                        </a>
+                    </span>
+                    <span title="2016-09-11 ~ ">
+                        <a href="https://open.kattis.com/" target="_blank">
+                            <img src="/static/bundle/0cf505f08cb62af24292.ico"/>Kattis
+                        </a>
+                    </span>
+                    <span class="dead" title="2016-09-27 ~ 2021-03-27">
+                        <a href="https://hihocoder.com/" target="_blank">
+                            <img src="/static/bundle/86dc5088185af61f77b5.jpg"/>HihoCoder
+                        </a>
+                    </span>
+                    <span class="dead" title="2016-12-10 ~ 2017-09-30">
+                        <a href="http://acm.hit.edu.cn/hoj/" target="_blank">
+                            <img src="/static/bundle/016595136a632184517a.png"/>HIT
+                        </a>
+                    </span>
+                    <span class="dead" title="2016-12-10 ~ 2022-01-10">
+                        <a href="http://acm.hrbust.edu.cn/" target="_blank">
+                            <img src="/static/bundle/8c2f67900665583ec51f.ico"/>HRBUST
+                        </a>
+                    </span>
+                    <span class="dead" title="2016-12-10 ~ 2017-12-25">
+                        <a href="http://acm.mipt.ru/judge/" target="_blank">
+                            <img src="/static/bundle/7fe12ac344725c3c6669.ico"/>EIJudge
+                        </a>
+                    </span>
+                    <span title="2016-12-11 ~ ">
+                        <a href="https://atcoder.jp/" target="_blank">
+                            <img src="/static/bundle/9f5a56961e774027bdcf.png"/>AtCoder
+                        </a>
+                    </span>
+                    <span title="2016-12-15 ~ ">
+                        <a href="https://www.hackerrank.com/" target="_blank">
+                            <img src="/static/bundle/827e9a41ed1deb5922b5.png"/>HackerRank
+                        </a>
+                    </span>
+                    <span class="" title="2017-04-02 ~ ">
+                        <a href="https://www.51nod.com/" target="_blank">
+                            <img src="/static/bundle/a980f768ea0540723431.ico"/>51Nod
+                        </a>
+                    </span>
+                    <span class="dead" title="2017-07-24 ~ 2024-06-07">
+                        <a href="https://arena.topcoder.com/" target="_blank">
+                            <img src="/static/bundle/3464519813a1484173a5.png"/>TopCoder
+                        </a>
+                    </span>
+                    <span title="2018-03-10 ~ ">
+                        <a href="https://eolymp.com/en" target="_blank">
+                            <img src="/static/bundle/4d5bd9a45b1a9245b670.ico"/>EOlymp
+                        </a>
+                    </span>
+                    <span title="2019-11-10 ~ ">
+                        <a href="https://nanti.jisuanke.com/" target="_blank">
+                            <img src="/static/bundle/e059987bc885b5336b00.ico"/>计蒜客
+                        </a>
+                    </span>
+                    <span title="2020-02-14 ~ ">
+                        <a href="https://loj.ac/" target="_blank">
+                            <img src="/static/bundle/d319c0859f22922e76db.ico"/>LibreOJ
+                        </a>
+                    </span>
+                    <span title="2020-10-23 ~ ">
+                        <a href="https://uoj.ac/" target="_blank">
+                            <img src="/static/bundle/de2b69c0cb3f89ec9bc9.ico"/>UniversalOJ
+                        </a>
+                    </span>
+                    <span class="" title="2020-10-27 ~ ">
+                        <a href="https://darkbzoj.cc" target="_blank">
+                            <img src="/static/bundle/de2b69c0cb3f89ec9bc9.ico"/>黑暗爆炸
+                        </a>
+                    </span>
+                    <span title="2021-12-09 ~ ">
+                        <a href="https://cpc.csgrandeur.cn/" target="_blank">
+                            <img src="/static/bundle/96283d213c81b5bfafc0.png"/>CSG
+                        </a>
+                    </span>
+                    <span title="2022-02-18 ~ ">
+                        <a href="https://dmoj.ca/" target="_blank">
+                            <img src="/static/bundle/cb63be31d0c8a9c931bc.png"/>DMOJ
+                        </a>
+                    </span>
+                    <span title="2022-03-07 ~ ">
+                        <a href="https://toph.co/" target="_blank">
+                            <img src="/static/bundle/4225461136c883368dba.png"/>Toph
+                        </a>
+                    </span>
+                    <span title="2022-03-19 ~ ">
+                        <a href="https://www.luogu.com.cn/" target="_blank">
+                            <img src="/static/bundle/4bccb2a6cf4dc154729b.ico"/>洛谷
+                        </a>
+                    </span>
+                    <span class="dead" title="2022-03-19 ~ 2026-04-28">
+                        <a href="https://www.acmicpc.net/lang?lang=1" target="_blank">
+                            <img src="/static/bundle/fb8265f1b129edaf4b15.png"/>Baekjoon
+                        </a>
+                    </span>
+                    <span title="2022-05-14 ~ ">
+                        <a href="http://qoj.ac/" target="_blank">
+                            <img src="/static/bundle/de2b69c0cb3f89ec9bc9.ico"/>QOJ
+                        </a>
+                    </span>
+                    <span title="2022-06-12 ~ ">
+                        <a href="https://cses.fi/problemset/" target="_blank">
+                            <img src="/static/bundle/8aeb2e93affef2d6e117.png"/>CSES
+                        </a>
+                    </span>
+                    <span title="2022-12-02 ~ ">
+                        <a href="http://www.usaco.org/index.php" target="_blank">
+                            <img src="/static/bundle/00b630b2ef7c4027b5bb.png"/>USACO
+                        </a>
+                    </span>
+                    <span title="2022-12-03 ~ ">
+                        <a href="https://oj.uz/" target="_blank">
+                            <img src="/static/bundle/75804f61731ecc629cc9.ico"/>oj.uz
+                        </a>
+                    </span>
+                    <span title="2023-01-10 ~ ">
+                        <a href="https://judge.yosupo.jp/" target="_blank">
+                            <img src="/static/bundle/84e15ca8b95e0d77954b.ico"/>Yosupo
+                        </a>
+                    </span>
+                    <span title="2023-08-26 ~ ">
+                        <a href="https://yukicoder.me/" target="_blank">
+                            <img src="/static/bundle/3d79e1d7488e2d01d0d9.png"/>yukicoder
+                        </a>
+                    </span>
+                    <span title="2023-09-09 ~ ">
+                        <a href="https://oj.vnoi.info/" target="_blank">
+                            <img src="/static/bundle/a507b35397cb4dd43cc7.png"/>VNOJ
+                        </a>
+                    </span>
+                    <span title="2023-10-16 ~ ">
+                        <a href="https://tlx.toki.id/" target="_blank">
+                            <img src="/static/bundle/eb0b5a7d27b56279ee6a.ico"/>TLX
+                        </a>
+                    </span>
+                    <span class="dead" title="2024-01-08 ~ 2024-11-20">
+                        <a href="https://new.bzoj.org:88/" target="_blank">
+                            <img src="/static/bundle/b0ef9eadb2afb8a94b73.png"/>BZOJ
+                        </a>
+                    </span>
+                    <span title="2024-06-29 ~ ">
+                        <a href="https://kilonova.ro/" target="_blank">
+                            <img src="/static/bundle/eb1d4bcd9c3b34d428cd.png"/>Kilonova
+                        </a>
+                    </span>
+                    <span title="2024-07-06 ~ ">
+                        <a href="https://szkopul.edu.pl/" target="_blank">
+                            <img src="/static/bundle/39331bcf42a65abbca8a.ico"/>Szkopuł
+                        </a>
+                    </span>
+                    <span title="2024-08-20 ~ ">
+                        <a href="https://csacademy.com/" target="_blank">
+                            <img src="/static/bundle/676cdd3d3793718b3d2c.png"/>CSAcademy
+                        </a>
+                    </span>
+                    <span title="2024-11-04 ~ ">
+                        <a href="https://ac.nowcoder.com/" target="_blank">
+                            <img src="/static/bundle/463a9d52370dc5b7ba15.jpg"/>牛客
+                        </a>
+                    </span>
+                    <span title="2026-03-15 ~ ">
+                        <a href="https://olymp.krsu.kg/onlinejudge#" target="_blank">
+                            <img src="/static/bundle/606ca4becd9330cf6420.png"/>KRSU
+                        </a>
+                    </span>
+                    <span title="2026-06-13 ~ ">
+                        <a href="https://bs.daimayuan.top" target="_blank">
+                            <img src="/static/bundle/2154cdd1cc942466fbd8.png"/>代码源
+                        </a>
+                    </span>
+                    <span title="2026-07-10 ~ ">
+                        <a href="https://acmp.ru" target="_blank">
+                            <img src="/static/bundle/c25f1e5f6b730b11b460.png"/>ACMP
+                        </a>
+                    </span>
+                </div>
+                <hr style="margin: 0">
+                <div class="card-body" style="text-align: center; padding: 10px">
+                    <a href="https://stats.uptimerobot.com/OM4Lnt5p1W" target="_blank">
+                        <i class="fa fa-circle text-success"></i>
+                        <span data-i18n="index.service_status"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 social"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="body-footer">
+    <div style="margin-bottom: 8px">
+        <a href="/cdn-cgi/l/email-protection#49203a673c27093838672a2624" target="_blank">
+            <img src="/static/bundle/159d24b1b159c99a98e3.svg"/>
+        </a>
+        <img src="/static/bundle/fdbb90aaddd32a5ab4ad.png" class="qq" data-bs-toggle="popover" data-bs-placement="top"/>
+        <a href="https://weibo.com/u/5340553087" target="_blank">
+            <img src="/static/bundle/aae271671b3d18e15b40.svg"/>
+        </a>
+        <a href="https://space.bilibili.com/3056509/lists/3909505" target="_blank">
+            <img src="/static/bundle/ad1d62977bf56d0e0010.png"/>
+        </a>
+        <a href="https://t.me/joinchat/Erw7nRGwXN3iSCoKguVW3w" target="_blank">
+            <img src="/static/bundle/7182da66feaf3e99632a.svg"/>
+        </a>
+        <a href="https://www.facebook.com/virtualjudge/" target="_blank">
+            <img src="/static/bundle/c2687d1cf1f3e06984eb.svg"/>
+        </a>
+    </div>
+    <div id="footer-info">
+        All Copyright Reserved © 2010-2026<br/>
+        <span data-i18n="bottom.server_time"></span>: <span class="currentTimeTZ"></span>
+    </div>
+</div>
+
+
+<input name="systemVersion" type="hidden" value="1790863624397"/>
+<input name="gaId" type="hidden" value="G-374JLX1715"/>
+
+
+
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">basePath = "";</script>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"cbda702c6a634090aafa4717574879a5","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a43d5f9a685e9b8d',t:'MTc5MDg3NzY5NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
