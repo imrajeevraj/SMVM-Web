@@ -370,9 +370,9 @@
   .vision-panel-mesh { @apply pointer-events-none absolute inset-0 -z-10 opacity-80; background-image: radial-gradient(circle at 78% 32%, rgba(36, 173, 255, .2), transparent 28%), radial-gradient(circle at 90% 84%, rgba(124, 58, 237, .24), transparent 32%), linear-gradient(rgba(80, 151, 255, .04) 1px, transparent 1px), linear-gradient(90deg, rgba(80, 151, 255, .04) 1px, transparent 1px); background-size: auto, auto, 48px 48px, 48px 48px; }
   .vision-icon-badge { @apply relative z-20 grid h-12 w-12 place-items-center rounded-2xl border border-cyan-400/35 bg-cyan-400/10 text-cyan-400 backdrop-blur-md; box-shadow: 0 12px 30px rgba(28, 158, 255, .18), 0 0 24px rgba(34, 211, 238, .2); }
   .vision-panel-content { @apply relative z-20 mt-9 max-w-[56%]; }
-  .vision-art-stage { @apply pointer-events-none absolute bottom-0 right-0 z-10 h-[68%] w-[58%] overflow-hidden; }
-  .vision-art-glow { @apply absolute bottom-[6%] right-[4%] h-[72%] w-[84%] rounded-full bg-blue-500/20 blur-[70px]; }
-  .vision-growth-art { @apply absolute bottom-0 right-[-5%] h-full w-full object-contain object-right-bottom transition-transform duration-500; filter: drop-shadow(0 22px 28px rgba(0, 7, 28, .36)); }
+  .vision-art-stage { @apply pointer-events-none absolute bottom-[18px] right-[18px] z-10 flex h-[64%] w-[55%] items-end justify-center p-3; }
+  .vision-art-glow { @apply absolute bottom-[8%] right-[8%] h-[72%] w-[84%] rounded-full bg-blue-500/20 blur-[70px]; }
+  .vision-growth-art { @apply relative h-auto max-h-full w-auto max-w-full object-contain object-center transition-transform duration-500; filter: drop-shadow(0 22px 28px rgba(0, 7, 28, .36)); }
   .vision-panel:hover .vision-growth-art { transform: translateY(-5px) scale(1.025); }
   .trust-indicator-card { --trust-rgb: 54 222 254; @apply flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[.035] p-4 transition-all duration-300; box-shadow: 0 12px 28px rgba(0, 5, 18, .2), 0 0 16px rgb(var(--trust-rgb) / .1); }
   .trust-indicator-card:nth-child(2) { --trust-rgb: 96 165 250; }
@@ -415,8 +415,7 @@
   .about-vision-title { font-size: 2.15rem; }
   .vision-panel { padding: 20px; }
   .vision-panel-content { margin-top: 28px; max-width: 100%; }
-  .vision-art-stage { position: relative; bottom: auto; right: auto; height: 300px; width: calc(100% + 16px); margin: 18px -8px -20px; }
-  .vision-growth-art { right: -3%; }
+  .vision-art-stage { position: relative; bottom: auto; right: auto; height: 300px; width: 100%; margin: 22px 0 -8px; padding: 12px 18px 20px; }
 }
 
 @media (min-width: 640px) and (max-width: 1023px) {
