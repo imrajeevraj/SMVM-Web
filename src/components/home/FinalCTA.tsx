@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export function FinalCTA() {
   return (
-    <section id="start-conversation" className="bg-background px-4 pb-16 sm:px-6 sm:pb-20">
+    <section id="start-conversation" className="scroll-mt-24 bg-background px-4 pb-16 sm:px-6 sm:pb-20">
       <div className="cta-panel cta-showcase-panel mx-auto max-w-[1240px] overflow-hidden rounded-[28px]">
         <div className="cta-grid" />
         <span className="cta-aurora cta-aurora-one" aria-hidden="true" />

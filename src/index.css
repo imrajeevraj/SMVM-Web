@@ -425,7 +425,7 @@
   .cta-action { @apply inline-flex min-h-12 items-center justify-center gap-3 rounded-full border px-6 text-sm font-extrabold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300; }
   .cta-action-primary { @apply border-white bg-white text-[#08265a]; box-shadow: 0 10px 30px rgba(82, 171, 255, .25), 0 0 20px rgba(75, 205, 255, .22); }
   .cta-action-primary:hover { transform: translateY(-3px); border-color: #9beaff; box-shadow: 0 16px 38px rgba(82, 171, 255, .38), 0 0 32px rgba(75, 205, 255, .36); }
-  .cta-action-secondary { @apply border-blue-300/60 bg-blue-500/5 text-white; box-shadow: inset 0 0 18px rgba(52, 143, 255, .06); }
+  .cta-action-secondary { @apply border-blue-300/60 bg-[#082b59]/80 text-white backdrop-blur-sm; box-shadow: inset 0 0 18px rgba(52, 143, 255, .09); }
   .cta-action-secondary:hover { transform: translateY(-3px); border-color: #67e8f9; background: rgba(35, 111, 255, .15); box-shadow: 0 0 28px rgba(43, 160, 255, .28); }
   .cta-visual-stage { @apply relative min-h-[280px] lg:min-h-[360px]; }
   .cta-product-art { @apply absolute bottom-[-54px] right-[-70px] z-10 h-auto w-[min(760px,135%)] max-w-none object-contain object-right-bottom transition-transform duration-500; filter: drop-shadow(0 24px 28px rgba(0, 4, 18, .48)) drop-shadow(0 0 22px rgba(34, 160, 255, .15)); }
@@ -493,8 +493,8 @@
 
 @media (max-width: 1023px) {
   .cta-showcase-copy > p { margin-left: auto; margin-right: auto; }
-  .cta-visual-stage { min-height: 320px; }
-  .cta-product-art { bottom: -44px; left: 50%; right: auto; width: min(720px, 112vw); transform: translateX(-50%); }
+  .cta-visual-stage { min-height: 400px; margin-top: 24px; }
+  .cta-product-art { bottom: -34px; left: 50%; right: auto; width: min(690px, 100vw); transform: translateX(-50%); }
   .cta-panel:hover .cta-product-art { transform: translateX(-50%) translateY(-5px) scale(1.015); }
   .cta-floating-chart { left: 8%; top: 24%; }
   .cta-floating-product { right: 8%; top: 14%; }
@@ -591,8 +591,8 @@
   .testimonial-empty-card { min-height: 205px; padding: 22px 18px; }
   .cta-showcase-grid { min-height: auto; padding: 34px 22px 0; }
   .cta-showcase-copy h2 { font-size: 2.2rem; }
-  .cta-visual-stage { min-height: 265px; }
-  .cta-product-art { bottom: -26px; width: 570px; }
+  .cta-visual-stage { min-height: 300px; margin-top: 26px; }
+  .cta-product-art { bottom: -18px; width: min(500px, 140vw); }
   .cta-floating-icon { height: 42px; width: 42px; border-radius: 14px; }
   .cta-floating-icon svg { height: 20px; width: 20px; }
   .cta-floating-product { right: 3%; }
