@@ -1,5 +1,4 @@
 import { MessageSquareQuote, Puzzle, Route, SlidersHorizontal } from 'lucide-react';
-import { SectionHeading } from './SectionHeading';
 
 const indicators = [
   { label: 'Solutions for focused and multi-location operations', icon: Route },
@@ -21,12 +20,23 @@ export function BusinessTrustSection() {
 
 export function TestimonialsSection() {
   return (
-    <section className="bg-background py-14 sm:py-16">
+    <section id="customer-stories" className="testimonials-section scroll-mt-24 py-14 sm:py-16">
       <div className="site-container">
-        <div className="testimonial-panel grid gap-8 rounded-[28px] border border-border bg-surface p-7 sm:p-9 lg:grid-cols-[.8fr_1.2fr]">
-          <SectionHeading align="left" eyebrow="Customer stories" title="Trust is earned through real outcomes" description="Verified customer stories and case studies will be published here after client approval." />
-          <div className="testimonial-empty-card grid min-h-[210px] place-items-center rounded-[22px] border border-dashed border-border bg-background p-7 text-center">
-            <div><span className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-brand/10 text-brand"><MessageSquareQuote className="h-7 w-7" /></span><h3 className="mt-5 font-bold text-text">Customer stories coming soon</h3><p className="mx-auto mt-2 max-w-md text-base leading-7 text-text-muted">Approved client quotes and case studies will appear here as they become available.</p></div>
+        <div className="testimonial-panel testimonial-showcase-grid">
+          <div className="testimonial-copy">
+            <p className="testimonial-eyebrow">Customer stories <span aria-hidden="true" /></p>
+            <h2 className="testimonial-title">Trust is earned<br />through <span>real outcomes</span></h2>
+            <p className="testimonial-description">Verified customer stories and case studies will be published here after client approval.</p>
+          </div>
+
+          <div className="testimonial-empty-card">
+            <span className="testimonial-orb testimonial-orb-one" aria-hidden="true" />
+            <span className="testimonial-orb testimonial-orb-two" aria-hidden="true" />
+            <div className="testimonial-empty-content">
+              <span className="testimonial-quote-icon"><MessageSquareQuote className="h-7 w-7" /></span>
+              <h3>Customer stories coming soon</h3>
+              <p>Approved client quotes and case studies will appear here<br className="hidden sm:block" /> as they become available.</p>
+            </div>
           </div>
         </div>
       </div>
