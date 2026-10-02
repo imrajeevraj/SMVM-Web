@@ -4,11 +4,15 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { products } from '@/data/site';
 import { SectionHeading } from './SectionHeading';
+import './ProductsSectionBackground.css';
 
 export function ProductsSection() {
   return (
-    <section id="products" className="overflow-hidden bg-background py-14 scroll-mt-24 sm:py-16 lg:py-20">
-      <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-6 lg:px-8">
+    <section id="products" className="product-showcase-section overflow-hidden py-14 scroll-mt-24 sm:py-16 lg:py-20">
+      <span className="product-section-orbit product-section-orbit-one" aria-hidden="true" />
+      <span className="product-section-orbit product-section-orbit-two" aria-hidden="true" />
+      <span className="product-section-dots" aria-hidden="true" />
+      <div className="relative z-10 mx-auto w-full max-w-[1500px] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <SectionHeading align="left" eyebrow="Our products" title="POS solutions for every business" description="Powerful, easy-to-use and future-ready POS software tailored for your business needs." />
           <Link to="/products" className="home-text-action inline-flex shrink-0 items-center gap-2 text-sm font-bold text-brand">View all products <ArrowRight className="h-4 w-4" /></Link>
