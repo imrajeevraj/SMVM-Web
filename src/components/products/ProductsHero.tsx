@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { BarChart3, Cloud, Home, MousePointer2, ShieldCheck, Sparkles, UsersRound } from 'lucide-react';
+import { BarChart3, Cloud, Home, MousePointer2, ShieldCheck, TrendingUp, UsersRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const trustItems = [
   { title: 'Easy to use', detail: 'Simple and intuitive', icon: MousePointer2 },
   { title: 'Reliable', detail: 'Built for your business', icon: ShieldCheck },
-  { title: 'Future ready', detail: 'Always evolving', icon: Sparkles },
+  { title: 'Future ready', detail: 'Always evolving', icon: BarChart3 },
 ];
 
 export function ProductsHero() {
@@ -63,7 +63,7 @@ export function ProductsHero() {
           >
             <div className="products-hero-orbit" aria-hidden="true" />
             <div className="products-hero-chip products-hero-chip-insights">
-              <span><BarChart3 aria-hidden="true" /></span>
+              <span><TrendingUp aria-hidden="true" /></span>
               <span><strong>Live insights</strong><small>For better decisions</small></span>
             </div>
             <div className="products-hero-chip products-hero-chip-platform">
