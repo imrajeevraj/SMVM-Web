@@ -49,8 +49,8 @@ export function ProductConsultation() {
           <div className="products-consultation-card">
             <div className="products-consultation-copy">
               <p className="products-page-eyebrow">Need help deciding?</p>
-              <h2 id="products-consultation-title">Let’s choose the right software together</h2>
-              <p>Tell us about your current workflow and what you want to improve. Our team will help you identify the most suitable next step.</p>
+              <h2 id="products-consultation-title">Not sure which product is right for you?</h2>
+              <p>Our team can help you choose the best solution based on your business size, industry, and future goals.</p>
               <div className="products-hero-actions">
                 <Link className="products-button products-button-light" to="/contact">Get a Free Consultation <ArrowRight aria-hidden="true" /></Link>
                 <a className="products-button products-button-dark-outline" href="#product-comparison">Compare Products <ArrowRight aria-hidden="true" /></a>

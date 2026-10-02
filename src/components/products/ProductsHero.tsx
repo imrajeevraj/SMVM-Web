@@ -3,9 +3,9 @@ import { CheckCircle2, MousePointer2, ShieldCheck, Sparkles } from 'lucide-react
 import { Link } from 'react-router-dom';
 
 const trustItems = [
-  { title: 'Easy to use', detail: 'Clear everyday workflows', icon: MousePointer2 },
-  { title: 'Reliable', detail: 'Built for daily operations', icon: ShieldCheck },
-  { title: 'Future ready', detail: 'Ready to evolve with you', icon: Sparkles },
+  { title: 'Easy to use', detail: 'Simple and intuitive', icon: MousePointer2 },
+  { title: 'Reliable', detail: 'Built for your business', icon: ShieldCheck },
+  { title: 'Future ready', detail: 'Always evolving', icon: Sparkles },
 ];
 
 export function ProductsHero() {
@@ -33,7 +33,7 @@ export function ProductsHero() {
               <span>for every business</span>
             </h1>
             <p className="products-hero-description">
-              From focused retail billing to advanced pharmacy management, our software helps teams simplify work, stay organised, and grow with confidence.
+              Modern, easy-to-use and future-ready software products designed to simplify your business operations and drive growth.
             </p>
             <div className="products-hero-actions">
               <Link className="products-button products-button-primary" to="/contact">

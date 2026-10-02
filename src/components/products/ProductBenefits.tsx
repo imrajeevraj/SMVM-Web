@@ -3,23 +3,23 @@ import { Layers3, MousePointer2, RefreshCw, ShieldCheck } from 'lucide-react';
 
 const benefits = [
   {
-    title: 'Simple to adopt',
-    description: 'Clear interfaces help teams get comfortable with everyday tasks.',
+    title: 'Easy to use',
+    description: 'Modern and intuitive interfaces.',
     icon: MousePointer2,
   },
   {
-    title: 'Reliable by design',
-    description: 'Thoughtful workflows keep important business operations organised.',
+    title: 'Reliable performance',
+    description: 'Stable and secure technology.',
     icon: ShieldCheck,
   },
   {
-    title: 'Built to scale',
-    description: 'Choose a focused solution now and expand as your requirements grow.',
+    title: 'Scalable solutions',
+    description: 'Grow with your business.',
     icon: Layers3,
   },
   {
-    title: 'Practical support',
-    description: 'Get guidance for product selection, onboarding, and evolving needs.',
+    title: 'Continuous updates',
+    description: 'Regular improvements and new features.',
     icon: RefreshCw,
   },
 ];
@@ -30,9 +30,9 @@ export function ProductBenefits() {
       <div className="products-page-shell">
         <div className="products-section-heading products-section-heading-centered">
           <div>
-            <p className="products-page-eyebrow">Why choose SMVM</p>
-            <h2 id="products-benefits-title">Software that works around your business</h2>
-            <p>Focused product experiences, practical capabilities, and room to grow.</p>
+            <p className="products-page-eyebrow">Why choose our products</p>
+            <h2 id="products-benefits-title">Built for real business needs</h2>
+            <p>Our products are designed with a focus on simplicity, reliability, and long-term growth.</p>
           </div>
         </div>
         <div className="products-benefit-grid">

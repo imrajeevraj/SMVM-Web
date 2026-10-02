@@ -5,19 +5,19 @@ import { Link } from 'react-router-dom';
 
 const faqs = [
   {
-    question: 'Which SMVM product is right for my business?',
+    question: 'Which product is right for my business?',
     answer: 'CamStore POS is focused on single stores and small shops, while CamBill POS supports larger and multi-store retail operations. MediBill POS is designed for medical stores, and MediBill Pro is intended for larger, multi-branch medical businesses.',
   },
   {
-    question: 'Are SMVM products secure?',
+    question: 'Is my data secure?',
     answer: 'Our products are designed with structured access and careful business-data handling in mind. Because security needs vary by deployment and workflow, our team can review the controls that matter to your organisation before you choose a product.',
   },
   {
-    question: 'Can I upgrade as my business grows?',
-    answer: 'Yes. We can review your changing store, branch, user, and reporting needs and recommend the most appropriate product path for the next stage of your business.',
+    question: 'Can I upgrade to a higher plan later?',
+    answer: 'The most suitable upgrade path depends on your current product and changing store, branch, user, and reporting needs. Our team can review those requirements and confirm the available options through an enquiry.',
   },
   {
-    question: 'Can the software be customised?',
+    question: 'Do you offer customization?',
     answer: 'SMVM also provides custom software development for requirements that go beyond a standard product workflow. The suitable scope and approach can be discussed during an enquiry.',
   },
   {
@@ -25,7 +25,7 @@ const faqs = [
     answer: 'Onboarding, training, and ongoing support arrangements can be discussed with our team based on the selected product and your operational needs.',
   },
   {
-    question: 'How can I request a product demo?',
+    question: 'Can I request a demo?',
     answer: 'Use the contact page to tell us which product you are considering and share a few details about your business. Our team can then coordinate the most relevant next step.',
   },
 ];
@@ -39,8 +39,8 @@ export function ProductFAQ() {
       <div className="products-page-shell products-faq-layout">
         <div className="products-faq-intro">
           <p className="products-page-eyebrow">Frequently asked questions</p>
-          <h2 id="products-faq-title">Helpful answers before you decide</h2>
-          <p>Still unsure? Tell us about your workflow and we’ll help you narrow down the options.</p>
+          <h2 id="products-faq-title">Questions about our products?</h2>
+          <p>Find answers to common questions about features, pricing, and more.</p>
           <Link className="products-text-link" to="/contact">Talk to our team <span aria-hidden="true">→</span></Link>
         </div>
         <div className="products-faq-list">
