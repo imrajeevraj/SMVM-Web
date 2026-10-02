@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, MousePointer2, ShieldCheck, Sparkles } from 'lucide-react';
+import { BarChart3, Cloud, Home, MousePointer2, ShieldCheck, Sparkles, UsersRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const trustItems = [
@@ -14,7 +14,7 @@ export function ProductsHero() {
       <div className="products-page-shell">
         <nav className="products-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><Link to="/">Home</Link></li>
+            <li><Link to="/"><Home aria-hidden="true" /> Home</Link></li>
             <li aria-hidden="true">/</li>
             <li aria-current="page">Products</li>
           </ol>
@@ -40,8 +40,17 @@ export function ProductsHero() {
                 Get a Quote <span aria-hidden="true">→</span>
               </Link>
               <Link className="products-button products-button-secondary" to="/contact">
-                Talk to Our Team <span aria-hidden="true">→</span>
+                <UsersRound aria-hidden="true" /> Talk to Our Team
               </Link>
+            </div>
+
+            <div className="products-trust-row" aria-label="Product qualities">
+              {trustItems.map(({ title, detail, icon: Icon }) => (
+                <div className="products-trust-item" key={title}>
+                  <span className="products-trust-icon"><Icon aria-hidden="true" /></span>
+                  <span><strong>{title}</strong><small>{detail}</small></span>
+                </div>
+              ))}
             </div>
           </motion.div>
 
@@ -50,30 +59,28 @@ export function ProductsHero() {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.65, delay: 0.08 }}
-            aria-label="SMVM point of sale software shown across desktop, laptop, tablet and mobile devices"
+            aria-label="CamStore POS shown across desktop and mobile devices with retail billing equipment"
           >
             <div className="products-hero-orbit" aria-hidden="true" />
-            <div className="products-hero-chip products-hero-chip-top" aria-hidden="true">
-              <CheckCircle2 /> Live insights
+            <div className="products-hero-chip products-hero-chip-insights">
+              <span><BarChart3 aria-hidden="true" /></span>
+              <span><strong>Live insights</strong><small>For better decisions</small></span>
             </div>
-            <div className="products-hero-chip products-hero-chip-bottom" aria-hidden="true">
-              <ShieldCheck /> Secure access
+            <div className="products-hero-chip products-hero-chip-platform">
+              <span><Cloud aria-hidden="true" /></span>
+              <span><strong>One platform</strong><small>Multiple possibilities</small></span>
             </div>
+            <div className="products-hero-chip products-hero-chip-secure">
+              <span><ShieldCheck aria-hidden="true" /></span>
+              <span><strong>Secure &amp; reliable</strong><small>Your data, our priority</small></span>
+            </div>
+            <div className="products-hero-analytics" aria-hidden="true"><BarChart3 /></div>
             <img
-              src="/images/products/cambill-pos-card.png"
-              alt="CamBill POS software running on multiple business devices"
+              src="/images/products/camstore-pos-card.png"
+              alt="CamStore POS dashboard with desktop display, mobile device, receipt printer and barcode scanner"
               loading="eager"
             />
           </motion.div>
-        </div>
-
-        <div className="products-trust-row" aria-label="Product qualities">
-          {trustItems.map(({ title, detail, icon: Icon }) => (
-            <div className="products-trust-item" key={title}>
-              <span className="products-trust-icon"><Icon aria-hidden="true" /></span>
-              <span><strong>{title}</strong><small>{detail}</small></span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
