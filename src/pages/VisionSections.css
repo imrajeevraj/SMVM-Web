@@ -1,0 +1,188 @@
+/* Shared visual backgrounds for the Vision supporting sections. */
+.vision-page__purpose,
+.vision-page__beliefs-new,
+.vision-impact-new {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.vision-page__purpose::after,
+.vision-page__beliefs-new::after,
+.vision-impact-new::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: '';
+}
+
+.vision-page__purpose {
+  background:
+    radial-gradient(circle at 8% 12%, rgb(42 157 255 / .18), transparent 28%),
+    radial-gradient(circle at 93% 88%, rgb(130 77 255 / .15), transparent 31%),
+    linear-gradient(135deg, #ffffff, #f0f8ff 52%, #f7f2ff);
+}
+
+.vision-page__purpose::after {
+  background-image:
+    linear-gradient(rgb(41 130 224 / .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(41 130 224 / .05) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, transparent, #000 20%, #000 82%, transparent);
+}
+
+.vision-page__purpose > .vision-page__shell,
+.vision-page__beliefs-new > .vision-page__shell,
+.vision-impact-new > .vision-impact__layout {
+  position: relative;
+  z-index: 1;
+}
+
+.vision-purpose__card {
+  border-color: rgb(var(--purpose-rgb) / .3);
+  background:
+    radial-gradient(circle at 92% 12%, rgb(var(--purpose-rgb) / .16), transparent 38%),
+    linear-gradient(145deg, rgb(255 255 255 / .96), rgb(255 255 255 / .84));
+  box-shadow: 0 20px 48px rgb(var(--purpose-rgb) / .13), inset 0 1px 0 #fff;
+  backdrop-filter: blur(16px);
+}
+
+.vision-purpose__card:hover {
+  border-color: rgb(var(--purpose-rgb) / .55);
+  box-shadow: 0 26px 60px rgb(var(--purpose-rgb) / .23), inset 0 1px 0 #fff;
+}
+
+.vision-purpose__icon {
+  box-shadow: 0 12px 28px rgb(var(--purpose-rgb) / .2), inset 0 1px 0 rgb(255 255 255 / .75);
+}
+
+.vision-page__beliefs-new {
+  background-image:
+    linear-gradient(180deg, rgb(247 251 255 / .78), rgb(239 248 255 / .9)),
+    url('/images/company/beliefs-bg.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.vision-page__beliefs-new::after {
+  background:
+    radial-gradient(circle at 12% 22%, rgb(22 119 255 / .16), transparent 28%),
+    radial-gradient(circle at 88% 76%, rgb(124 77 255 / .14), transparent 30%);
+}
+
+.vision-beliefs__card {
+  border-color: rgb(var(--belief-rgb) / .28);
+  background:
+    radial-gradient(circle at 95% 100%, rgb(var(--belief-rgb) / .14), transparent 42%),
+    linear-gradient(145deg, rgb(255 255 255 / .92), rgb(248 252 255 / .76));
+  box-shadow: 0 18px 46px rgb(28 83 145 / .12), inset 0 1px 0 #fff;
+}
+
+.vision-beliefs__card:hover {
+  border-color: rgb(var(--belief-rgb) / .55);
+  box-shadow: 0 26px 58px rgb(var(--belief-rgb) / .22), inset 0 1px 0 #fff;
+}
+
+.vision-impact-new {
+  background-image:
+    linear-gradient(100deg, rgb(247 251 255 / .95) 0%, rgb(241 249 255 / .88) 43%, rgb(238 248 255 / .72) 100%),
+    url('/images/company/impact-bg.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.vision-impact-new::after {
+  background:
+    linear-gradient(rgb(47 133 225 / .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(47 133 225 / .045) 1px, transparent 1px),
+    radial-gradient(circle at 83% 17%, rgb(106 80 255 / .14), transparent 30%);
+  background-size: 58px 58px, 58px 58px, auto;
+  mask-image: linear-gradient(to right, #000, #000 70%, transparent);
+}
+
+.vision-impact__card {
+  border-color: rgb(var(--impact-rgb) / .3);
+  background:
+    radial-gradient(circle at 90% 100%, rgb(var(--impact-rgb) / .17), transparent 43%),
+    linear-gradient(145deg, rgb(255 255 255 / .94), rgb(248 252 255 / .8));
+  box-shadow: 0 20px 48px rgb(27 83 145 / .13), inset 0 1px 0 #fff;
+}
+
+.vision-impact__card:hover {
+  border-color: rgb(var(--impact-rgb) / .55);
+  box-shadow: 0 28px 62px rgb(var(--impact-rgb) / .24), inset 0 1px 0 #fff;
+}
+
+.dark .vision-page__purpose {
+  background:
+    radial-gradient(circle at 8% 12%, rgb(26 132 255 / .2), transparent 28%),
+    radial-gradient(circle at 93% 88%, rgb(126 68 255 / .18), transparent 31%),
+    linear-gradient(135deg, #061630, #092143 52%, #111c43);
+}
+
+.dark .vision-page__purpose::after { opacity: .48; }
+
+.dark .vision-purpose__card {
+  border-color: rgb(var(--purpose-rgb) / .36);
+  background:
+    radial-gradient(circle at 92% 12%, rgb(var(--purpose-rgb) / .2), transparent 40%),
+    linear-gradient(145deg, rgb(9 34 72 / .96), rgb(7 27 59 / .9));
+  box-shadow: 0 22px 52px rgb(0 7 24 / .36), inset 0 1px 0 rgb(133 198 255 / .14);
+}
+
+.dark .vision-purpose__card:hover {
+  border-color: rgb(var(--purpose-rgb) / .62);
+  box-shadow: 0 28px 65px rgb(var(--purpose-rgb) / .23), inset 0 1px 0 rgb(133 198 255 / .2);
+}
+
+.dark .vision-page__beliefs-new {
+  background-image:
+    linear-gradient(180deg, rgb(4 17 39 / .9), rgb(6 27 58 / .94)),
+    url('/images/company/beliefs-bg.jpg');
+  background-blend-mode: multiply, luminosity;
+}
+
+.dark .vision-page__beliefs-new::after { opacity: .78; }
+
+.dark .vision-beliefs__card {
+  border-color: rgb(var(--belief-rgb) / .38);
+  background:
+    radial-gradient(circle at 95% 100%, rgb(var(--belief-rgb) / .17), transparent 43%),
+    linear-gradient(145deg, rgb(9 35 74 / .91), rgb(7 27 58 / .84));
+  box-shadow: 0 20px 48px rgb(0 7 24 / .4), inset 0 1px 0 rgb(126 194 255 / .14);
+}
+
+.dark .vision-beliefs__card:hover {
+  border-color: rgb(var(--belief-rgb) / .62);
+  box-shadow: 0 28px 64px rgb(var(--belief-rgb) / .23), inset 0 1px 0 rgb(126 194 255 / .2);
+}
+
+.dark .vision-impact-new {
+  background-image:
+    linear-gradient(100deg, rgb(4 17 39 / .97) 0%, rgb(6 27 58 / .93) 48%, rgb(8 36 75 / .84) 100%),
+    url('/images/company/impact-bg.jpg');
+  background-blend-mode: normal, luminosity;
+}
+
+.dark .vision-impact-new::after { opacity: .55; }
+
+.dark .vision-impact__card {
+  border-color: rgb(var(--impact-rgb) / .38);
+  background:
+    radial-gradient(circle at 90% 100%, rgb(var(--impact-rgb) / .19), transparent 44%),
+    linear-gradient(145deg, rgb(9 35 74 / .94), rgb(7 27 58 / .86));
+  box-shadow: 0 22px 52px rgb(0 7 24 / .42), inset 0 1px 0 rgb(126 194 255 / .14);
+}
+
+.dark .vision-impact__card:hover {
+  border-color: rgb(var(--impact-rgb) / .62);
+  box-shadow: 0 30px 68px rgb(var(--impact-rgb) / .24), inset 0 1px 0 rgb(126 194 255 / .2);
+}
+
+@media (max-width: 768px) {
+  .vision-page__beliefs-new,
+  .vision-impact-new { background-position: center; }
+  .vision-page__beliefs-new::after,
+  .vision-impact-new::after { opacity: .65; }
+}
