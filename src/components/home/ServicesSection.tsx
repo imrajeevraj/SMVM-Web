@@ -1,71 +1,93 @@
 import { motion } from 'framer-motion';
 import type { CSSProperties } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, BadgeCheck, Blocks, Code2, Headphones, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { services } from '@/data/site';
+import './ServicesSection.css';
+
+const homeServices = [
+  {
+    title: 'Web Development',
+    description: 'Modern, responsive, and high-performance websites built to strengthen your online presence and support business growth.',
+    features: ['Responsive website design', 'Business & corporate websites', 'E-commerce development', 'Performance and SEO fundamentals'],
+    image: '/images/services/web-development-home.png',
+    accent: '22 119 255',
+    Icon: Code2,
+  },
+  {
+    title: 'Custom Software Development',
+    description: 'Tailored software solutions designed around your workflows, helping streamline operations, improve productivity, and support growth.',
+    features: ['Business management systems', 'Inventory & billing workflows', 'POS & administrative systems', 'API & database integration'],
+    image: '/images/services/custom-software-development-home.png',
+    accent: '142 70 242',
+    Icon: Blocks,
+  },
+  {
+    title: 'Mobile & Android App Development',
+    description: 'Feature-rich mobile applications that help you connect with customers, simplify daily operations, and extend digital services.',
+    features: ['Native Android applications', 'Cross-platform mobile apps', 'API integration', 'Testing & deployment support'],
+    image: '/images/services/mobile-app-development-home.png',
+    accent: '5 190 151',
+    Icon: Smartphone,
+  },
+  {
+    title: 'Consulting & Support',
+    description: 'Practical technical guidance, implementation assistance, and ongoing support to keep your technology useful and reliable.',
+    features: ['Technical consultation', 'Implementation guidance', 'Troubleshooting & maintenance', 'Updates & ongoing support'],
+    image: '/images/services/consulting-support-home.png',
+    accent: '255 122 20',
+    Icon: Headphones,
+  },
+] as const;
 
 export function ServicesSection() {
   return (
-    <section id="services" className="services-showcase scroll-mt-20">
-      <div className="services-showcase-grid" aria-hidden="true" />
-      <div className="services-showcase-wave" aria-hidden="true" />
+    <section id="services" className="home-services scroll-mt-20" aria-labelledby="home-services-title">
+      <div className="home-services__grid-pattern" aria-hidden="true" />
+      <div className="home-services__dots" aria-hidden="true" />
 
-      <div className="services-shell relative z-10">
-        <div className="flex flex-col justify-between gap-7 lg:flex-row lg:items-end">
-          <div className="max-w-[1120px]">
-            <p className="flex items-center gap-3 text-xs font-extrabold uppercase tracking-[.24em] text-[#56b6ff]">
-              What we do <span className="h-px w-10 bg-[#56b6ff]" />
-            </p>
-            <h2 className="services-heading mt-4 max-w-[1120px] text-balance text-4xl font-extrabold leading-[1.04] tracking-[-.045em] sm:text-5xl xl:text-[58px]">
-              Beyond products — complete <span className="services-gradient-title">software solutions</span>
-            </h2>
-            <p className="services-intro mt-4 max-w-[1050px] text-base leading-7 sm:text-lg">
-              From the first idea to an evolving digital system, we help businesses turn technology into useful, well-designed tools.
-            </p>
+      <div className="home-services__shell">
+        <header className="home-services__heading">
+          <div>
+            <p className="home-services__eyebrow">What we offer <span /></p>
+            <h2 id="home-services-title">Our <span>Services</span></h2>
+            <p className="home-services__intro">Practical, scalable, and reliable technology services tailored to your business goals.</p>
           </div>
+          <p className="home-services__side-copy">We combine technical expertise with thoughtful delivery to build useful solutions around real business needs.</p>
+        </header>
 
-          <Link to="/contact" className="services-project-button">
-            Discuss your project <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
+        <div className="home-services__cards">
+          {homeServices.map((service, index) => {
+            const Icon = service.Icon;
+            const serviceSlug = service.title.toLowerCase().replace(/&/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-5">
-          {services.map((service, index) => {
-            const Icon = service.icon;
             return (
               <motion.article
                 key={service.title}
-                id={`service-${service.title.toLowerCase().replace(/&/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`}
-                initial={{ opacity: 0, y: 18 }}
+                id={`service-${serviceSlug}`}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
+                viewport={{ once: true, margin: '-50px' }}
                 transition={{ delay: index * 0.07, duration: 0.46 }}
-                className="service-card group scroll-mt-24"
+                className="home-service-card"
                 style={{ '--service-rgb': service.accent } as CSSProperties}
               >
-                <div className="service-card-visual">
-                  <span className="service-icon-badge"><Icon className="h-6 w-6" /></span>
-                  <img
-                    src={service.image}
-                    alt={`${service.title} technology illustration`}
-                    loading="lazy"
-                    decoding="async"
-                    className={`service-card-art service-card-art-${service.tone}`}
-                    style={{ objectFit: service.artMode }}
-                  />
+                <div className="home-service-card__visual">
+                  <span className="home-service-card__icon" aria-hidden="true"><Icon /></span>
+                  <img src={service.image} alt={`${service.title} illustration`} loading="lazy" decoding="async" />
                 </div>
 
-                <div className="service-card-content">
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="service-card-title text-[17px] font-extrabold leading-[1.25]">{service.title}</h3>
-                    <Link to="/contact" className="service-card-arrow" aria-label={`Discuss ${service.title}`}>
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </div>
-                  <p className="service-card-copy mt-2.5 text-[13px] leading-[1.55]">{service.description}</p>
-                  <div className="mt-auto flex flex-nowrap gap-1.5 pt-5">
-                    {service.features.map((feature) => <span key={feature} className="service-chip">{feature}</span>)}
-                  </div>
+                <div className="home-service-card__body">
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <ul>
+                    {service.features.map((feature) => (
+                      <li key={feature}><BadgeCheck aria-hidden="true" />{feature}</li>
+                    ))}
+                  </ul>
+                  <Link to="/contact" className="home-service-card__cta" aria-label={`Explore ${service.title}`}>
+                    <span>Explore {service.title}</span>
+                    <ArrowRight aria-hidden="true" />
+                  </Link>
                 </div>
               </motion.article>
             );
@@ -75,4 +97,3 @@ export function ServicesSection() {
     </section>
   );
 }
-

@@ -1,10 +1,27 @@
 import { motion } from 'framer-motion';
 import type { CSSProperties } from 'react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, BarChart3, Building2, Calendar, ExternalLink, HeartPulse, LayoutDashboard, LayoutGrid, Package, Pill, Receipt, ShieldCheck, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { products } from '@/data/site';
 import { SectionHeading } from './SectionHeading';
 import './ProductsSectionBackground.css';
+
+function getFeatureIcon(featureName: string) {
+  const normalized = featureName.toLowerCase();
+  if (normalized.includes('inventory')) return Package;
+  if (normalized.includes('billing')) return Receipt;
+  if (normalized.includes('customer')) return Users;
+  if (normalized.includes('multi-store')) return Building2;
+  if (normalized.includes('analytics')) return BarChart3;
+  if (normalized.includes('user roles')) return ShieldCheck;
+  if (normalized.includes('medicine stock')) return HeartPulse;
+  if (normalized.includes('batch tracking')) return Pill;
+  if (normalized.includes('multi-branch')) return Building2;
+  if (normalized.includes('expiry')) return Calendar;
+  if (normalized.includes('reporting')) return BarChart3;
+  if (normalized.includes('pos')) return LayoutDashboard;
+  return LayoutGrid;
+}
 
 export function ProductsSection() {
   return (
@@ -18,9 +35,13 @@ export function ProductsSection() {
           <Link to="/products" className="home-text-action inline-flex shrink-0 items-center gap-2 text-sm font-bold text-brand">View all products <ArrowRight className="h-4 w-4" /></Link>
         </div>
 
-        <div className="mt-9 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div className="products-catalog-grid mt-9">
           {products.map((product, index) => {
             const Icon = product.icon;
+            const nameParts = product.name.split(' ');
+            const lastNamePart = nameParts.pop();
+            const firstParts = nameParts.join(' ');
+
             return (
               <motion.article
                 key={product.slug}
@@ -28,36 +49,35 @@ export function ProductsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ delay: index * 0.08, duration: 0.55 }}
-                className="product-card group"
+                className="products-catalog-card"
                 style={{ '--product-rgb': product.accent } as CSSProperties}
               >
-                <div className="relative z-10 flex h-full flex-col">
-                  <div className="relative flex items-center gap-3 pr-20">
-                    <div className="flex items-center gap-3">
-                      <span className="product-icon"><Icon className="h-6 w-6" /></span>
-                      <h3 className="text-xl font-extrabold tracking-tight text-text">{product.name}</h3>
-                    </div>
-                    <span className="product-badge">{product.tag}</span>
-                  </div>
-                  <p className="product-audience mt-2 text-[11px] font-bold uppercase tracking-[0.1em]">{product.audience}</p>
-
-                  <div className="product-card-body">
-                    <p className="product-card-copy">{product.description}</p>
-                    <div className="product-card-media product-card-media-cutout">
-                      <img src={product.image} alt={`${product.name} software workspace`} loading="lazy" />
-                    </div>
-                  </div>
-
-                  <div className="mt-auto flex items-center gap-3 pt-3">
-                    <Link to={`/products/${product.slug}`} className="product-card-action" aria-label={`Explore ${product.name}`}>
-                      Explore {product.name} <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </div>
-
-                  <div className="product-feature-strip">
-                    {product.features.map((feature) => <span key={feature}><CheckCircle2 className="h-3.5 w-3.5" />{feature}</span>)}
-                  </div>
+                <div className="products-card-topline">
+                  <span className="products-card-icon"><Icon aria-hidden="true" /></span>
+                  <span className="products-card-tag">{product.tag}</span>
                 </div>
+                <h3>{firstParts} <span className="product-name-highlight">{lastNamePart}</span></h3>
+                <p className="products-card-audience">{product.audience.toUpperCase()}</p>
+                <p className="products-card-description">{product.description}</p>
+
+                <div className="products-card-art">
+                  <img src={product.image} alt={`${product.name} interface and compatible devices`} loading="lazy" />
+                </div>
+
+                <ul className="products-card-features-pills" aria-label={`${product.name} highlights`}>
+                  {product.features.map((feature) => {
+                    const FeatureIcon = getFeatureIcon(feature);
+                    return <li key={feature}><FeatureIcon size={14} aria-hidden="true" /> {feature}</li>;
+                  })}
+                </ul>
+
+                <Link className="products-card-button" to={`/products/${product.slug}`}>
+                  Explore {product.name} <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+
+                <Link className="products-card-learn-more" to={`/products/${product.slug}`}>
+                  Learn more <ExternalLink size={12} aria-hidden="true" />
+                </Link>
               </motion.article>
             );
           })}
@@ -66,4 +86,3 @@ export function ProductsSection() {
     </section>
   );
 }
-

@@ -44,7 +44,7 @@ function answerFor(input: string): Omit<ChatMessage, 'id' | 'role'> {
   if (text.includes('service') || text.includes('website') || text.includes('web development') || text.includes('custom') || text.includes('mobile') || text.includes('android')) {
     return {
       text: 'SMVM provides web development, custom software, mobile and Android app development, and consulting and support.',
-      actions: [{ label: 'Explore services', to: '/#services' }],
+      actions: [{ label: 'Explore services', to: '/services' }],
     };
   }
 

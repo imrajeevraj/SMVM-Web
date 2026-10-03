@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom';
 const quickLinks = [
   ['Home', '/'],
   ['Products', '/#products'],
-  ['Services', '/#services'],
+  ['Services', '/services'],
   ['About Us', '/about'],
   ['Our Vision', '/vision'],
   ['Contact Us', '/contact'],
@@ -33,10 +33,10 @@ const productLinks = [
 ] as const;
 
 const serviceLinks = [
-  ['Web Development', '/#service-web-development'],
-  ['Custom Software', '/#service-custom-software-development'],
-  ['Mobile App Development', '/#service-mobile-android-app-development'],
-  ['Consulting & Support', '/#service-consulting-support'],
+  ['Web Development', '/services#service-web-development'],
+  ['Custom Software', '/services#service-custom-software-development'],
+  ['Mobile App Development', '/services#service-mobile-android-app-development'],
+  ['Consulting & Support', '/services#service-consulting-support'],
 ] as const;
 
 const socialLinks = [

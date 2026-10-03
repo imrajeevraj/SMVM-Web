@@ -19,10 +19,6 @@ export function Layout({ children }: LayoutProps) {
     }
   }, [location.pathname, location.hash]);
 
-  useEffect(() => {
-    document.documentElement.dataset.qaViewport = `${window.innerWidth}/${document.documentElement.scrollWidth}`;
-  });
-
   return (
     <div className="flex min-h-screen flex-col">
       <a href="#main-content" className="fixed left-4 top-3 z-[120] -translate-y-20 rounded-full bg-white px-5 py-3 text-sm font-bold text-[#06152f] shadow-xl transition-transform focus:translate-y-0">

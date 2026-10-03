@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:smvm": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/start-smvm-dev.ps1",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview"
   },

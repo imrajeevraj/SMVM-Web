@@ -1,4 +1,7 @@
 .product-showcase-section {
+  --pp-surface-strong: #ffffff;
+  --pp-text: #071834;
+  --pp-muted: #607493;
   position: relative;
   isolation: isolate;
   background-color: #f3f8ff;
@@ -80,6 +83,9 @@
 }
 
 .dark .product-showcase-section {
+  --pp-surface-strong: #081a36;
+  --pp-text: #f5f9ff;
+  --pp-muted: #9fb2cf;
   background-color: #03132d;
   background-image:
     radial-gradient(circle at 10% 18%, rgba(19, 151, 255, 0.2), transparent 30%),

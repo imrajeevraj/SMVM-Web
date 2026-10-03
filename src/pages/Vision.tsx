@@ -1,40 +1,38 @@
+import type { CSSProperties } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Compass, Lightbulb, Scaling, Users } from 'lucide-react';
+import { ArrowRight, BarChart3, Building2, Eye, Globe2, Lightbulb, Rocket, Settings2, ShieldCheck, Target, UsersRound } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import './VisionPage.css';
 
-const principles = [
-  { title: 'Practical innovation', description: 'Use modern technology where it makes work clearer, faster, or easier to manage.', icon: Lightbulb },
-  { title: 'People-first design', description: 'Create software that respects how teams already think and work.', icon: Users },
-  { title: 'Room to grow', description: 'Shape solutions that can evolve as requirements and operations change.', icon: Scaling },
-];
+const beliefs = [
+  { title: 'People First', description: 'We believe in building technology that truly helps people and businesses.', icon: UsersRound, accent: '22 119 255' },
+  { title: 'Continuous Innovation', description: 'We embrace new ideas and modern technology to stay ahead.', icon: Rocket, accent: '0 191 174' },
+  { title: 'Quality & Reliability', description: 'We are committed to building solutions that are reliable, maintainable, and built for the long term.', icon: ShieldCheck, accent: '139 69 255' },
+  { title: 'Growth Together', description: 'We see our clients’ success as our success and strive to grow together.', icon: BarChart3, accent: '255 121 0' },
+] as const;
+const impacts = [
+  { title: 'Empowering Businesses', description: 'Solutions that simplify operations and improve productivity.', icon: Building2, accent: '22 119 255' },
+  { title: 'Enabling Growth', description: 'Technology designed to support long-term business growth.', icon: UsersRound, accent: '139 69 255' },
+  { title: 'Driving Innovation', description: 'Modern solutions for tomorrow’s opportunities.', icon: Target, accent: '0 191 174' },
+] as const;
+const reveal = { initial: { opacity: 0, y: 18 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: '-50px' }, transition: { duration: .45 } };
 
 export function Vision() {
   return (
-    <div className="w-full bg-background">
-      <section className="vision-section min-h-[680px] pt-24 text-white">
-        <div className="vision-mesh" />
-        <div className="site-container grid min-h-[590px] items-center gap-12 py-20 lg:grid-cols-[1fr_.65fr]">
-          <motion.div initial={{ opacity: 0, y: 22 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="section-eyebrow text-cyan-300">Our vision</p>
-            <h1 className="mt-5 max-w-4xl text-5xl font-extrabold tracking-[-.045em] sm:text-6xl lg:text-7xl">To empower businesses with innovative technology</h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">We want technology to feel like a practical partner—helping businesses organise work, make clearer decisions, and move forward with confidence.</p>
-            <Link to="/contact" className="button-light mt-9">Start a conversation <ArrowRight className="h-4 w-4" /></Link>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, scale: .92 }} animate={{ opacity: 1, scale: 1 }} className="relative mx-auto grid aspect-square w-full max-w-[380px] place-items-center rounded-full border border-white/10 bg-white/[.04] shadow-[0_0_100px_rgba(22,119,255,.25)] backdrop-blur-xl">
-            <div className="absolute inset-8 rounded-full border border-dashed border-cyan-300/25" />
-            <div className="absolute inset-20 rounded-full border border-white/10" />
-            <Compass className="relative h-28 w-28 text-cyan-300" strokeWidth={1.2} />
-          </motion.div>
-        </div>
-      </section>
+    <main className="vision-page">
+      <section className="vision-page__hero" aria-labelledby="vision-hero-title"><div className="vision-page__shell vision-page__hero-layout"><motion.div {...reveal} className="vision-page__hero-copy"><p className="vision-page__eyebrow">Our vision</p><h1 id="vision-hero-title">A Smarter, More Connected <span>Tomorrow</span></h1><p>We envision a future where technology empowers every business to work smarter, grow faster, and create meaningful impact in the digital world.</p><div className="vision-page__hero-actions"><Link className="vision-page__button vision-page__button--primary" to="/services">Our Services <ArrowRight aria-hidden="true" /></Link><Link className="vision-page__button vision-page__button--outline" to="/contact">Contact Us <ArrowRight aria-hidden="true" /></Link></div></motion.div><motion.div initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .55 }} className="vision-page__hero-art"><img src="/images/company/vision-mountain-hero.png" alt="Mountain peak with a luminous connected path representing business progress" /><span className="vision-page__float vision-page__float--one"><Lightbulb aria-hidden="true" />Innovation</span><span className="vision-page__float vision-page__float--two"><Globe2 aria-hidden="true" />Digital Future</span><span className="vision-page__float vision-page__float--three"><BarChart3 aria-hidden="true" />Growth</span><span className="vision-page__float vision-page__float--four"><Building2 aria-hidden="true" />Better Businesses</span></motion.div></div></section>
 
-      <section className="section-space bg-surface">
-        <div className="site-container">
-          <div className="mx-auto max-w-3xl text-center"><p className="section-eyebrow">How we see the future</p><h2 className="section-title">Technology should make business work feel more natural</h2></div>
-          <div className="mt-14 grid gap-6 md:grid-cols-3">{principles.map(({ title, description, icon: Icon }, index) => <motion.article key={title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * .08 }} className="rounded-[26px] border border-border bg-background p-8"><span className="grid h-14 w-14 place-items-center rounded-2xl bg-brand/10 text-brand"><Icon className="h-7 w-7" /></span><h3 className="mt-7 text-xl font-bold text-text">{title}</h3><p className="mt-4 text-base leading-7 text-text-muted">{description}</p></motion.article>)}</div>
-          <div className="mt-12 text-center"><Link to="/products" className="button-outline">Explore SMVM products <ArrowRight className="h-4 w-4" /></Link></div>
-        </div>
-      </section>
-    </div>
+      <section className="vision-page__section vision-page__purpose" aria-labelledby="vision-purpose-title"><div className="vision-page__shell"><header className="vision-page__center"><p className="vision-page__eyebrow">Our purpose</p><h2 id="vision-purpose-title">Our Mission and Vision</h2><p>Guided by a clear purpose, we work every day to build technology that creates real value for businesses and a better digital future.</p></header><div className="vision-page__purpose-grid"><article className="vision-page__purpose-card" style={{ '--vision-rgb': '22 119 255' } as CSSProperties}><span><Target aria-hidden="true" /></span><div><h3>Our Mission</h3><p>To make useful technology accessible to businesses by building reliable, user-friendly, and scalable digital solutions that address real operational challenges.</p></div></article><article className="vision-page__purpose-card" style={{ '--vision-rgb': '139 69 255' } as CSSProperties}><span><Eye aria-hidden="true" /></span><div><h3>Our Vision</h3><p>To become a trusted technology partner for businesses seeking smarter workflows, better digital experiences, and sustainable growth through innovation.</p></div></article></div></div></section>
+
+      <section className="vision-page__section vision-page__brighter" aria-labelledby="vision-brighter-title"><div className="vision-page__shell vision-page__brighter-layout"><motion.div {...reveal}><p className="vision-page__eyebrow">Our vision</p><h2 id="vision-brighter-title">Technology for a Brighter Future</h2><p>We aim to create a future where businesses of all sizes can leverage the right technology to simplify operations, enhance productivity, and deliver exceptional value to their customers.</p><Link className="vision-page__button vision-page__button--primary" to="/about">About Us <ArrowRight aria-hidden="true" /></Link></motion.div><motion.div {...reveal} transition={{ delay: .08, duration: .45 }} className="vision-page__city-art"><img src="/images/company/vision-growth.png" alt="Future city and connected growth illustration" /><span><Lightbulb aria-hidden="true" />Innovative Solutions</span><span><Globe2 aria-hidden="true" />Global Opportunities</span><span><BarChart3 aria-hidden="true" />Sustainable Growth</span><span><UsersRound aria-hidden="true" />Positive Impact</span></motion.div></div></section>
+
+      <section className="vision-page__section vision-page__beliefs" aria-labelledby="vision-beliefs-title"><div className="vision-page__shell"><header className="vision-page__center"><p className="vision-page__eyebrow">Our core beliefs</p><h2 id="vision-beliefs-title">Values That Drive Our Vision</h2><p>Our vision is shaped by a set of core beliefs that guide how we think, build, and grow.</p></header><div className="vision-page__belief-grid">{beliefs.map(({ title, description, icon: Icon, accent }, index) => <motion.article {...reveal} transition={{ delay: index * .06, duration: .42 }} key={title} style={{ '--vision-rgb': accent } as CSSProperties}><span><Icon aria-hidden="true" /></span><h3>{title}</h3><p>{description}</p></motion.article>)}</div></div></section>
+
+      <section className="vision-page__section vision-page__ecosystem" aria-labelledby="vision-ecosystem-title"><div className="vision-page__shell vision-page__ecosystem-layout"><div><p className="vision-page__eyebrow">Our goals</p><h2 id="vision-ecosystem-title">Building a Smarter Digital Ecosystem</h2><p>We aim to help businesses adopt technology, streamline their operations, and unlock new opportunities in an increasingly digital world.</p><Link className="vision-page__button vision-page__button--primary" to="/services">Our Services <ArrowRight aria-hidden="true" /></Link></div><div className="vision-page__globe" aria-label="Connected global digital ecosystem"><Globe2 aria-hidden="true" /><span><Settings2 aria-hidden="true" />Smarter Workflows</span><span><BarChart3 aria-hidden="true" />Scalable Solutions</span><span><Building2 aria-hidden="true" />Stronger Businesses</span><span><Globe2 aria-hidden="true" />Global Presence</span></div></div></section>
+
+      <section className="vision-page__section vision-page__impact" aria-labelledby="vision-impact-title"><div className="vision-page__shell vision-page__impact-layout"><div><p className="vision-page__eyebrow">Our impact</p><h2 id="vision-impact-title">Creating Opportunities Through Technology</h2><p>We strive to make a positive impact by enabling businesses to work more efficiently, reach more customers, and achieve their long-term goals with the right digital solutions.</p></div><div className="vision-page__impact-grid">{impacts.map(({ title, description, icon: Icon, accent }) => <article key={title} style={{ '--vision-rgb': accent } as CSSProperties}><span><Icon aria-hidden="true" /></span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
+
+      <section className="vision-page__final" aria-labelledby="vision-final-title"><div className="vision-page__shell"><div><p className="vision-page__eyebrow">Let&apos;s build a better tomorrow</p><h2 id="vision-final-title">Turn Your Vision Into Reality</h2><p>Partner with SMVM Softwares and let&apos;s create smarter, more innovative solutions together.</p><div><Link className="vision-page__button vision-page__button--light" to="/contact">Get in Touch <ArrowRight aria-hidden="true" /></Link><Link className="vision-page__button vision-page__button--dark-outline" to="/services">Explore Our Services <ArrowRight aria-hidden="true" /></Link></div></div><img src="/images/company/vision-hero-ecosystem.png" alt="" aria-hidden="true" /></div></section>
+    </main>
   );
 }

@@ -70,7 +70,7 @@ export function Hero() {
             Powering businesses with smart software
           </div>
 
-          <h1 className="max-w-3xl text-5xl font-extrabold leading-[0.98] tracking-[-0.045em] text-white sm:text-6xl lg:text-[3.65rem] xl:text-[4rem]">
+          <h1 className="max-w-3xl text-[2.6rem] font-extrabold leading-[0.98] tracking-[-0.045em] text-white sm:text-6xl lg:text-[3.65rem] xl:text-[4rem]">
             <span className="block sm:whitespace-nowrap">Where Creativity</span>
             <span className="mt-1 block sm:whitespace-nowrap">Meets <span className="hero-gradient-text">Innovation</span></span>
           </h1>
@@ -196,4 +196,3 @@ export function Hero() {
     </section>
   );
 }
-

@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Products', path: '/products' },
-  { name: 'Services', path: '/#services' },
+  { name: 'Services', path: '/services' },
   { name: 'About Us', path: '/about' },
   { name: 'Our Vision', path: '/vision' },
   { name: 'Contact Us', path: '/contact' },
@@ -16,7 +16,7 @@ const navLinks = [
 
 const searchItems = [
   ...productSearchItems,
-  ...services.map((service) => ({ label: service.title, description: 'SMVM technology service', href: '/#services', icon: service.icon })),
+  ...services.map((service) => ({ label: service.title, description: 'SMVM technology service', href: `/services#service-${service.title.toLowerCase().replace(/&/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`, icon: service.icon })),
   { label: 'About SMVM Softwares', description: 'Learn about the company', href: '/about', icon: productSearchItems[0].icon },
   { label: 'Our Vision', description: 'Our direction and technology philosophy', href: '/vision', icon: productSearchItems[0].icon },
 ];
@@ -172,4 +172,3 @@ export function Header() {
     </>
   );
 }
-
