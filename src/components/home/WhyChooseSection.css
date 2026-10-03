@@ -1,0 +1,169 @@
+/* Preserve the current card treatment while keeping this layout correction
+   isolated from the site's broader, actively evolving visual system. */
+.why-card.why-card {
+  min-height: 28.75rem;
+  border-color: rgb(var(--why-rgb) / 0.32);
+  background: linear-gradient(150deg, rgb(255 255 255 / 0.96), rgb(var(--why-rgb) / 0.045));
+  box-shadow:
+    0 16px 38px rgb(18 56 105 / 0.09),
+    inset 0 0 0 1px rgb(255 255 255 / 0.54);
+}
+
+.why-card.why-card::after {
+  background:
+    radial-gradient(circle at 78% 19%, rgb(var(--why-rgb) / 0.11), transparent 38%),
+    radial-gradient(circle at 10% 100%, rgb(var(--why-rgb) / 0.07), transparent 34%);
+}
+
+.dark .why-card.why-card {
+  border-color: rgb(var(--why-rgb) / 0.32);
+  background: linear-gradient(150deg, rgb(7 29 61 / 0.96), rgb(var(--why-rgb) / 0.075));
+  box-shadow:
+    0 20px 48px rgb(0 7 24 / 0.28),
+    inset 0 0 0 1px rgb(132 190 255 / 0.035);
+}
+
+.why-card.why-card:hover {
+  border-color: rgb(var(--why-rgb) / 0.62);
+  box-shadow:
+    0 27px 58px rgb(7 27 66 / 0.18),
+    0 0 28px rgb(var(--why-rgb) / 0.18);
+}
+
+.why-card .why-card-glow {
+  right: -4rem;
+  bottom: -6rem;
+  top: auto;
+  width: 15rem;
+  height: 15rem;
+  opacity: 0.6;
+  background: rgb(var(--why-rgb) / 0.14);
+}
+
+.why-card:hover .why-card-glow {
+  opacity: 1;
+  background: rgb(var(--why-rgb) / 0.22);
+}
+
+.why-card .why-card-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  color: rgb(var(--why-rgb));
+  border-color: rgb(var(--why-rgb) / 0.12);
+  background: rgb(var(--why-rgb) / 0.12);
+  box-shadow: inset 0 -8px 18px rgb(var(--why-rgb) / 0.04);
+}
+
+.why-card .why-card-visual {
+  left: 0;
+  right: 0;
+  top: 0.75rem;
+  width: auto;
+  height: 54%;
+  padding-inline: 0.5rem;
+}
+
+.why-card .why-card-art {
+  object-position: center;
+  filter: drop-shadow(0 16px 20px rgb(var(--why-rgb) / 0.12));
+}
+
+.why-card .why-card-content {
+  min-height: 28.75rem;
+  padding: 14.0625rem 1.25rem 1.25rem;
+}
+
+.why-card .why-card-title {
+  max-width: 92%;
+  font-size: 1.3125rem;
+  letter-spacing: -0.035em;
+}
+
+.why-card .why-card-copy {
+  max-width: 96%;
+  margin-top: 0.75rem;
+  font-size: 0.9375rem;
+}
+
+.why-card .why-card-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.625rem;
+}
+
+.why-card .why-card-tags {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.375rem;
+  width: 100%;
+  min-width: 0;
+}
+
+.why-card .why-card-tag {
+  min-width: 0;
+  min-height: 1.875rem;
+  padding-inline: clamp(0.5rem, 0.85vw, 0.75rem);
+  white-space: nowrap;
+  font-size: clamp(0.625rem, 0.7vw, 0.6875rem);
+  line-height: 1;
+}
+
+.why-card .why-card-action-row {
+  display: flex;
+  min-height: 2.875rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.why-card .why-card-arrow {
+  width: 2.875rem;
+  height: 2.875rem;
+  border: 1px solid rgb(var(--why-rgb) / 0.42);
+  border-radius: 0.875rem;
+}
+
+.why-card .why-card-arrow:focus-visible {
+  outline: 2px solid rgb(var(--why-rgb));
+  outline-offset: 3px;
+}
+
+@media (max-width: 420px) {
+  .why-card .why-card-tags {
+    gap: 0.25rem;
+  }
+
+  .why-card .why-card-tag {
+    padding-inline: 0.45rem;
+    font-size: 0.625rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .why-card.why-card,
+  .why-card .why-card-content {
+    min-height: 30.625rem;
+  }
+
+  .why-card .why-card-content {
+    padding: 15.625rem 1.5rem 1.5rem;
+  }
+
+  .why-card .why-card-title {
+    font-size: 1.375rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .why-card .why-card-tag {
+    padding-inline: 0.375rem;
+    font-size: 0.59375rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-card .why-card-arrow {
+    transition: none;
+  }
+}

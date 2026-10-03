@@ -3,6 +3,7 @@ import type { CSSProperties } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { reasons } from '@/data/site';
+import './WhyChooseSection.css';
 
 interface WhyChooseCardProps {
   reason: (typeof reasons)[number];
@@ -45,9 +46,11 @@ function WhyChooseCard({ reason, index }: WhyChooseCardProps) {
               <span key={feature} className="why-card-tag">{feature}</span>
             ))}
           </div>
-          <Link to="/contact" className="why-card-arrow" aria-label={`Discuss ${reason.title}`}>
-            <ArrowRight className="h-5 w-5" />
-          </Link>
+          <div className="why-card-action-row">
+            <Link to="/contact" className="why-card-arrow" aria-label={`Discuss ${reason.title}`}>
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+          </div>
         </div>
       </div>
     </motion.article>
@@ -82,4 +85,3 @@ export function WhyChooseSection() {
     </section>
   );
 }
-
