@@ -1,40 +1,47 @@
-import { CheckCircle2, Download, Printer } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
+import { CAMSTORE_IMAGES } from '@/data/camstore';
 import { InvoiceScreen } from './screens';
-import { BrowserFrame, Reveal, SectionHead } from './shared';
+import { Reveal, SectionHead } from './shared';
 
 const invoicePoints = [
-  'GST-ready tax invoice with HSN codes',
-  'A4 PDF and 80mm thermal printing',
-  'QR code and barcode on every bill',
-  'Store details, customer details and payment mode',
+  'Custom store details & logo',
+  'Itemized product list',
+  'GST / tax calculation',
+  'Barcode on invoice',
+  'Print / Download / Share (PDF)',
 ] as const;
 
 export function InvoiceShowcase() {
   return (
     <section className="cs-section" aria-labelledby="cs-invoice-title">
-      <div className="site-container cs-two cs-two--invoice">
+      <div className="site-container cs-two">
         <Reveal className="cs-two__copy">
           <SectionHead
             id="cs-invoice-title"
-            eyebrow="Invoices"
-            title="Professional Invoices, Every Time"
-            copy="Generate clear, GST-ready invoices in seconds. Reprint a bill, share a PDF, or print to a thermal printer right from the counter."
+            title="Professional Invoices With Your Store Details"
+            copy="Generate clean and professional invoices with your store information, itemized products, taxes and barcode for a better customer experience."
           />
-          <ul className="cs-checks cs-checks--single">
+          <ul className="cs-checks cs-checks--single" style={{ marginBottom: '40px' }}>
             {invoicePoints.map((p) => <li key={p}><CheckCircle2 aria-hidden="true" />{p}</li>)}
           </ul>
-          {/* Illustrative of the actions available on an invoice; the buttons live inside the product, not on this page. */}
-          <p className="cs-note">Sample invoice shown. Available actions inside CamStore POS:</p>
-          <div className="cs-pillrow" aria-hidden="true">
-            <span><Printer />Print Invoice</span>
-            <span><Download />Download PDF</span>
+          
+          <div style={{ transform: 'scale(0.85)', transformOrigin: 'top left' }}>
+             <InvoiceScreen />
           </div>
         </Reveal>
 
-        <Reveal className="cs-two__media cs-two__media--invoice" delay={0.05}>
-          <BrowserFrame title="CamStore POS — Invoice">
-            <InvoiceScreen />
-          </BrowserFrame>
+        <Reveal className="cs-two__media" delay={0.05}>
+          <img src={CAMSTORE_IMAGES.cameraGear} alt="Camera gear" style={{ borderRadius: '24px', width: '100%', marginBottom: '32px' }} />
+          
+          <SectionHead
+            id="cs-invoice-sub"
+            title="Professional Invoices, Every Time"
+            copy="Generate clean and professional invoices with your store details, customer information, itemized products, GST and barcode."
+          />
+          
+          <div style={{ position: 'relative', marginTop: '32px' }}>
+            <img src={CAMSTORE_IMAGES.storeAmbience} alt="Store ambience" style={{ borderRadius: '24px', width: '100%', height: '300px', objectFit: 'cover' }} />
+          </div>
         </Reveal>
       </div>
     </section>

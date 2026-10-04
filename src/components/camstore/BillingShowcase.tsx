@@ -6,9 +6,9 @@ import { BrowserFrame, Reveal, SectionHead } from './shared';
 const billingPoints = [
   'Quick product search',
   'Barcode scanner support',
-  'Discounts & GST handled automatically',
-  'Multiple payment options',
-  'Thermal & PDF invoice printing',
+  'Discount & GST handling',
+  'Multiple payment methods',
+  'Thermal / PDF invoice printing',
 ] as const;
 
 export function BillingShowcase() {
@@ -24,9 +24,8 @@ export function BillingShowcase() {
         <Reveal className="cs-two__copy" delay={0.05}>
           <SectionHead
             id="cs-billing-title"
-            eyebrow="POS Billing"
             title="Fast, Simple & Reliable Billing"
-            copy="Process camera-store sales quickly with product search, barcode scanning, discounts, GST, and multiple payment options."
+            copy="CamStore POS brings with product search, barcode scanning, discount, GST and multiple payment platform."
           />
           <ul className="cs-checks cs-checks--single">
             {billingPoints.map((p) => <li key={p}><CheckCircle2 aria-hidden="true" />{p}</li>)}

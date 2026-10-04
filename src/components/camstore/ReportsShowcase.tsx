@@ -4,15 +4,13 @@ import { BrowserFrame, Reveal, SectionHead } from './shared';
 
 export function ReportsShowcase() {
   return (
-    <section className="cs-section" aria-labelledby="cs-reports-title">
-      <div className="site-container">
+    <div aria-labelledby="cs-reports-title" style={{ width: "100%" }}>
+      <div>
         <Reveal>
           <SectionHead
             id="cs-reports-title"
-            align="center"
-            eyebrow="Reports & Analytics"
-            title="Understand Your Business Better"
-            copy="Seven focused reports turn daily sales, purchases, stock, and services into clear numbers."
+            title="Reports & Analytics"
+            copy="Make better decisions with detailed business reports."
           />
         </Reveal>
 
@@ -27,7 +25,6 @@ export function ReportsShowcase() {
             <AppScreen id="reports" />
           </BrowserFrame>
         </Reveal>
-      </div>
-    </section>
+      </div></div>
   );
 }

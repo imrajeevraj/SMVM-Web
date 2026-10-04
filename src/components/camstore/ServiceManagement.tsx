@@ -6,14 +6,13 @@ const tone = { Pending: 'amber', 'In Progress': 'blue', Completed: 'green' } as 
 
 export function ServiceManagement() {
   return (
-    <section className="cs-section cs-section--alt" aria-labelledby="cs-service-title">
-      <div className="site-container cs-two cs-two--media-wide">
+    <div aria-labelledby="cs-service-title" style={{ width: "100%" }}>
+      <div>
         <Reveal className="cs-two__copy">
           <SectionHead
             id="cs-service-title"
-            eyebrow="Service & Repairs"
-            title="Keep Camera Services Organized"
-            copy="Track camera and lens repairs, service requests, customer history, and service status from one place."
+            title="Service Management"
+            copy="Keep camera repairs and service requests organized."
           />
           <ul className="cs-statuses" aria-label="Service statuses">
             {serviceBadges.map((s) => (
@@ -27,7 +26,6 @@ export function ServiceManagement() {
             <AppScreen id="services" />
           </BrowserFrame>
         </Reveal>
-      </div>
-    </section>
+      </div></div>
   );
 }

@@ -10,9 +10,9 @@ export function WhyCamStore() {
         </Reveal>
         <Reveal delay={0.05}>
           <ul className="cs-why">
-            {whyCards.map(({ number, title, copy, icon: Icon }) => (
+            {whyCards.map(({ title, copy, icon: Icon, accent }) => (
               <li key={title} className="cs-why__card">
-                <div className="cs-why__top"><span className="cs-icon cs-icon--sm"><Icon aria-hidden="true" /></span><em>{number}</em></div>
+                <div className="cs-why__top"><span className="cs-icon cs-icon--sm" style={{ color: accent, backgroundColor: `${accent}1A` }}><Icon aria-hidden="true" /></span></div>
                 <h3>{title}</h3>
                 <p>{copy}</p>
               </li>

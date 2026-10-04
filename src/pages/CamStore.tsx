@@ -24,11 +24,12 @@ export function CamStore() {
       <BillingShowcase />
       <ProductManagement />
       <InvoiceShowcase />
-      <ServiceManagement />
-      <ReportsShowcase />
+      <div className="site-container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', padding: '56px 0' }}>
+        <div style={{ minWidth: 0 }}><ServiceManagement /></div>
+        <div style={{ minWidth: 0 }}><ReportsShowcase /></div>
+      </div>
       <WhyCamStore />
       <CamStoreWorkflow />
-      <CamStoreGallery />
       <CamStoreCTA />
     </div>
   );

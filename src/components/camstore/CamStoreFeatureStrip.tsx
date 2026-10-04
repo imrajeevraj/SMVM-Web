@@ -7,9 +7,9 @@ export function CamStoreFeatureStrip() {
       <div className="site-container">
         <Reveal>
           <ul className="cs-strip">
-            {featureStrip.map(({ title, copy, icon: Icon }) => (
+            {featureStrip.map(({ title, copy, icon: Icon, accent }) => (
               <li key={title} className="cs-strip__item">
-                <span className="cs-icon"><Icon aria-hidden="true" /></span>
+                <span className="cs-icon" style={accent ? { color: accent } : {}}><Icon aria-hidden="true" /></span>
                 <h3>{title}</h3>
                 <p>{copy}</p>
               </li>

@@ -1,4 +1,6 @@
 import {
+  Cloud,
+  Zap,
   Aperture,
   Backpack,
   BarChart3,
@@ -42,21 +44,21 @@ export const CAMSTORE_IMAGES = {
 } as const;
 
 export const trustIndicators = [
-  { value: '1000+', label: 'Stores Trust Us' },
-  { value: '50+', label: 'Powerful Features' },
-  { value: 'Easy', label: 'Setup' },
-  { value: 'Lifetime', label: 'Updates' },
+  { value: '1000+', label: 'Stores Trust Us', icon: Users },
+  { value: '50+', label: 'Powerful Features', icon: Settings },
+  { value: 'Easy Setup', label: 'Quick Installation', icon: Zap },
+  { value: 'Lifetime Updates', label: 'Always Up To Date', icon: Cloud },
 ] as const;
 
-export type FeatureItem = { title: string; copy: string; icon: LucideIcon };
+export type FeatureItem = { title: string; copy: string; icon: LucideIcon; accent?: string };
 
 export const featureStrip: FeatureItem[] = [
-  { title: 'Easy Billing', copy: 'Fast and reliable POS billing', icon: ReceiptText },
-  { title: 'Inventory Management', copy: 'Track cameras, lenses & accessories', icon: Boxes },
-  { title: 'Customer Management', copy: 'Maintain customer records', icon: Users },
-  { title: 'Purchase Management', copy: 'Manage suppliers and purchases', icon: Truck },
-  { title: 'Service Management', copy: 'Track camera repairs and services', icon: Wrench },
-  { title: 'Detailed Reports', copy: 'Sales, stock & profit insights', icon: BarChart3 },
+  { title: 'Easy Billing', copy: 'Fast and reliable POS billing', icon: ShoppingCart, accent: '#ef4444' },
+  { title: 'Inventory Management', copy: 'Track camera, lenses & accessories', icon: Boxes, accent: '#10b981' },
+  { title: 'Customer Management', copy: 'Maintain complete customer records', icon: Users, accent: '#3b82f6' },
+  { title: 'Purchase Management', copy: 'Manage suppliers and purchases', icon: Truck, accent: '#8b5cf6' },
+  { title: 'Service Management', copy: 'Track camera repairs and services', icon: Wrench, accent: '#d946ef' },
+  { title: 'Detailed Reports', copy: 'Sales, stock & profit insights', icon: BarChart3, accent: '#f97316' },
 ];
 
 export const keyFeatureList = [
@@ -64,7 +66,7 @@ export const keyFeatureList = [
   'Camera, Lens & Accessories Management',
   'POS Billing',
   'Sales & Purchase Management',
-  'Barcode Scanning',
+  'Barcode Scanning Support',
   'Customer & Supplier Management',
   'Service & Repair Management',
   'Expense Tracking',
@@ -225,10 +227,10 @@ export const supplierRows = [
 ];
 
 export const whyCards: Array<FeatureItem & { number: string }> = [
-  { number: '01', title: 'Built for Camera Stores', copy: 'Designed around the real workflows of camera and photography equipment businesses.', icon: Store },
-  { number: '02', title: 'Simple & Fast', copy: 'A clean interface that makes everyday billing and inventory management easier.', icon: ShoppingCart },
-  { number: '03', title: 'Powerful Inventory Control', copy: 'Track cameras, lenses, accessories, stock levels and product information.', icon: PackageCheck },
-  { number: '04', title: 'Ready to Grow', copy: 'Built to support growing stores and expanding product catalogs.', icon: BarChart3 },
+  { number: '01', title: 'Built for Camera Stores', copy: 'Designed around the real workflows of camera and photography equipment businesses.', icon: Store, accent: '#ef4444' },
+  { number: '02', title: 'Simple & Fast', copy: 'A clean interface that makes everyday billing and inventory management easier.', icon: Zap, accent: '#a855f7' },
+  { number: '03', title: 'Powerful Inventory Control', copy: 'Track cameras, lenses, accessories, stock levels and product information.', icon: PackageCheck, accent: '#10b981' },
+  { number: '04', title: 'Ready to Grow', copy: 'Built to support growing stores and expanding product catalogs.', icon: BarChart3, accent: '#f97316' },
 ];
 
 export const workflowSteps: Array<{ label: string; icon: LucideIcon }> = [

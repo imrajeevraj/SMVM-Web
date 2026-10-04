@@ -42,7 +42,7 @@ export function CamStoreHero() {
 
             <ul className="cs-trust" aria-label="CamStore POS highlights">
               {trustIndicators.map((t) => (
-                <li key={t.label}><b>{t.value}</b><span>{t.label}</span></li>
+                <li key={t.label} style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "8px", borderLeft: 0, paddingLeft: 0, padding: 0 }}><t.icon aria-hidden="true" style={{ width: "32px", height: "32px", color: "rgb(var(--cs-rgb))" }} /><div style={{ display: "flex", flexDirection: "column", gap: 0, paddingLeft: "4px" }}><b>{t.value}</b><span>{t.label}</span></div></li>
               ))}
             </ul>
           </div>

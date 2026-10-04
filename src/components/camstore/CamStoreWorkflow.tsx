@@ -11,9 +11,8 @@ export function CamStoreWorkflow() {
           <SectionHead
             id="cs-flow-title"
             align="center"
-            eyebrow="Connected Workflow"
             title="Everything Connected in One POS"
-            copy="From the first product entry to the final report, every step shares the same data."
+            copy="From products to reports, CamStore POS connects all your camera store operations together."
           />
         </Reveal>
         <Reveal delay={0.05}>
