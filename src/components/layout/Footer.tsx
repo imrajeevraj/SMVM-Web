@@ -33,10 +33,10 @@ const productLinks = [
 ] as const;
 
 const serviceLinks = [
-  ['Web Development', '/services#service-web-development'],
-  ['Custom Software', '/services#service-custom-software-development'],
-  ['Mobile App Development', '/services#service-mobile-android-app-development'],
-  ['Consulting & Support', '/services#service-consulting-support'],
+  ['Web Development', '/services/web-development'],
+  ['Custom Software', '/services/custom-software-development'],
+  ['Mobile App Development', '/services/mobile-android-app-development'],
+  ['Consulting & Support', '/services/consulting-support'],
 ] as const;
 
 const socialLinks = [

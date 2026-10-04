@@ -6,6 +6,7 @@ import './ServicesSection.css';
 
 const homeServices = [
   {
+    slug: 'web-development',
     title: 'Web Development',
     description: 'Modern, responsive, and high-performance websites built to strengthen your online presence and support business growth.',
     features: ['Responsive website design', 'Business & corporate websites', 'E-commerce development', 'Performance and SEO fundamentals'],
@@ -14,6 +15,7 @@ const homeServices = [
     Icon: Code2,
   },
   {
+    slug: 'custom-software-development',
     title: 'Custom Software Development',
     description: 'Tailored software solutions designed around your workflows, helping streamline operations, improve productivity, and support growth.',
     features: ['Business management systems', 'Inventory & billing workflows', 'POS & administrative systems', 'API & database integration'],
@@ -22,6 +24,7 @@ const homeServices = [
     Icon: Blocks,
   },
   {
+    slug: 'mobile-android-app-development',
     title: 'Mobile & Android App Development',
     description: 'Feature-rich mobile applications that help you connect with customers, simplify daily operations, and extend digital services.',
     features: ['Native Android applications', 'Cross-platform mobile apps', 'API integration', 'Testing & deployment support'],
@@ -30,6 +33,7 @@ const homeServices = [
     Icon: Smartphone,
   },
   {
+    slug: 'consulting-support',
     title: 'Consulting & Support',
     description: 'Practical technical guidance, implementation assistance, and ongoing support to keep your technology useful and reliable.',
     features: ['Technical consultation', 'Implementation guidance', 'Troubleshooting & maintenance', 'Updates & ongoing support'],
@@ -58,12 +62,10 @@ export function ServicesSection() {
         <div className="home-services__cards">
           {homeServices.map((service, index) => {
             const Icon = service.Icon;
-            const serviceSlug = service.title.toLowerCase().replace(/&/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-
             return (
               <motion.article
                 key={service.title}
-                id={`service-${serviceSlug}`}
+                id={`service-${service.slug}`}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-50px' }}
@@ -84,7 +86,7 @@ export function ServicesSection() {
                       <li key={feature}><BadgeCheck aria-hidden="true" />{feature}</li>
                     ))}
                   </ul>
-                  <Link to="/contact" className="home-service-card__cta" aria-label={`Explore ${service.title}`}>
+                  <Link to={`/services/${service.slug}`} className="home-service-card__cta" aria-label={`Explore ${service.title}`}>
                     <span>Explore {service.title}</span>
                     <ArrowRight aria-hidden="true" />
                   </Link>
