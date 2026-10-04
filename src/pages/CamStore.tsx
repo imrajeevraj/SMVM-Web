@@ -1,6 +1,5 @@
 import { CamStoreCTA } from '@/components/camstore/CamStoreCTA';
 import { CamStoreFeatureStrip } from '@/components/camstore/CamStoreFeatureStrip';
-import { CamStoreGallery } from '@/components/camstore/CamStoreGallery';
 import { CamStoreHero } from '@/components/camstore/CamStoreHero';
 import { CamStoreKeyFeatures } from '@/components/camstore/CamStoreKeyFeatures';
 import { CamStoreWorkflow } from '@/components/camstore/CamStoreWorkflow';
