@@ -1,0 +1,117 @@
+/* A shared interaction layer, imported after page styles. Art accents stay local. */
+.smvm-site {
+  --smvm-rgb: var(--color-brand-rgb);
+  --smvm-ease: cubic-bezier(.2, .7, .25, 1);
+  --smvm-glow: .15;
+  --smvm-shadow: rgb(20 54 98 / .12);
+}
+.dark .smvm-site { --smvm-glow: .26; --smvm-shadow: rgb(0 5 18 / .38); }
+.site-route { display: flex; flex: 1; min-width: 0; flex-direction: column; animation: smvm-route-in 320ms var(--smvm-ease); }
+@keyframes smvm-route-in { from { opacity: .35; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes smvm-heading-in { from { opacity: .55; translate: 0 10px; } to { opacity: 1; translate: 0 0; } }
+.smvm-revealed { animation: smvm-heading-in 420ms var(--smvm-ease); }
+
+.smvm-site [data-smvm-surface] {
+  transition: transform 300ms var(--smvm-ease), translate 300ms var(--smvm-ease),
+    border-color 240ms ease, box-shadow 300ms ease, background-color 240ms ease;
+}
+.smvm-site [data-smvm-surface]:not([data-smvm-existing]) {
+  box-shadow: 0 12px 30px var(--smvm-shadow), 0 0 18px rgb(var(--smvm-rgb) / .065);
+}
+.smvm-site [data-smvm-surface="badge"]:not([data-smvm-existing]) {
+  box-shadow: 0 7px 20px var(--smvm-shadow), 0 0 12px rgb(var(--smvm-rgb) / .06);
+}
+.smvm-site [data-smvm-surface]:focus-within {
+  border-color: rgb(var(--smvm-rgb) / .55);
+  box-shadow: 0 18px 38px var(--smvm-shadow), 0 0 26px rgb(var(--smvm-rgb) / var(--smvm-glow)), inset 0 0 0 1px rgb(var(--smvm-rgb) / .12);
+}
+.smvm-site [data-smvm-control] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 220ms var(--smvm-ease), translate 220ms var(--smvm-ease), scale 150ms ease,
+    color 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 220ms ease;
+}
+.smvm-site [data-smvm-control]:focus-visible {
+  outline: 3px solid rgb(var(--smvm-rgb) / .75);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px rgb(var(--smvm-rgb) / .1), 0 0 22px rgb(var(--smvm-rgb) / .2);
+}
+.smvm-site [data-smvm-control="action"]:active:not(:disabled):not([aria-disabled="true"]) { scale: .97; }
+.smvm-site [role="tab"][aria-selected="true"] { border-color: rgb(var(--smvm-rgb) / .5); box-shadow: 0 0 20px rgb(var(--smvm-rgb) / .16); }
+.smvm-site :is(.about-page__faq-list, .services-faq-list, .products-faq-list) .is-open {
+  border-color: rgb(var(--smvm-rgb) / .5);
+  box-shadow: 0 10px 26px var(--smvm-shadow), 0 0 20px rgb(var(--smvm-rgb) / .12);
+}
+.smvm-site :is(.about-page__faq-list, .services-faq-list, .products-faq-list) button { border-radius: inherit; }
+.smvm-site :is(input, textarea, select) { transition: border-color 180ms ease, box-shadow 220ms ease, background-color 180ms ease; }
+.smvm-site :is(input, textarea, select):focus-visible:not([type="checkbox"]) { outline: 2px solid rgb(var(--smvm-rgb) / .65); outline-offset: 2px; }
+.smvm-site :is(input, textarea, select)[aria-invalid="true"] { --smvm-rgb: var(--color-danger-rgb); }
+
+/* Previously unframed About benefits become accent-matched information cards. */
+.about-page__benefit-grid article {
+  padding: 22px;
+  border: 1px solid rgb(var(--about-rgb) / .2);
+  border-radius: 22px;
+  background: radial-gradient(circle at 100% 0, rgb(var(--about-rgb) / .09), transparent 60%), rgb(var(--color-surface-rgb) / .85);
+}
+.product-detail-page { --smvm-rgb: var(--product-rgb, var(--color-brand-rgb)); }
+.product-feature-chip { padding: 12px 14px; border: 1px solid rgb(var(--smvm-rgb) / .18); border-radius: 14px; background: rgb(var(--smvm-rgb) / .045); }
+.product-detail-preview { border-color: rgb(var(--smvm-rgb) / .25); }
+.product-detail-preview > img, .about-page__process-grid article > img, .contact-enquiry__visual > img { transition: scale 450ms var(--smvm-ease); }
+.smvm-site [data-smvm-surface] > span > svg,
+.smvm-site :is(.services-benefit-card-top > span, .contact-detail-card__icon) > svg { transition: scale 280ms var(--smvm-ease), filter 280ms ease; }
+
+/* Match small floating surfaces to their illustration's icon color. */
+.smvm-site :is(.contact-hero__float--phone, .vision-brighter__card--3, .vision-ecosystem__card--bl) { --smvm-rgb: 139 69 255; }
+.smvm-site :is(.contact-hero__float--office, .vision-brighter__card--4, .vision-ecosystem__card--tr) { --smvm-rgb: 0 191 174; }
+.smvm-site :is(.vision-brighter__card--2, .vision-ecosystem__card--br) { --smvm-rgb: 255 138 0; }
+.smvm-site .services-tech-layout li:nth-child(1) { --smvm-rgb: 20 184 229; }
+.smvm-site .services-tech-layout li:nth-child(3) { --smvm-rgb: 109 87 255; }
+.smvm-site .services-tech-layout li:nth-child(4) { --smvm-rgb: 71 160 69; }
+.smvm-site .services-tech-layout li:nth-child(5) { --smvm-rgb: 6 182 212; }
+.smvm-site .services-tech-layout li:nth-child(6) { --smvm-rgb: 255 98 62; }
+.smvm-site :is(.footer-social-row a, .footer-back-to-top) { --smvm-rgb: 32 217 255; }
+.smvm-site :is(.about-page__hero-benefits li, .about-page__who-highlights li):nth-child(2) { --smvm-rgb: 129 73 232; }
+.smvm-site :is(.about-page__hero-benefits li, .about-page__who-highlights li):nth-child(3) { --smvm-rgb: 8 169 135; }
+.smvm-site .about-product-note-two { --smvm-rgb: 124 58 237; }
+.smvm-site .vision-hero__card { pointer-events: auto; }
+.smvm-site .vision-hero__inner { pointer-events: none; }
+.smvm-site .vision-hero__copy { pointer-events: auto; }
+.smvm-site button[aria-label*="SMVM Assistant"] { --smvm-rgb: 32 217 255; border-radius: 50%; }
+
+@media (hover: hover) and (pointer: fine) {
+  .smvm-site [data-smvm-surface]:hover {
+    border-color: rgb(var(--smvm-rgb) / .6);
+    box-shadow: 0 22px 46px var(--smvm-shadow), 0 0 32px rgb(var(--smvm-rgb) / var(--smvm-glow)), inset 0 0 0 1px rgb(var(--smvm-rgb) / .1);
+  }
+  .smvm-site [data-smvm-surface="card"]:hover { transform: none; translate: 0 -4px; }
+  .smvm-site [data-smvm-surface="panel"]:hover { transform: none; }
+  .smvm-site [data-smvm-surface="badge"]:hover { box-shadow: 0 10px 24px var(--smvm-shadow), 0 0 22px rgb(var(--smvm-rgb) / var(--smvm-glow)); }
+  .smvm-site [data-smvm-lift="true"]:hover { translate: 0 -4px; }
+  .smvm-site [data-smvm-control="action"]:hover:not(:disabled):not([aria-disabled="true"]) {
+    translate: 0 -2px;
+    box-shadow: 0 10px 26px rgb(var(--smvm-rgb) / .17), 0 0 24px rgb(var(--smvm-rgb) / .22);
+  }
+  .smvm-site [data-smvm-control="link"]:hover { text-shadow: 0 0 16px rgb(var(--smvm-rgb) / .23); }
+  .smvm-site header [data-smvm-control="link"]:hover { box-shadow: 0 0 18px rgb(var(--smvm-rgb) / .13); }
+  .smvm-site [data-smvm-surface]:hover > span > svg,
+  .smvm-site [data-smvm-surface]:hover :is(.services-benefit-card-top > span, .contact-detail-card__icon) > svg { scale: 1.08; filter: drop-shadow(0 0 5px rgb(var(--smvm-rgb) / .3)); }
+  .smvm-site :is(.product-detail-preview, .about-page__process-grid article, .contact-enquiry__visual):hover > img { scale: 1.025; }
+  .smvm-site .vision-hero__card:hover { animation-play-state: paused; }
+  .smvm-site button[aria-label*="SMVM Assistant"]:hover { box-shadow: none; }
+  .smvm-site button[aria-label="Open SMVM Assistant"]:hover > img { filter: drop-shadow(0 10px 18px rgb(8 43 89 / .28)) drop-shadow(0 0 12px rgb(32 217 255 / .35)); }
+}
+
+/* Touch gets clear press feedback, without sticky hover or floating content. */
+@media (hover: none), (pointer: coarse) {
+  .smvm-site [data-smvm-surface]:hover { transform: none; translate: none; }
+  .smvm-site [data-smvm-control="action"]:hover { transform: none; translate: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-route, .smvm-revealed { animation: none; }
+  .smvm-site *, .smvm-site *::before, .smvm-site *::after { animation: none !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .smvm-site [data-smvm-surface]:hover, .smvm-site [data-smvm-control]:hover { translate: none; transform: none; }
+  .smvm-site [data-smvm-control="action"]:active { scale: 1; }
+  .smvm-site :is(.product-detail-preview, .about-page__process-grid article, .contact-enquiry__visual):hover > img { scale: 1; }
+  .smvm-site [data-smvm-surface]:hover svg { scale: 1; }
+}

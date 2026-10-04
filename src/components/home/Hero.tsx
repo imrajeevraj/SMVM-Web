@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, ChevronLeft, ChevronRight, Play, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { highlights } from '@/data/site';
 
 export function Hero() {
+  const reducedMotion = useReducedMotion();
   const [tourOpen, setTourOpen] = useState(false);
   const [tourStep, setTourStep] = useState(0);
   const tourButtonRef = useRef<HTMLButtonElement>(null);
@@ -126,7 +127,7 @@ export function Hero() {
           </div>
 
           <motion.div
-            animate={{ y: [0, -7, 0] }}
+            animate={reducedMotion ? { y: 0 } : { y: [0, -7, 0] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             className="device-tablet"
           >
@@ -134,7 +135,7 @@ export function Hero() {
           </motion.div>
 
           <motion.div
-            animate={{ y: [0, 6, 0] }}
+            animate={reducedMotion ? { y: 0 } : { y: [0, 6, 0] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
             className="device-phone"
           >
