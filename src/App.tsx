@@ -9,6 +9,7 @@ import { NotFound } from './pages/NotFound';
 import { Legal } from './pages/Legal';
 import { Services } from './pages/Services';
 import { CamStore } from './pages/CamStore';
+import { CamBill } from './pages/CamBill';
 import { POSShowcase } from './pages/POSShowcase';
 import { ServiceShowcase } from './pages/ServiceShowcase';
 
@@ -23,7 +24,7 @@ function App() {
         <Route path="/services/custom-software-development" element={<ServiceShowcase service="custom-software-development" />} />
         <Route path="/services/mobile-android-app-development" element={<ServiceShowcase service="mobile-android-app-development" />} />
         <Route path="/services/consulting-support" element={<ServiceShowcase service="consulting-support" />} />
-        <Route path="/products/cambill-pos" element={<POSShowcase product="cambill-pos" />} />
+        <Route path="/products/cambill-pos" element={<CamBill />} />
         <Route path="/products/camstore-pos" element={<CamStore />} />
         <Route path="/products/medibill-pos" element={<POSShowcase product="medibill-pos" />} />
         <Route path="/products/medibill-pro" element={<POSShowcase product="medibill-pro" />} />
