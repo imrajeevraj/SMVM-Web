@@ -10,6 +10,7 @@ import { Legal } from './pages/Legal';
 import { Services } from './pages/Services';
 import { CamStore } from './pages/CamStore';
 import { POSShowcase } from './pages/POSShowcase';
+import { ServiceShowcase } from './pages/ServiceShowcase';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/services/web-development" element={<ServiceShowcase service="web-development" />} />
+        <Route path="/services/custom-software-development" element={<ServiceShowcase service="custom-software-development" />} />
+        <Route path="/services/mobile-android-app-development" element={<ServiceShowcase service="mobile-android-app-development" />} />
+        <Route path="/services/consulting-support" element={<ServiceShowcase service="consulting-support" />} />
         <Route path="/products/cambill-pos" element={<POSShowcase product="cambill-pos" />} />
         <Route path="/products/camstore-pos" element={<CamStore />} />
         <Route path="/products/medibill-pos" element={<POSShowcase product="medibill-pos" />} />

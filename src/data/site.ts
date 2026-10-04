@@ -68,6 +68,7 @@ export const products = [
 
 export const services = [
   {
+    slug: 'web-development',
     title: 'Web Development',
     description: 'Fast, responsive websites and web applications shaped around clear business goals.',
     icon: Code2,
@@ -78,6 +79,7 @@ export const services = [
     accent: '52 167 255',
   },
   {
+    slug: 'custom-software-development',
     title: 'Custom Software Development',
     description: 'Purpose-built systems that fit your workflows instead of forcing a generic process.',
     icon: Blocks,
@@ -88,6 +90,7 @@ export const services = [
     accent: '138 88 255',
   },
   {
+    slug: 'mobile-android-app-development',
     title: 'Mobile & Android App Development',
     description: 'High-performance mobile applications for Android and cross-platform solutions designed to reach more users.',
     icon: Smartphone,
@@ -98,6 +101,7 @@ export const services = [
     accent: '22 210 184',
   },
   {
+    slug: 'consulting-support',
     title: 'Consulting & Support',
     description: 'Practical technology guidance and ongoing support for evolving software needs.',
     icon: Headphones,
