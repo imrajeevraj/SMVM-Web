@@ -158,7 +158,7 @@ export function Chatbot() {
                       {message.actions && (
                         <div className="mt-3 flex flex-wrap gap-2">
                           {message.actions.map((action) => (
-                            <Link key={action.to} to={action.to} onClick={() => setOpen(false)} className="inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3 py-2 text-xs font-extrabold text-brand transition hover:bg-brand hover:text-white">
+                            <Link key={action.to} to={action.to} onClick={() => setOpen(false)} className="chat-action inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3 py-2 text-xs font-extrabold text-brand transition hover:bg-brand hover:text-white">
                               {action.label}<ArrowRight className="h-3.5 w-3.5" />
                             </Link>
                           ))}

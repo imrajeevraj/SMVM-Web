@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { useState, type KeyboardEvent } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, BarChart3, Boxes, CheckCircle2, ReceiptText, Settings } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -11,11 +11,24 @@ const views = [
 ] as const;
 
 export function ProductDetail() {
+  const reducedMotion = useReducedMotion();
   const [activeView, setActiveView] = useState<(typeof views)[number]['id']>('inventory');
   const selected = views.find((view) => view.id === activeView) ?? views[0];
 
+  const navigateTabs = (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+    let next = index;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % views.length;
+    else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (index - 1 + views.length) % views.length;
+    else if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = views.length - 1;
+    else return;
+    event.preventDefault();
+    setActiveView(views[next].id);
+    document.getElementById(`tab-${views[next].id}`)?.focus();
+  };
+
   return (
-    <div className="w-full bg-background">
+    <div className="product-detail-page w-full bg-background">
       <section className="relative overflow-hidden pb-20 pt-32 sm:pt-40 lg:pb-24">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_80%_20%,rgba(22,119,255,.14),transparent_34%),radial-gradient(circle_at_20%_80%,rgba(124,58,237,.1),transparent_30%)]" />
         <div className="site-container">
@@ -26,14 +39,14 @@ export function ProductDetail() {
               <h1 className="mt-4 text-5xl font-extrabold tracking-[-.045em] text-text sm:text-6xl">CamBill POS</h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-text-muted">An advanced POS platform positioned for larger retail operations, with workspace areas for billing, inventory, reports, and administration.</p>
               <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-                {['Multi-store operations', 'Enterprise inventory', 'Billing workflows', 'Reports and analytics'].map((item) => <li key={item} className="flex items-center gap-3 text-base font-semibold text-text"><CheckCircle2 className="h-5 w-5 text-brand" />{item}</li>)}
+                {['Multi-store operations', 'Enterprise inventory', 'Billing workflows', 'Reports and analytics'].map((item) => <li key={item} className="product-feature-chip flex items-center gap-3 text-base font-semibold text-text"><CheckCircle2 className="h-5 w-5 text-brand" />{item}</li>)}
               </ul>
               <Link to="/contact" className="button-primary mt-9">Discuss CamBill POS <ArrowRight className="h-4 w-4" /></Link>
             </motion.div>
 
             <motion.div initial={{ opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} className="relative">
               <div className="absolute inset-10 rounded-full bg-brand/20 blur-[100px]" />
-              <div className="relative overflow-hidden rounded-[26px] border border-border bg-surface p-2 shadow-2xl">
+              <div className="product-detail-preview relative overflow-hidden rounded-[26px] border border-border bg-surface p-2 shadow-2xl">
                 <div className="flex h-9 items-center gap-2 rounded-t-[18px] bg-[#101d32] px-4"><i className="h-2 w-2 rounded-full bg-rose-400" /><i className="h-2 w-2 rounded-full bg-amber-400" /><i className="h-2 w-2 rounded-full bg-emerald-400" /><span className="ml-2 text-[11px] font-semibold text-slate-400">CamBill POS workspace</span></div>
                 <img src="/images/products/cambill-pos/camstore_pos.png" alt="CamBill POS workspace overview" className="w-full rounded-b-[18px]" />
               </div>
@@ -52,16 +65,16 @@ export function ProductDetail() {
 
           <div className="mt-12 grid gap-8 lg:grid-cols-[280px_1fr]">
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-1" role="tablist" aria-label="CamBill POS workspace views">
-              {views.map((view) => {
+              {views.map((view, index) => {
                 const Icon = view.icon;
                 const active = view.id === activeView;
-                return <button key={view.id} type="button" role="tab" aria-selected={active} aria-controls={`panel-${view.id}`} id={`tab-${view.id}`} onClick={() => setActiveView(view.id)} className={`flex items-center gap-3 rounded-2xl border p-4 text-left text-base font-bold transition ${active ? 'border-brand/30 bg-brand/10 text-brand shadow-sm' : 'border-transparent text-text-muted hover:border-border hover:bg-background hover:text-text'}`}><span className="grid h-10 w-10 place-items-center rounded-xl bg-surface"><Icon className="h-5 w-5" /></span>{view.title}</button>;
+                return <button key={view.id} type="button" role="tab" aria-selected={active} aria-controls={`panel-${view.id}`} id={`tab-${view.id}`} tabIndex={active ? 0 : -1} onKeyDown={event => navigateTabs(event, index)} onClick={() => setActiveView(view.id)} className={`flex items-center gap-3 rounded-2xl border p-4 text-left text-base font-bold transition ${active ? 'border-brand/30 bg-brand/10 text-brand shadow-sm' : 'border-transparent text-text-muted hover:border-border hover:bg-background hover:text-text'}`}><span className="grid h-10 w-10 place-items-center rounded-xl bg-surface"><Icon className="h-5 w-5" /></span>{view.title}</button>;
               })}
             </div>
 
-            <div className="overflow-hidden rounded-[28px] border border-border bg-background shadow-xl">
+            <div className="product-detail-preview overflow-hidden rounded-[28px] border border-border bg-background shadow-xl">
               <AnimatePresence mode="wait">
-                <motion.div key={selected.id} id={`panel-${selected.id}`} role="tabpanel" aria-labelledby={`tab-${selected.id}`} initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -18 }}>
+                <motion.div key={selected.id} id={`panel-${selected.id}`} role="tabpanel" tabIndex={0} aria-labelledby={`tab-${selected.id}`} initial={{ opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -18 }} transition={{ duration: reducedMotion ? 0 : .22 }}>
                   <img src={selected.image} alt={`${selected.title} view in CamBill POS`} className="aspect-[1.75] w-full object-cover object-top" />
                   <div className="border-t border-border bg-surface p-6 sm:p-8"><h3 className="text-2xl font-bold text-text">{selected.title}</h3><p className="mt-3 text-base leading-7 text-text-muted">{selected.description}</p></div>
                 </motion.div>
