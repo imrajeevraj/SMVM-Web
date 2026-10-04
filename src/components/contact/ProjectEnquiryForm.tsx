@@ -1,5 +1,5 @@
 import { FormEvent, ReactNode, useRef, useState } from 'react';
-import { AlertTriangle, ArrowRight, CheckCircle2, Loader2, LockKeyhole, MailCheck } from 'lucide-react';
+import { AlertTriangle, CheckCircle2, Loader2, LockKeyhole, MailCheck, Send } from 'lucide-react';
 import { contactConfig } from '@/config/contact';
 
 type FormValues = {
@@ -20,7 +20,7 @@ const initialValues: FormValues = {
   fullName: '', email: '', phone: '', company: '', service: '', budget: '', timeline: '', details: '', consent: false,
 };
 
-const fieldClass = 'mt-2 min-h-12 w-full rounded-xl border border-border bg-background px-4 text-sm text-text outline-none transition focus:border-brand focus:ring-4 focus:ring-brand/10 aria-[invalid=true]:border-danger aria-[invalid=true]:ring-danger/10';
+const fieldClass = 'contact-form-control';
 
 export function ProjectEnquiryForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -86,11 +86,14 @@ export function ProjectEnquiryForm() {
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate className="rounded-[28px] border border-border bg-surface p-5 shadow-[0_24px_70px_rgba(19,68,132,.1)] sm:p-8" aria-label="Project enquiry form">
-      <h3 className="text-2xl font-extrabold text-text">Project Enquiry Form</h3>
-      <p className="mt-2 text-sm text-text-muted">Fill in the details below and we&apos;ll get back to you.</p>
+    <form ref={formRef} onSubmit={handleSubmit} noValidate className="contact-form" aria-label="Project enquiry form">
+      <div className="contact-form__header">
+        <span><MailCheck aria-hidden="true" /></span>
+        <div><p>Tell us about your project</p><h3>Project Enquiry Form</h3></div>
+      </div>
+      <p className="contact-form__intro">Share the essentials below. The more context you provide, the more useful our first conversation can be.</p>
 
-      <div className="mt-7 grid gap-x-5 gap-y-5 sm:grid-cols-2">
+      <div className="contact-form__grid">
         <FormField id="fullName" label="Full Name" required error={errors.fullName}>
           <input id="fullName" name="fullName" autoComplete="name" value={values.fullName} onChange={(e) => update('fullName', e.target.value)} className={fieldClass} aria-invalid={Boolean(errors.fullName)} aria-describedby={errors.fullName ? 'fullName-error' : undefined} placeholder="Enter your full name" />
         </FormField>
@@ -120,28 +123,28 @@ export function ProjectEnquiryForm() {
         </FormField>
       </div>
 
-      <div className="mt-5">
+      <div className="contact-form__details">
         <FormField id="details" label="Project Details" required error={errors.details}>
           <textarea id="details" name="details" rows={5} value={values.details} onChange={(e) => update('details', e.target.value)} className={`${fieldClass} resize-y py-3`} aria-invalid={Boolean(errors.details)} aria-describedby={errors.details ? 'details-error' : undefined} placeholder="Tell us about your project requirements…" />
         </FormField>
       </div>
 
-      <div className="mt-5">
-        <label className="flex cursor-pointer items-start gap-3 text-xs leading-5 text-text">
-          <input type="checkbox" checked={values.consent} onChange={(e) => update('consent', e.target.checked)} className="mt-0.5 h-4 w-4 rounded border-border text-brand focus:ring-brand" aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? 'consent-error' : undefined} />
+      <div className="contact-form__consent">
+        <label>
+          <input type="checkbox" checked={values.consent} onChange={(e) => update('consent', e.target.checked)} aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? 'consent-error' : undefined} />
           <span>I agree to share my information with SMVM Softwares for the purpose of discussing my project.</span>
         </label>
-        {errors.consent && <p id="consent-error" className="mt-2 text-xs font-semibold text-danger">{errors.consent}</p>}
+        {errors.consent && <p id="consent-error" className="contact-form__error">{errors.consent}</p>}
       </div>
 
-      <button type="submit" disabled={isSubmitting} className="button-primary mt-6 w-full disabled:cursor-not-allowed disabled:opacity-70">
-        {isSubmitting ? <><Loader2 className="h-4 w-4 animate-spin" /> Preparing enquiry…</> : <>Send Project Enquiry <ArrowRight className="h-4 w-4" /></>}
+      <button type="submit" disabled={isSubmitting} className="contact-form__submit">
+        {isSubmitting ? <><Loader2 className="animate-spin" /> Preparing enquiry…</> : <><Send /> Prepare Project Enquiry</>}
       </button>
 
-      <p className="mt-4 flex items-start justify-center gap-2 text-center text-[11px] leading-5 text-text-muted"><LockKeyhole className="mt-0.5 h-3.5 w-3.5 shrink-0" /> Your information will be used only to respond to your enquiry.</p>
-      {!contactConfig.submissionEndpoint && <p className="mt-2 text-center text-[11px] leading-5 text-text-muted">Online submission is not connected yet. This form prepares an email draft for you to review and send.</p>}
+      <p className="contact-form__privacy"><LockKeyhole /> Your information will be used only to respond to your enquiry.</p>
+      {!contactConfig.submissionEndpoint && <p className="contact-form__handoff-note">The form securely prepares an email draft for you to review before sending it to {contactConfig.email}.</p>}
 
-      <div className="mt-4" aria-live="polite">
+      <div className="contact-form__status" aria-live="polite">
         {status === 'handoff' && <StatusMessage icon={MailCheck} tone="text-brand bg-brand/10" text="Your email app should open with a prepared draft. Review it and choose Send there to complete the enquiry." />}
         {status === 'success' && <StatusMessage icon={CheckCircle2} tone="text-emerald-600 bg-emerald-500/10" text="Your project enquiry was accepted. We’ll use the details only to respond to your request." />}
         {status === 'error' && <StatusMessage icon={AlertTriangle} tone="text-danger bg-danger/10" text={`We couldn't prepare your enquiry. Your entries are still here; please try again or email ${contactConfig.email}.`} />}
@@ -151,7 +154,7 @@ export function ProjectEnquiryForm() {
 }
 
 function FormField({ id, label, required, error, children }: { id: string; label: string; required?: boolean; error?: string; children: ReactNode }) {
-  return <div><label htmlFor={id} className="text-xs font-bold text-text">{label}{required && <span className="text-danger"> *</span>}</label>{children}{error && <p id={`${id}-error`} className="mt-1.5 text-xs font-semibold text-danger">{error}</p>}</div>;
+  return <div className="contact-form__field"><label htmlFor={id}>{label}{required && <span> *</span>}</label>{children}{error && <p id={`${id}-error`} className="contact-form__error">{error}</p>}</div>;
 }
 
 function StatusMessage({ icon: Icon, tone, text }: { icon: typeof CheckCircle2; tone: string; text: string }) {

@@ -1,13 +1,13 @@
 export const contactConfig = {
-  email: 'support@smvmsoftwares.com',
+  email: 'smvmsoftware@gmail.com',
   phone: {
-    display: '+91 98765 43210',
-    dial: '+919876543210',
-    verified: false,
+    display: '+91 78588 20836',
+    dial: '+917858820836',
+    verified: true,
   },
   office: {
-    label: 'Ranchi, Jharkhand, India',
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Ranchi%2C%20Jharkhand%2C%20India',
+    label: 'Bhilai, Chhattisgarh, India',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Bhilai%2C%20Chhattisgarh%2C%20India',
   },
   hours: 'Mon – Sat: 9:00 AM – 6:00 PM (IST)',
   submissionEndpoint: null as string | null,
