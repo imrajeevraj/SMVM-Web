@@ -10,6 +10,7 @@ import { NotFound } from './pages/NotFound';
 import { ProductOverview } from './pages/ProductOverview';
 import { Legal } from './pages/Legal';
 import { Services } from './pages/Services';
+import { CamStore } from './pages/CamStore';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/services" element={<Services />} />
         <Route path="/products/cambill-pos" element={<ProductDetail />} />
-        <Route path="/products/camstore-pos" element={<ProductOverview productSlug="camstore-pos" />} />
+        <Route path="/products/camstore-pos" element={<CamStore />} />
         <Route path="/products/medibill-pos" element={<ProductOverview productSlug="medibill-pos" />} />
         <Route path="/products/medibill-pro" element={<ProductOverview productSlug="medibill-pro" />} />
         <Route path="/about" element={<About />} />
