@@ -420,11 +420,11 @@
   filter: drop-shadow(0 12px 14px rgba(30, 75, 130, .16));
 }
 .cs-smart__product-art { width: 100%; aspect-ratio: 1.24 / 1; background-position: 66.667% 0%; }
-.cs-smart__workflow {
+.cs-page .cs-smart__workflow {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(30px, 4vw, 56px);
-  margin-top: clamp(42px, 5vw, 70px);
+  margin-top: clamp(28px, 3.2vw, 40px);
 }
 .cs-smart__workflow > li { position: relative; min-width: 0; }
 .cs-smart-step {
@@ -489,7 +489,7 @@
   .cs-smart__intro > p { margin-inline: auto; }
   .cs-smart__details { gap: 24px; }
   .cs-smart__product-art { justify-self: center; width: min(210px, 68%); margin-top: 0; }
-  .cs-smart__workflow { grid-template-columns: 1fr; gap: 36px; }
+  .cs-page .cs-smart__workflow { grid-template-columns: 1fr; gap: 36px; margin-top: 24px; }
   .cs-smart-step { grid-template-columns: auto minmax(0, 1fr) 105px; min-height: 126px; }
   .cs-smart-step__art { grid-column: auto; width: 105px; margin-top: 0; }
   .cs-smart-step__arrow { top: auto; right: 50%; bottom: -32px; transform: translateX(50%) rotate(90deg); }
