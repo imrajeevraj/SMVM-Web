@@ -1,7 +1,6 @@
 import type { CSSProperties } from 'react';
 import { ArrowRight, BarChart3, Check } from 'lucide-react';
-import { AppScreen } from './screens';
-import { BrowserFrame, Reveal } from './shared';
+import { Reveal } from './shared';
 
 const benefits = [
   'Fast billing with professional invoice printing',
@@ -48,9 +47,15 @@ export function SmartStoreManagement() {
           </Reveal>
 
           <Reveal className="cs-smart__dashboard" delay={0.04}>
-            <BrowserFrame title="CamStore POS — Dashboard">
-              <AppScreen id="dashboard" minScale={0.3} />
-            </BrowserFrame>
+            <span className="cs-smart__dashboard-glow" aria-hidden="true" />
+            <figure className="cs-smart__device">
+              <img
+                className="cs-smart__dashboard-image"
+                src="/images/products/camstore/camstore-pos-dashboard-laptop.png"
+                alt="CamStore POS dashboard displayed on a realistic laptop"
+                loading="lazy"
+              />
+            </figure>
           </Reveal>
 
           <Reveal className="cs-smart__details" delay={0.08}>

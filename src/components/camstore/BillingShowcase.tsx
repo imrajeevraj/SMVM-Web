@@ -65,8 +65,8 @@ export function BillingShowcase() {
             <figure className="cs-billing__device">
               <img
                 className="cs-billing__screen-image"
-                src="/images/products/camstore/camstore-pos-dashboard-laptop.png"
-                alt="CamStore POS dashboard displayed on a realistic laptop"
+                src="/images/products/camstore/camstore-pos-live-billing-laptop.png"
+                alt="CamStore POS live billing terminal displayed on a realistic laptop"
                 loading="lazy"
               />
             </figure>
