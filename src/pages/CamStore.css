@@ -583,20 +583,16 @@
   color: transparent;
 }
 .cs-billing__intro > p { margin-top: 19px; max-width: 570px; color: #60708c; font-size: clamp(1rem, 1.35vw, 1.18rem); line-height: 1.58; }
-.cs-billing__screen .cs-browser {
+.cs-billing__device {
   position: relative;
   z-index: 1;
-  border-color: rgba(148, 184, 226, .44);
-  border-radius: 25px;
-  background: #fff;
-  box-shadow: 0 30px 68px rgba(27, 66, 118, .2), 0 3px 8px rgba(33, 77, 132, .08);
+  margin: 0;
+  filter: drop-shadow(0 30px 34px rgba(27, 66, 118, .22));
 }
-.cs-billing__screen .cs-browser__bar { background: #fff; border-bottom-color: rgba(164, 192, 226, .34); }
-.cs-billing__screen .cs-browser__body { overflow: hidden; background: #050a14; }
 .cs-billing__screen-glow {
   position: absolute;
-  inset: 7% -4% -8% 7%;
-  border-radius: 38px;
+  inset: 12% -2% 4% 8%;
+  border-radius: 50%;
   background:
     radial-gradient(circle at 78% 16%, rgba(255, 177, 42, .18), transparent 27%),
     linear-gradient(135deg, rgba(42, 143, 255, .2), rgba(118, 206, 255, .08));
@@ -606,9 +602,7 @@
 .cs-billing__screen-image {
   display: block;
   width: 100%;
-  aspect-ratio: 1920 / 965;
-  object-fit: cover;
-  object-position: top;
+  height: auto;
 }
 .cs-billing__benefits { display: grid; gap: 11px; }
 .cs-billing__benefits li { display: flex; align-items: flex-start; gap: 11px; color: #586985; font-size: .98rem; font-weight: 570; line-height: 1.42; }

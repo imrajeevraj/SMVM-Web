@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import type { LucideIcon } from 'lucide-react';
 import { ArrowRight, Check, CreditCard, ReceiptText, ShoppingCart } from 'lucide-react';
-import { BrowserFrame, Reveal } from './shared';
+import { Reveal } from './shared';
 
 const billingBenefits = [
   'Quick product search and selection',
@@ -62,14 +62,14 @@ export function BillingShowcase() {
 
           <Reveal className="cs-billing__screen" delay={0.04}>
             <span className="cs-billing__screen-glow" aria-hidden="true" />
-            <BrowserFrame title="CamStore POS — Live Billing Terminal">
+            <figure className="cs-billing__device">
               <img
                 className="cs-billing__screen-image"
-                src="/images/products/camstore/pos-billing-terminal.png"
-                alt="CamStore POS dark billing terminal with product catalog, category filters and current sale panel"
+                src="/images/products/camstore/camstore-pos-dashboard-laptop.png"
+                alt="CamStore POS dashboard displayed on a realistic laptop"
                 loading="lazy"
               />
-            </BrowserFrame>
+            </figure>
           </Reveal>
 
           <Reveal className="cs-billing__details" delay={0.08}>
