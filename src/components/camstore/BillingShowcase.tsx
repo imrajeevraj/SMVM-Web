@@ -1,7 +1,6 @@
 import type { CSSProperties } from 'react';
 import type { LucideIcon } from 'lucide-react';
 import { ArrowRight, Check, CreditCard, ReceiptText, ShoppingCart } from 'lucide-react';
-import { AppScreen } from './screens';
 import { BrowserFrame, Reveal } from './shared';
 
 const billingBenefits = [
@@ -62,9 +61,15 @@ export function BillingShowcase() {
           </Reveal>
 
           <Reveal className="cs-billing__screen" delay={0.04}>
-          <BrowserFrame title="CamStore POS — POS Billing">
-              <AppScreen id="billing" minScale={0.3} />
-          </BrowserFrame>
+            <span className="cs-billing__screen-glow" aria-hidden="true" />
+            <BrowserFrame title="CamStore POS — Live Billing Terminal">
+              <img
+                className="cs-billing__screen-image"
+                src="/images/products/camstore/pos-billing-terminal.png"
+                alt="CamStore POS dark billing terminal with product catalog, category filters and current sale panel"
+                loading="lazy"
+              />
+            </BrowserFrame>
           </Reveal>
 
           <Reveal className="cs-billing__details" delay={0.08}>
