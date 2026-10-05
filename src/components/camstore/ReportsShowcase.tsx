@@ -1,4 +1,3 @@
-import { reportTypes } from '@/data/camstore';
 import { AppScreen } from './screens';
 import { BrowserFrame, Reveal, SectionHead } from './shared';
 
@@ -14,13 +13,8 @@ export function ReportsShowcase() {
           />
         </Reveal>
 
-        <Reveal delay={0.05}>
-          <ul className="cs-tags cs-tags--center" aria-label="Available reports">
-            {reportTypes.map((r) => <li key={r}>{r}</li>)}
-          </ul>
-        </Reveal>
 
-        <Reveal delay={0.08} className="cs-wide cs-wide--md">
+        <Reveal className="cs-two__media" delay={0.05}>
           <BrowserFrame title="CamStore POS — Reports">
             <AppScreen id="reports" />
           </BrowserFrame>

@@ -27,18 +27,19 @@ export function BillingShowcase() {
             title="Fast, Simple & Reliable Billing"
             copy="CamStore POS brings with product search, barcode scanning, discount, GST and multiple payment platform."
           />
-          <ul className="cs-checks cs-checks--single">
-            {billingPoints.map((p) => <li key={p}><CheckCircle2 aria-hidden="true" />{p}</li>)}
-          </ul>
-          <figure className="cs-photo cs-photo--light">
-            <img
-              src={CAMSTORE_IMAGES.scannerPrinter}
-              alt="Handheld barcode scanner in its stand beside a thermal receipt printer"
-              width={1200}
-              height={896}
-              loading="lazy"
-            />
-          </figure>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '20px', marginTop: '20px' }}>
+            <ul className="cs-checks cs-checks--single" style={{ flex: 1 }}>
+              {billingPoints.map((p) => <li key={p}><CheckCircle2 aria-hidden="true" />{p}</li>)}
+            </ul>
+            <div style={{ flex: 1, display: 'flex', justifyContent: 'center' }}>
+              <img
+                src={CAMSTORE_IMAGES.scannerPrinter}
+                alt="Handheld barcode scanner in its stand beside a thermal receipt printer"
+                style={{ width: '100%', maxWidth: '240px', mixBlendMode: 'darken' }}
+                loading="lazy"
+              />
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>

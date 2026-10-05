@@ -6,11 +6,12 @@ import { CamStoreWorkflow } from '@/components/camstore/CamStoreWorkflow';
 import { BillingShowcase } from '@/components/camstore/BillingShowcase';
 import { InventoryShowcase } from '@/components/camstore/InventoryShowcase';
 import { InvoiceShowcase } from '@/components/camstore/InvoiceShowcase';
-import { ProductManagement } from '@/components/camstore/ProductManagement';
+
 import { ReportsShowcase } from '@/components/camstore/ReportsShowcase';
 import { ServiceManagement } from '@/components/camstore/ServiceManagement';
 import { WhyCamStore } from '@/components/camstore/WhyCamStore';
 import './CamStore.css';
+import '../components/camstore/mock.css';
 
 /** /products/camstore-pos: composes the CamStore POS product page. Content lives in src/data/camstore.ts. */
 export function CamStore() {
@@ -21,7 +22,6 @@ export function CamStore() {
       <CamStoreKeyFeatures />
       <InventoryShowcase />
       <BillingShowcase />
-      <ProductManagement />
       <InvoiceShowcase />
       <div className="site-container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', padding: '56px 0' }}>
         <div style={{ minWidth: 0 }}><ServiceManagement /></div>

@@ -1,7 +1,14 @@
-import { ArrowRight, ChevronRight, Play } from 'lucide-react';
+import { Camera, ChevronRight, Headphones, PackageCheck, Play, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { CAMSTORE_DEMO_URL, CAMSTORE_IMAGES, trustIndicators } from '@/data/camstore';
+import { CAMSTORE_CONTACT_PATH, CAMSTORE_DEMO_URL, CAMSTORE_IMAGES, trustIndicators } from '@/data/camstore';
 import { scrollToId } from './shared';
+
+const heroBenefits = [
+  { title: 'Easy to Use', copy: 'Clean, simple interface', icon: Zap, tone: 'green' },
+  { title: 'Complete Store Management', copy: 'Sales, stock & service', icon: PackageCheck, tone: 'violet' },
+  { title: 'Built for Camera Retailers', copy: 'Cameras, lenses & more', icon: Camera, tone: 'orange' },
+  { title: 'Reliable Support', copy: 'Help when you need it', icon: Headphones, tone: 'blue' },
+] as const;
 
 export function CamStoreHero() {
   const watchDemo = () => {
@@ -11,7 +18,6 @@ export function CamStoreHero() {
 
   return (
     <section className="cs-hero" aria-labelledby="camstore-title">
-      <div className="cs-hero__bg" aria-hidden="true" />
       <div className="site-container">
         <nav className="cs-crumbs" aria-label="Breadcrumb">
           <ol>
@@ -21,41 +27,57 @@ export function CamStoreHero() {
           </ol>
         </nav>
 
-        <div className="cs-hero__layout">
-          <div className="cs-hero__copy">
-            <span className="cs-eyebrow">Camera Store POS Software</span>
-            <h1 id="camstore-title">CamStore <span>POS</span></h1>
-            <p className="cs-hero__sub">Complete POS &amp; Inventory Solution for Camera Stores</p>
-            <p className="cs-hero__lead">
-              CamStore POS is a modern and easy-to-use software solution designed specifically for camera stores. Manage products,
-              inventory, billing, customers, purchases, services, and business reports from one powerful platform.
-            </p>
+        <div className="cs-hero__card">
+          <div className="cs-hero__ribbons" aria-hidden="true" />
 
-            <div className="cs-hero__actions">
-              <a href="#camstore-features" className="button-primary" onClick={(e) => { e.preventDefault(); scrollToId('camstore-features'); }}>
-                Explore CamStore POS <ArrowRight aria-hidden="true" className="h-4 w-4" />
-              </a>
-              <button type="button" className="button-outline" onClick={watchDemo}>
-                <Play aria-hidden="true" className="h-4 w-4" /> Watch Demo
-              </button>
+          <div className="cs-hero__layout">
+            <div className="cs-hero__copy">
+              <span className="cs-eyebrow"><Camera aria-hidden="true" /> Camera Store Management Software</span>
+              <h1 id="camstore-title">CamStore <span>POS</span></h1>
+              <p className="cs-hero__sub">Complete POS &amp; Inventory Solution<br />for <strong>Camera Stores</strong></p>
+              <p className="cs-hero__lead">
+                Manage cameras, lenses, accessories and services with fast billing, real-time inventory,
+                repair tracking and detailed reports—all in one place.
+              </p>
+
+              <div className="cs-hero__actions">
+                <Link to={CAMSTORE_CONTACT_PATH} className="button-primary">Get Started Now</Link>
+                <button type="button" className="button-outline" onClick={watchDemo}>
+                  <Play aria-hidden="true" /> Watch Demo
+                </button>
+              </div>
+
+              <ul className="cs-hero__benefits" aria-label="CamStore POS benefits">
+                {heroBenefits.map((benefit) => (
+                  <li key={benefit.title}>
+                    <span className={`cs-hero__benefit-icon cs-hero__benefit-icon--${benefit.tone}`}>
+                      <benefit.icon aria-hidden="true" />
+                    </span>
+                    <span><b>{benefit.title}</b><small>{benefit.copy}</small></span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            <ul className="cs-trust" aria-label="CamStore POS highlights">
-              {trustIndicators.map((t) => (
-                <li key={t.label} style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "8px", borderLeft: 0, paddingLeft: 0, padding: 0 }}><t.icon aria-hidden="true" style={{ width: "32px", height: "32px", color: "rgb(var(--cs-rgb))" }} /><div style={{ display: "flex", flexDirection: "column", gap: 0, paddingLeft: "4px" }}><b>{t.value}</b><span>{t.label}</span></div></li>
-              ))}
-            </ul>
+            <div className="cs-hero__visual">
+              <img
+                src={CAMSTORE_IMAGES.hero}
+                alt="CamStore POS dark dashboard displayed on a laptop beside a professional camera, lens, memory card and camera bag"
+                width={1536}
+                height={1024}
+                fetchPriority="high"
+              />
+            </div>
           </div>
 
-          <div className="cs-hero__visual">
-            <img
-              src={CAMSTORE_IMAGES.hero}
-              alt="CamStore POS dashboard on desktop and tablet, with a camera, lenses, memory cards, barcode scanner and thermal receipt printer"
-              width={1536}
-              height={1024}
-              fetchPriority="high"
-            />
-          </div>
+          <ul className="cs-trust" aria-label="CamStore POS highlights">
+            {trustIndicators.map((item) => (
+              <li key={item.label}>
+                <item.icon aria-hidden="true" />
+                <span><b>{item.value}</b><small>{item.label}</small></span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

@@ -1,8 +1,5 @@
-import { serviceBadges } from '@/data/camstore';
-import { AppScreen, Badge } from './screens';
+import { AppScreen } from './screens';
 import { BrowserFrame, Reveal, SectionHead } from './shared';
-
-const tone = { Pending: 'amber', 'In Progress': 'blue', Completed: 'green' } as const;
 
 export function ServiceManagement() {
   return (
@@ -14,11 +11,7 @@ export function ServiceManagement() {
             title="Service Management"
             copy="Keep camera repairs and service requests organized."
           />
-          <ul className="cs-statuses" aria-label="Service statuses">
-            {serviceBadges.map((s) => (
-              <li key={s}><Badge tone={tone[s]}>{s}</Badge></li>
-            ))}
-          </ul>
+
         </Reveal>
 
         <Reveal className="cs-two__media" delay={0.05}>

@@ -13,8 +13,8 @@ export function CamStoreCTA() {
               <h2 id="cs-cta-title">Ready to Upgrade Your Camera Store?</h2>
               <p>Manage inventory, billing, customers, purchases, services, and reports with CamStore POS.</p>
               <div className="cs-cta__actions">
-                <Link to={CAMSTORE_CONTACT_PATH} className="button-light">Get Started <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
-                <Link to="/contact" className="button-secondary-dark">Contact Us <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
+                <Link to={CAMSTORE_CONTACT_PATH} className="button-primary">Get Started <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
+                <Link to="/contact" className="button-outline">Contact Us <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
               </div>
             </div>
           </div>

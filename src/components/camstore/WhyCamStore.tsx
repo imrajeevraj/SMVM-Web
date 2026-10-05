@@ -6,7 +6,7 @@ export function WhyCamStore() {
     <section className="cs-section cs-section--alt" aria-labelledby="cs-why-title">
       <div className="site-container">
         <Reveal>
-          <SectionHead id="cs-why-title" align="center" eyebrow="Why Choose Us" title="Why CamStore POS?" />
+          <SectionHead id="cs-why-title" align="left" title="Why CamStore POS?" />
         </Reveal>
         <Reveal delay={0.05}>
           <ul className="cs-why">

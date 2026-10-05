@@ -37,7 +37,7 @@ export const CAMSTORE_CONTACT_PATH = '/contact?product=camstore-pos';
 export const CAMSTORE_DEMO_URL: string | null = null;
 
 export const CAMSTORE_IMAGES = {
-  hero: '/images/products/camstore-pos-card.png',
+  hero: '/images/products/camstore/camstore-hero-dashboard-v2.png',
   storeAmbience: '/images/products/camstore/store-ambience.jpg',
   cameraGear: '/images/products/camstore/camera-gear.jpg',
   scannerPrinter: '/images/products/camstore/scanner-printer.jpg',
@@ -66,7 +66,7 @@ export const keyFeatureList = [
   'Camera, Lens & Accessories Management',
   'POS Billing',
   'Sales & Purchase Management',
-  'Barcode Scanning Support',
+  'Barcode Scanning',
   'Customer & Supplier Management',
   'Service & Repair Management',
   'Expense Tracking',
@@ -228,7 +228,7 @@ export const supplierRows = [
 
 export const whyCards: Array<FeatureItem & { number: string }> = [
   { number: '01', title: 'Built for Camera Stores', copy: 'Designed around the real workflows of camera and photography equipment businesses.', icon: Store, accent: '#ef4444' },
-  { number: '02', title: 'Simple & Fast', copy: 'A clean interface that makes everyday billing and inventory management easier.', icon: Zap, accent: '#a855f7' },
+  { number: '02', title: 'Simple & Fast', copy: 'A clean interface that makes everyday billing and inventory management easier.', icon: ShoppingCart, accent: '#8b5cf6' },
   { number: '03', title: 'Powerful Inventory Control', copy: 'Track cameras, lenses, accessories, stock levels and product information.', icon: PackageCheck, accent: '#10b981' },
   { number: '04', title: 'Ready to Grow', copy: 'Built to support growing stores and expanding product catalogs.', icon: BarChart3, accent: '#f97316' },
 ];
