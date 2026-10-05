@@ -136,7 +136,7 @@
 .cs-form span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11.5px; font-weight: 700; }
 
 /* Invoice document */
-.cs-invoice { display: flex; flex-direction: column; gap: 14px; width: 600px; min-height: 600px; padding: 28px 30px 20px; color: #14223b; background: #fff; font: 500 11.5px/1.4 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+.cs-invoice { display: flex; flex-direction: column; gap: 14px; width: 600px; height: 700px; padding: 28px 30px 20px; color: #14223b; background: #fff; font: 500 11.5px/1.4 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; }
 .cs-invoice header { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 2px solid #0b2a63; }
 .cs-invoice header b { display: block; margin-top: 8px; font-size: 13px; }
 .cs-invoice small { display: block; font-size: 10.5px; color: #5d6c86; }
@@ -158,6 +158,13 @@
 .cs-invoice dl { display: flex; width: 250px; flex-direction: column; gap: 5px; margin: 0; }
 .cs-invoice dl div { display: flex; justify-content: space-between; gap: 8px; }
 .cs-invoice dt { color: #5d6c86; } .cs-invoice dd { margin: 0; font-weight: 700; }
+.cs-invoice__closing { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-top: auto; padding-top: 10px; border-top: 1px solid #e3eaf4; }
+.cs-invoice__closing > div:first-child { display: grid; gap: 3px; }
+.cs-invoice__closing b { color: #0b2a63; font-size: 10.5px; }
+.cs-invoice__closing span { display: block; color: #5d6c86; font-size: 9.5px; }
+.cs-invoice__signature { display: grid; justify-items: center; min-width: 130px; }
+.cs-invoice__signature i { color: #0b2a63; font: italic 20px cursive; transform: rotate(-8deg); }
+.cs-invoice__signature span { width: 100%; padding-top: 5px; text-align: center; border-top: 1px solid #9aabc5; }
 .cs-invoice footer { margin-top: auto; padding-top: 10px; text-align: center; font-size: 9.5px; color: #7a889f; border-top: 1px solid #e3eaf4; }
 
 /* Invoice preview screen: document window + recent invoices */
