@@ -1,14 +1,12 @@
 import { CamStoreCTA } from '@/components/camstore/CamStoreCTA';
-import { CamStoreFeatureStrip } from '@/components/camstore/CamStoreFeatureStrip';
 import { CamStoreHero } from '@/components/camstore/CamStoreHero';
 import { CamStoreKeyFeatures } from '@/components/camstore/CamStoreKeyFeatures';
 import { CamStoreWorkflow } from '@/components/camstore/CamStoreWorkflow';
 import { BillingShowcase } from '@/components/camstore/BillingShowcase';
-import { InventoryShowcase } from '@/components/camstore/InventoryShowcase';
 import { InvoiceShowcase } from '@/components/camstore/InvoiceShowcase';
-
 import { ReportsShowcase } from '@/components/camstore/ReportsShowcase';
 import { ServiceManagement } from '@/components/camstore/ServiceManagement';
+import { SmartStoreManagement } from '@/components/camstore/SmartStoreManagement';
 import { WhyCamStore } from '@/components/camstore/WhyCamStore';
 import './CamStore.css';
 import '../components/camstore/mock.css';
@@ -18,9 +16,8 @@ export function CamStore() {
   return (
     <div className="cs-page">
       <CamStoreHero />
-      <CamStoreFeatureStrip />
       <CamStoreKeyFeatures />
-      <InventoryShowcase />
+      <SmartStoreManagement />
       <BillingShowcase />
       <InvoiceShowcase />
       <div className="site-container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '40px', padding: '56px 0' }}>
