@@ -200,6 +200,74 @@ npm run build
 
 If a new design disappears, check `git status` and `git stash list` before changing or restoring files. Never edit files inside `dist/`; update the source under `src/` or `public/` and rebuild.
 
+## Git Command Reference
+
+Run these commands from the repository root in PowerShell. Replace placeholders such as `<branch-name>` and `<file>` with your values.
+
+### Get the repository and check your work
+
+```powershell
+git clone https://github.com/imrajeevraj/SMVM-Web.git
+cd "SMVM-Web"
+git status
+git status --short
+git branch --show-current
+git remote -v
+```
+
+### Review changes and history
+
+```powershell
+git diff
+git diff --staged
+git log -5 --oneline
+git show --stat
+```
+
+### Create and switch branches
+
+```powershell
+git branch
+git switch -c <branch-name>
+git switch main
+git branch -d <branch-name>
+```
+
+### Stage, commit, and publish changes
+
+```powershell
+git add <file>
+git add -A
+git diff --staged
+git commit -m "Describe the change"
+git push -u origin <branch-name>
+git push
+```
+
+Use `git add <file>` to stage specific files, or `git add -A` to stage all changes after reviewing `git status`.
+
+### Sync with the remote repository
+
+```powershell
+git fetch
+git pull origin main
+git push origin main
+```
+
+### Temporarily save and restore uncommitted changes
+
+```powershell
+git stash push -m "Describe the work"
+git stash list
+git stash pop
+```
+
+To remove a file from the staging area without discarding its edits:
+
+```powershell
+git restore --staged <file>
+```
+
 ## Current Limitations
 
 - The enquiry experience is frontend-only; no server-side CRM or email integration is configured.

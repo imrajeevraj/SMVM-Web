@@ -1,17 +1,42 @@
-import { featureStrip } from '@/data/camstore';
+import {
+  ArrowRight,
+  BarChart3,
+  Boxes,
+  Camera,
+  ReceiptText,
+  Truck,
+  Users,
+  Wrench,
+} from 'lucide-react';
 import { Reveal } from './shared';
+
+const featureCards = [
+  { label: 'Products', icon: Camera },
+  { label: 'Inventory', icon: Boxes },
+  { label: 'Purchase', icon: Truck },
+  { label: 'Billing', icon: ReceiptText },
+  { label: 'Customers', icon: Users },
+  { label: 'Service', icon: Wrench },
+  { label: 'Reports', icon: BarChart3 },
+];
 
 export function CamStoreFeatureStrip() {
   return (
-    <section id="camstore-features" className="cs-section cs-section--tight" aria-label="CamStore POS at a glance">
+    <section id="camstore-features" className="cs-section cs-section--tight cs-feature-strip" aria-label="CamStore POS at a glance">
       <div className="site-container">
         <Reveal>
-          <ul className="cs-strip" style={{ gap: '20px', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))' }}>
-            {featureStrip.map(({ title, copy, icon: Icon, accent }) => (
-              <li key={title} className="cs-strip__item" style={{ alignItems: 'center', textAlign: 'center', border: 'none', background: 'transparent', padding: '10px 0', minHeight: 'auto' }}>
-                <span className="cs-icon" style={{ ...(accent ? { color: accent, background: `${accent}1A`, border: 'none', width: '56px', height: '56px', borderRadius: '16px' } : {}), marginBottom: '16px' }}><Icon aria-hidden="true" style={{ width: '28px', height: '28px' }} /></span>
-                <h3 style={{ fontSize: '15px', marginBottom: '6px' }}>{title}</h3>
-                <p style={{ fontSize: '13px' }}>{copy}</p>
+          <div className="cs-feature-strip__head">
+            <h2>Everything Connected in One POS</h2>
+            <p>From products to reports, CamStore POS connects all your camera store operations together.</p>
+          </div>
+          <ul className="cs-strip">
+            {featureCards.map(({ label, icon: Icon }, index) => (
+              <li key={label} className="cs-strip__item">
+                <div className="cs-strip__card">
+                  <span className="cs-strip__icon"><Icon aria-hidden="true" /></span>
+                  {index < featureCards.length - 1 ? <ArrowRight className="cs-strip__arrow" aria-hidden="true" /> : null}
+                </div>
+                <span className="cs-strip__label">{label}</span>
               </li>
             ))}
           </ul>

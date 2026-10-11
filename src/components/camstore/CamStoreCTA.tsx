@@ -17,6 +17,9 @@ export function CamStoreCTA() {
                 <Link to="/contact" className="button-outline">Contact Us <ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
               </div>
             </div>
+            <div className="cs-cta__visual" aria-hidden="true">
+              <img src="/images/products/camstore-pos-card.png" alt="" width={1536} height={1024} loading="lazy" />
+            </div>
           </div>
         </Reveal>
       </div>

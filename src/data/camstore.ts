@@ -37,7 +37,7 @@ export const CAMSTORE_CONTACT_PATH = '/contact?product=camstore-pos';
 export const CAMSTORE_DEMO_URL: string | null = null;
 
 export const CAMSTORE_IMAGES = {
-  hero: '/images/products/camstore/camstore-hero-dashboard-v2.png',
+  hero: '/images/products/camstore/camstore-hero-products.png',
   storeAmbience: '/images/products/camstore/store-ambience.jpg',
   cameraGear: '/images/products/camstore/camera-gear.jpg',
   scannerPrinter: '/images/products/camstore/scanner-printer.jpg',
