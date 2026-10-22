@@ -3,6 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "allowScripts": {
+    "esbuild": true
+  },
   "scripts": {
     "dev": "vite",
     "dev:smvm": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/start-smvm-dev.ps1",

@@ -23,7 +23,7 @@ try {
   await mkdir('docs/legal/archive', { recursive: true });
   let previous;
   try { previous = await readFile(archivePath, 'utf8'); } catch (error) { if (error.code !== 'ENOENT') throw error; }
-  if (previous && previous !== content) throw new Error('Policy archive is immutable: increment policyVersion before changing archived legal content or identity.');
+  if (previous && previous.replace(/\r\n/g, '\n') !== content.replace(/\r\n/g, '\n')) throw new Error('Policy archive is immutable: increment policyVersion before changing archived legal content or identity.');
   if (!previous) await writeFile(archivePath, content);
   // Internal review snapshots stay in docs and are not published with the website.
   // Draft policies are crawlable via links, but excluded from indexing and sitemap until approved.
