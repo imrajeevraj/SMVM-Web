@@ -1,0 +1,32 @@
+{
+  "brandName": "SMVM Softwares",
+  "merchantLegalName": "BUSINESS_VERIFICATION_REQUIRED",
+  "businessStructure": "BUSINESS_VERIFICATION_REQUIRED",
+  "businessAddress": "BUSINESS_VERIFICATION_REQUIRED",
+  "supportEmail": {
+    "value": "smvmsoftware@gmail.com",
+    "status": "BUSINESS_VERIFICATION_REQUIRED",
+    "source": "Existing repository contact configuration; ownership and monitoring not confirmed"
+  },
+  "supportTelephone": {
+    "value": null,
+    "status": "NOT_PUBLISHED_AT_OWNER_REQUEST"
+  },
+  "grievanceOfficer": "BUSINESS_VERIFICATION_REQUIRED",
+  "grievanceContact": "BUSINESS_VERIFICATION_REQUIRED",
+  "privacyContactStatus": "BUSINESS_VERIFICATION_REQUIRED",
+  "operatingHours": "BUSINESS_VERIFICATION_REQUIRED",
+  "gstin": "BUSINESS_VERIFICATION_REQUIRED",
+  "registrationInformation": "BUSINESS_VERIFICATION_REQUIRED",
+  "websiteUrl": "https://smvmsoftwares.up.railway.app",
+  "websiteStatus": "OWNER_SUPPLIED_DEPLOYMENT_UNVERIFIED",
+  "paymentGateway": "Instamojo",
+  "paymentGatewayStatus": "NOT_INTEGRATED",
+  "legalApproval": "LEGAL_APPROVAL_REQUIRED",
+  "ownerApproval": "BUSINESS_VERIFICATION_REQUIRED",
+  "productionCheckoutEnabled": false,
+  "policyVersion": "2026-10-22-draft.2",
+  "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+  "lastUpdated": "2026-10-22",
+  "changeSummary": "Customer-facing copy simplified at owner request; internal merchant verification and legal review retained in repository documentation."
+}

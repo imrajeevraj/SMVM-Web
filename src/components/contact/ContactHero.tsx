@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { Briefcase, CheckCircle2, Mail, MapPin, MessageSquareText, Phone, Sparkles } from 'lucide-react';
+import { Briefcase, CheckCircle2, Mail, MessageSquareText, Sparkles } from 'lucide-react';
 import { contactConfig } from '@/config/contact';
 
 const benefits = [
@@ -42,21 +42,15 @@ export function ContactHero() {
         <div className="contact-hero__visual">
           <div className="contact-hero__halo" aria-hidden="true" />
           <div className="contact-hero__image-frame">
-            <img src="/images/contact/contact-hero.png" alt="SMVM technology consultant ready to discuss a software project" fetchPriority="high" />
+            <img src="/images/contact/contact-hero.webp" alt="SMVM technology consultant ready to discuss a software project" fetchpriority="high" decoding="async" />
           </div>
 
           <div className="contact-hero__float contact-hero__float--email">
             <span><Mail aria-hidden="true" /></span>
             <div><small>Email us</small><strong>{contactConfig.email}</strong></div>
           </div>
-          <div className="contact-hero__float contact-hero__float--phone">
-            <span><Phone aria-hidden="true" /></span>
-            <div><small>Call our team</small><strong>{contactConfig.phone.display}</strong></div>
-          </div>
-          <div className="contact-hero__float contact-hero__float--office">
-            <span><MapPin aria-hidden="true" /></span>
-            <div><small>Our office</small><strong>{contactConfig.office.label}</strong></div>
-          </div>
+
+
         </div>
       </div>
     </section>

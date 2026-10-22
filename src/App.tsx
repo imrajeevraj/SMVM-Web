@@ -1,21 +1,27 @@
-import { Routes, Route } from 'react-router-dom';
+import { lazy } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { policies } from './data/policies';
+import { PageMetadata } from './components/legal/PageMetadata';
 import { Layout } from './components/layout/Layout';
 import { Home } from './pages/Home';
-import { Products } from './pages/Products';
-import { About } from './pages/About';
-import { Vision } from './pages/Vision';
-import { Contact } from './pages/Contact';
-import { NotFound } from './pages/NotFound';
 import { Legal } from './pages/Legal';
-import { Services } from './pages/Services';
-import { CamStore } from './pages/CamStore';
-import { CamBill } from './pages/CamBill';
-import { POSShowcase } from './pages/POSShowcase';
-import { ServiceShowcase } from './pages/ServiceShowcase';
+
+const Products = lazy(() => import('./pages/Products').then(m => ({ default: m.Products })));
+const Services = lazy(() => import('./pages/Services').then(m => ({ default: m.Services })));
+const ServiceShowcase = lazy(() => import('./pages/ServiceShowcase').then(m => ({ default: m.ServiceShowcase })));
+const CamBill = lazy(() => import('./pages/CamBill').then(m => ({ default: m.CamBill })));
+const CamStore = lazy(() => import('./pages/CamStore').then(m => ({ default: m.CamStore })));
+const POSShowcase = lazy(() => import('./pages/POSShowcase').then(m => ({ default: m.POSShowcase })));
+const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
+const Vision = lazy(() => import('./pages/Vision').then(m => ({ default: m.Vision })));
+const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
+const PurchaseReview = lazy(() => import('./pages/PurchaseReview').then(m => ({ default: m.PurchaseReview })));
+const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
 
 function App() {
   return (
     <Layout>
+      <PageMetadata />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -31,9 +37,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/vision" element={<Vision />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy" element={<Legal type="privacy" />} />
-        <Route path="/terms" element={<Legal type="terms" />} />
-        <Route path="/cookies" element={<Legal type="cookies" />} />
+        {policies.map(policy => <Route key={policy.id} path={policy.path} element={<Legal type={policy.id} />} />)}
+        <Route path="/cookie-policy" element={<Navigate to="/cookies" replace />} />
+        <Route path="/checkout" element={<PurchaseReview />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Layout>

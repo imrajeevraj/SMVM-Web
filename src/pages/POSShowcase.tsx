@@ -57,13 +57,13 @@ type ProductConfig = {
 };
 
 const cambillViews: View[] = [
-  { id: 'dashboard', title: 'Dashboard', icon: LayoutGrid, image: '/images/products/cambill-pos/dashboard.png', description: 'A consolidated operating view for sales, purchases, products, customers and store activity.' },
-  { id: 'billing', title: 'Billing', icon: ReceiptText, image: '/images/products/cambill-pos/billing.png', description: 'A focused sales workspace for building invoices and completing counter transactions.' },
-  { id: 'inventory', title: 'Inventory', icon: Boxes, image: '/images/products/cambill-pos/inventory.png', description: 'Structured inventory screens keep product and stock information organised for daily operations.' },
-  { id: 'products', title: 'Products', icon: PackageCheck, image: '/images/products/cambill-pos/products.png', description: 'A searchable product catalogue helps teams maintain items and find them quickly.' },
-  { id: 'customers', title: 'Customers', icon: Users, image: '/images/products/cambill-pos/customers.png', description: 'Customer records stay connected to sales workflows and business follow-up.' },
-  { id: 'reports', title: 'Reports', icon: BarChart3, image: '/images/products/cambill-pos/reports.png', description: 'Readable reporting views turn store activity into information your team can act on.' },
-  { id: 'settings', title: 'Settings', icon: Settings, image: '/images/products/cambill-pos/settings.png', description: 'Configuration tools help adapt the workspace to users and operational requirements.' },
+  { id: 'dashboard', title: 'Dashboard', icon: LayoutGrid, image: '/images/products/cambill-pos/dashboard.webp', description: 'A consolidated operating view for sales, purchases, products, customers and store activity.' },
+  { id: 'billing', title: 'Billing', icon: ReceiptText, image: '/images/products/cambill-pos/billing.webp', description: 'A focused sales workspace for building invoices and completing counter transactions.' },
+  { id: 'inventory', title: 'Inventory', icon: Boxes, image: '/images/products/cambill-pos/inventory.webp', description: 'Structured inventory screens keep product and stock information organised for daily operations.' },
+  { id: 'products', title: 'Products', icon: PackageCheck, image: '/images/products/cambill-pos/products.webp', description: 'A searchable product catalogue helps teams maintain items and find them quickly.' },
+  { id: 'customers', title: 'Customers', icon: Users, image: '/images/products/cambill-pos/customers.webp', description: 'Customer records stay connected to sales workflows and business follow-up.' },
+  { id: 'reports', title: 'Reports', icon: BarChart3, image: '/images/products/cambill-pos/reports.webp', description: 'Readable reporting views turn store activity into information your team can act on.' },
+  { id: 'settings', title: 'Settings', icon: Settings, image: '/images/products/cambill-pos/settings.webp', description: 'Configuration tools help adapt the workspace to users and operational requirements.' },
 ];
 
 const configs: Record<ProductKey, ProductConfig> = {
@@ -74,7 +74,7 @@ const configs: Record<ProductKey, ProductConfig> = {
     headline: 'Scale every store from',
     highlight: 'one clear workspace.',
     description: 'CamBill POS connects billing, purchases, inventory, customers, suppliers and reporting in a structured workspace built for larger retail operations.',
-    image: '/images/products/cambill-pos-card.png',
+    image: '/images/products/cambill-pos-card.webp',
     imageAlt: 'CamBill POS shown across desktop, laptop, tablet and mobile with retail billing equipment',
     accent: '43 139 255',
     secondary: '98 84 255',
@@ -119,7 +119,7 @@ const configs: Record<ProductKey, ProductConfig> = {
     headline: 'Make everyday pharmacy work',
     highlight: 'clear and dependable.',
     description: 'MediBill POS brings medicine inventory, pharmacy billing, batch handling, expiry visibility and customer records into one purpose-built workspace.',
-    image: '/images/products/medibill-pos-card.png',
+    image: '/images/products/medibill-pos-card.webp',
     imageAlt: 'MediBill POS pharmacy workspace shown on desktop and tablet with medicines and barcode scanner',
     accent: '5 166 105',
     secondary: '6 182 212',
@@ -163,7 +163,7 @@ const configs: Record<ProductKey, ProductConfig> = {
     headline: 'Lead every branch with',
     highlight: 'one intelligent platform.',
     description: 'MediBill Pro brings multi-branch pharmacy operations, central inventory visibility, user controls, supplier workflows and enterprise reporting into one scalable platform.',
-    image: '/images/products/medibill-pro-card.png',
+    image: '/images/products/medibill-pro-card.webp',
     imageAlt: 'MediBill Pro enterprise pharmacy dashboard shown on desktop and mobile with medicine stock',
     accent: '139 92 246',
     secondary: '75 89 255',
@@ -255,7 +255,16 @@ export function POSShowcase({ product }: { product: ProductKey }) {
 
             <div className="pos-showcase-hero__visual">
               <div className="pos-showcase-visual__glow" aria-hidden="true" />
-              <img src={config.image} alt={config.imageAlt} />
+              <img
+                src={config.image}
+                srcSet={`${config.image.replace('.webp', '-mobile.webp')} 480w, ${config.image} 1200w`}
+                sizes="(max-width: 768px) 100vw, 580px"
+                alt={config.imageAlt}
+                fetchpriority="high"
+                decoding="async"
+                width={1200}
+                height={800}
+              />
               <div className="pos-visual-note pos-visual-note--top" style={{ '--card-rgb': config.visualNotes[0].accent } as CSSProperties}>
                 {(() => { const Icon = config.visualNotes[0].icon; return <span><Icon aria-hidden="true" /></span>; })()}
                 <div><strong>{config.visualNotes[0].title}</strong><small>{config.visualNotes[0].caption}</small></div>
@@ -309,7 +318,7 @@ export function POSShowcase({ product }: { product: ProductKey }) {
                 <div className="pos-workspace-preview">
                   <AnimatePresence mode="wait">
                     <motion.div key={selectedView.id} id={`${product}-panel-${selectedView.id}`} role="tabpanel" tabIndex={0} aria-labelledby={`${product}-tab-${selectedView.id}`} initial={{ opacity: 0, y: reducedMotion ? 0 : 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: reducedMotion ? 0 : -8 }} transition={{ duration: reducedMotion ? 0 : .22 }}>
-                      <img src={selectedView.image} alt={`${selectedView.title} workspace in ${config.name}`} />
+                      <img src={selectedView.image} alt={`${selectedView.title} workspace in ${config.name}`} loading="lazy" decoding="async" width={1200} height={800} />
                       <div><h3>{selectedView.title}</h3><p>{selectedView.description}</p></div>
                     </motion.div>
                   </AnimatePresence>

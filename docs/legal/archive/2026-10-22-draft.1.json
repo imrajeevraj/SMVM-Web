@@ -1,0 +1,707 @@
+{
+  "version": "2026-10-22-draft.1",
+  "identity": {
+    "brandName": "SMVM Softwares",
+    "merchantLegalName": "BUSINESS_VERIFICATION_REQUIRED",
+    "businessStructure": "BUSINESS_VERIFICATION_REQUIRED",
+    "businessAddress": "BUSINESS_VERIFICATION_REQUIRED",
+    "supportEmail": {
+      "value": "smvmsoftware@gmail.com",
+      "status": "BUSINESS_VERIFICATION_REQUIRED",
+      "source": "Existing repository contact configuration; ownership and monitoring not confirmed"
+    },
+    "supportTelephone": {
+      "value": null,
+      "status": "NOT_PUBLISHED_AT_OWNER_REQUEST"
+    },
+    "grievanceOfficer": "BUSINESS_VERIFICATION_REQUIRED",
+    "grievanceContact": "BUSINESS_VERIFICATION_REQUIRED",
+    "privacyContactStatus": "BUSINESS_VERIFICATION_REQUIRED",
+    "operatingHours": "BUSINESS_VERIFICATION_REQUIRED",
+    "gstin": "BUSINESS_VERIFICATION_REQUIRED",
+    "registrationInformation": "BUSINESS_VERIFICATION_REQUIRED",
+    "websiteUrl": "https://smvmsoftwares.up.railway.app",
+    "websiteStatus": "OWNER_SUPPLIED_DEPLOYMENT_UNVERIFIED",
+    "paymentGateway": "Instamojo",
+    "paymentGatewayStatus": "NOT_INTEGRATED",
+    "legalApproval": "LEGAL_APPROVAL_REQUIRED",
+    "ownerApproval": "BUSINESS_VERIFICATION_REQUIRED",
+    "productionCheckoutEnabled": false,
+    "policyVersion": "2026-10-22-draft.1",
+    "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+    "lastUpdated": "2026-10-22",
+    "changeSummary": "Initial review drafts reflecting the static marketing site and email-draft support. No live sales enabled."
+  },
+  "policies": [
+    {
+      "id": "terms",
+      "path": "/terms",
+      "title": "Terms and Conditions",
+      "description": "Review terms for SMVM software enquiries, future software purchases and professional services.",
+      "sections": [
+        {
+          "id": "scope",
+          "title": "1. Scope and acceptance",
+          "paragraphs": [
+            "SMVM Softwares is a public-facing brand. The contracting merchant legal name, structure and principal address are BUSINESS_VERIFICATION_REQUIRED. Instamojo is a proposed payment provider, not the seller of SMVM products. These draft terms cover this public marketing website only; they do not establish terms for SMVM Cloud or any separate customer portal.",
+            "This site currently supports product and service enquiries, not online purchases. Sending an enquiry does not place an order. Before sales open, the merchant must approve these terms, publish its verified identity and require an affirmative, unchecked purchase agreement tied to the applicable policy versions."
+          ]
+        },
+        {
+          "id": "definitions",
+          "title": "2. Definitions",
+          "paragraphs": [
+            "Merchant means the verified legal operator of SMVM Softwares. Customer or User means the individual visiting or contracting, or the business they are authorized to represent. Website means the public SMVM Softwares marketing website. Product means an identified software offering; Software means its executable program and accompanying documentation; License means the agreed permission to use that software.",
+            "Service means agreed development, consulting or support work. Order means an identified request accepted by the Merchant. Transaction means a payment processed for an Order; Transaction Amount is the disclosed total payable. Payment Gateway means the provider processing that payment. Digital Delivery means the agreed electronic handover of files, access or license information. Refund means the return of an approved amount. Support means assistance within the agreed scope."
+          ]
+        },
+        {
+          "id": "eligibility",
+          "title": "3. Eligibility and authority",
+          "paragraphs": [
+            "Purchasers must be legally competent to contract under applicable Indian law. A person acting for a business must have authority to bind it. A minor should involve a parent or lawful guardian for any proposed contract. Browsing the site does not itself create a paid contract."
+          ]
+        },
+        {
+          "id": "information",
+          "title": "4. Product and service information",
+          "paragraphs": [
+            "The catalogue presents CamStore POS, CamBill POS, MediBill POS and MediBill Pro, plus website development, custom software, mobile/Android development, consulting and technical support. Current calls to action request a demo or discussion. They are not promises of a downloadable trial or immediate paid access.",
+            "Before purchase, the written offer must specify edition, verified features, operating system and version compatibility, hardware and dependency requirements, license duration, users/devices, activation, delivery, updates and support inclusions. Prices shown inside illustrative product screens are sample retail transactions, not software prices. Material product representations must be accurate; a disclaimer does not excuse misrepresentation."
+          ]
+        },
+        {
+          "id": "orders",
+          "title": "5. Orders and contract formation",
+          "paragraphs": [
+            "For a future enabled sale, the customer selects the product or service, reviews the complete price and delivery terms, affirmatively accepts the policies and initiates payment. The Merchant must verify the provider payment and then communicate order acceptance and fulfilment details. A browser redirect, payment attempt or debit notification alone is not a confirmed order.",
+            "Reasonable fraud and order checks may be performed. If an order cannot be accepted after payment, the customer must receive an explanation and the appropriate refund or other lawful remedy. Pending payments should be reconciled before a customer is asked to pay again."
+          ]
+        },
+        {
+          "id": "pricing",
+          "title": "6. Prices, currency and taxes",
+          "paragraphs": [
+            "Software prices, GST registration and tax treatment remain BUSINESS_VERIFICATION_REQUIRED. Request an itemized written quotation in INR. Before any payment, the base amount, quantity, duration where relevant, discount, tax basis, additional fees and final total must be disclosed. No fee or paid add-on may be silently added after review. A product screenshot mentioning GST does not establish the Merchant’s GST registration."
+          ]
+        },
+        {
+          "id": "payments",
+          "title": "7. Payments and transaction issues",
+          "paragraphs": [
+            "Instamojo is the intended gateway but is not connected to this website. No payment methods, recurring billing or checkout service are currently offered here. When activated, only methods supported by the approved merchant account will be shown. Payment credentials must be entered only on the authorized provider checkout.",
+            "Report pending or failed payments, duplicate debits and incorrect charges using the support request tool. Provide a payment reference, never card numbers, CVV, OTPs or passwords. A failed payment grants no paid access. Chargebacks and payment disputes remain subject to applicable law and provider processes; customers are not required to waive those rights."
+          ]
+        },
+        {
+          "id": "licensing",
+          "title": "8. Software licensing",
+          "paragraphs": [
+            "A software purchase grants only the license stated in the approved product addendum and order. It does not automatically transfer copyright or source code. No common subscription duration, device limit, activation method or transfer restriction is assumed for all four products. Read the separate Software License Agreement before any future purchase."
+          ]
+        },
+        {
+          "id": "ip",
+          "title": "9. Intellectual property",
+          "paragraphs": [
+            "SMVM and its licensors retain their respective rights in software, branding, documentation and website materials. Customer-owned data and materials remain the customer’s. Third-party and open-source licenses continue to apply to their components. Obtain permission for redistribution or use outside the applicable license, except where the law permits it."
+          ]
+        },
+        {
+          "id": "support",
+          "title": "10. Updates, maintenance and support",
+          "paragraphs": [
+            "Support hours, response targets, covered versions, maintenance charges and upgrade entitlements must be agreed in the offer. No perpetual free support, lifetime upgrades, uninterrupted availability or round-the-clock staffing is promised by these drafts. Existing contractual commitments and statutory remedies remain applicable."
+          ]
+        },
+        {
+          "id": "services",
+          "title": "11. Professional services and statements of work",
+          "paragraphs": [
+            "Custom work requires a separately accepted written proposal or Statement of Work (SOW). It must define customer requirements, deliverables, exclusions, milestones, advances and payment obligations, dependencies, revision limits if agreed, change requests, acceptance criteria and procedures, and delay handling.",
+            "The SOW must allocate domain, hosting and third-party costs; confidentiality obligations; ownership of pre-existing and newly created intellectual property; any source code handover; and maintenance. Customer approval is required for scope or price changes. Ready-made software license restrictions do not automatically govern bespoke deliverables. Cancellation and fair accounting for completed work follow the Refund Policy and the lawful agreed SOW."
+          ]
+        },
+        {
+          "id": "responsibilities",
+          "title": "12. Customer responsibilities",
+          "paragraphs": [
+            "Provide accurate contact and requirement information, obtain rights to supplied materials, maintain the agreed technical environment, protect any software credentials and keep appropriate backups. Do not send sensitive customer datasets in an ordinary support email; ask for an agreed secure method if diagnostic data is necessary."
+          ]
+        },
+        {
+          "id": "use",
+          "title": "13. Acceptable use",
+          "paragraphs": [
+            "Do not use the website or software for fraud, malware, piracy, credential abuse, unauthorized access, unlawful redistribution or attacks on others. Responsible security reports, honest reviews, lawful criticism and consumer complaints are permitted. See the Acceptable Use Policy."
+          ]
+        },
+        {
+          "id": "refunds",
+          "title": "14. Cancellation and refunds",
+          "paragraphs": [
+            "The separate Cancellation and Refund Policy addresses digital products and professional services, including non-delivery, defects, duplicate payments and work already performed. There is no blanket “all sales final” rule. The proposed Instamojo request period is at least three business days from the transaction, without limiting later statutory or contractual remedies."
+          ]
+        },
+        {
+          "id": "liability",
+          "title": "15. Warranties, disclaimers and liability",
+          "paragraphs": [
+            "Software outcomes depend on the disclosed requirements, configuration and appropriate use. No unsupported result, tax compliance certification or error-free operation is guaranteed. Any negotiated liability allocation requires legal review and must be reasonable for the transaction. These drafts impose no numerical liability cap or blanket exclusion.",
+            "Nothing in this policy excludes rights, remedies or liabilities that cannot lawfully be excluded, including remedies for defective software, misleading descriptions, non-delivery or deficient services."
+          ]
+        },
+        {
+          "id": "termination",
+          "title": "16. Suspension and termination",
+          "paragraphs": [
+            "Where legally justified, access may be restricted for material license breaches, fraud or security threats. Provide notice, reasons and a reasonable opportunity to remedy where appropriate; urgent security action may require prompt restriction followed by explanation. Restrictions must be proportionate. Termination does not erase accrued payment rights or customer remedies and must not disable unrelated paid purchases."
+          ]
+        },
+        {
+          "id": "third-parties",
+          "title": "17. Third-party services",
+          "paragraphs": [
+            "Hosting infrastructure serves the site, and an email provider processes messages the customer chooses to send. External map and social destinations have separate terms. Instamojo will process payments only if the integration is activated after review. The Merchant remains responsible for its own product and service commitments."
+          ]
+        },
+        {
+          "id": "law",
+          "title": "18. Governing law",
+          "paragraphs": [
+            "Applicable Indian law governs the proposed commercial relationship. The appropriate contractual jurisdiction remains LEGAL_APPROVAL_REQUIRED after verification of the merchant’s location and business circumstances. No exclusive venue or mandatory arbitration clause is selected by these drafts."
+          ]
+        },
+        {
+          "id": "disputes",
+          "title": "19. Disputes and complaints",
+          "paragraphs": [
+            "Use the Grievance page to prepare a complaint or escalation and retain your correspondence and payment evidence. The grievance officer and operational timelines must be confirmed before sales open. Customers retain access to competent consumer commissions, courts and other available statutory remedies; contacting support is not a waiver of those remedies."
+          ]
+        },
+        {
+          "id": "changes",
+          "title": "20. Policy changes and earlier orders",
+          "paragraphs": [
+            "Material amendments require explicit owner and legal approval, a new version, an archived prior text and reasonable notice before taking effect. An existing transaction remains linked to the terms accepted for it unless a lawful and expressly agreed change applies. Draft review dates are not effective contract dates."
+          ]
+        },
+        {
+          "id": "contact",
+          "title": "21. Contact",
+          "paragraphs": [
+            "Use the email support options below or the Contact page. The existing email channel is awaiting owner verification. Telephone contact is not published at the owner’s request. Merchant identity and the responsible grievance contact must be completed before checkout opens."
+          ]
+        }
+      ],
+      "version": "2026-10-22-draft.1",
+      "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+      "lastUpdated": "2026-10-22",
+      "publicUrl": "https://smvmsoftwares.up.railway.app/terms",
+      "changeSummary": "Initial review drafts reflecting the static marketing site and email-draft support. No live sales enabled.",
+      "archiveUrl": "/legal/archive/2026-10-22-draft.1.json"
+    },
+    {
+      "id": "privacy",
+      "path": "/privacy",
+      "title": "Privacy Policy",
+      "description": "How the SMVM marketing site handles enquiries, local preferences, support drafts and hosting data.",
+      "sections": [
+        {
+          "id": "scope",
+          "title": "Scope and responsible operator",
+          "paragraphs": [
+            "This notice describes this marketing website, not data processing inside SMVM software or SMVM Cloud. The legal operator and verified privacy contact are BUSINESS_VERIFICATION_REQUIRED. The existing support email can be used to request clarification; its ownership and monitoring still need confirmation."
+          ]
+        },
+        {
+          "id": "enquiries",
+          "title": "Project enquiries and support requests",
+          "paragraphs": [
+            "The project form collects your name, email, selected service and project details, with optional company, budget and timeline. The support tool collects an email address, request category, product/service, reason and optional order/payment references. Its purpose is to prepare correspondence about the request you choose to make.",
+            "Required consent is separate from purchase acceptance and contains no marketing permission. In this build, entries remain in page memory until you choose to open an email draft or copy the text. Opening a draft hands the entered details to your email application; sending it shares them with the recipient and email providers. The site cannot confirm sending or receipt. Leaving or reloading clears page-memory entries; copies and email drafts remain under your email/device controls."
+          ]
+        },
+        {
+          "id": "browsing",
+          "title": "Browsing, local storage and chat",
+          "paragraphs": [
+            "The theme preference smvm-theme stores “light” or “dark” in your browser until changed or cleared. Search text and the automated product guide conversation remain in memory in the open page; the guide uses local rules and sends no chat data to an AI provider. No optional analytics, advertising pixels, account cookies, application error-reporting SDKs or download trackers are implemented in this source.",
+            "Hosting infrastructure necessarily receives request information such as IP address, browser/request metadata and requested paths. Actual access logs, security monitoring, retention and access permissions must be confirmed with the deployment operator. Avoid placing personal information in URLs."
+          ]
+        },
+        {
+          "id": "commerce",
+          "title": "Purchases, payment and license data",
+          "paragraphs": [
+            "There is no live payment processing, billing database, license activation or customer account service in this site. The purchase-review screen does not save acceptance or create an order. Instamojo is planned but receives no checkout data from this build. Before enabling commerce, this notice must be updated for billing, payment references, delivery, consent evidence and any license telemetry. Never submit card numbers, CVV, OTPs or passwords to support."
+          ]
+        },
+        {
+          "id": "purposes",
+          "title": "Purposes and processing grounds",
+          "paragraphs": [
+            "Enquiry information is provided voluntarily to discuss a requested product/service or respond to a complaint. The form asks for permission to prepare and share the relevant correspondence. Contract performance, legal recordkeeping, dispute handling and any other processing grounds require review for the actual merchant and applicable law. Optional marketing would require its own choice; this site does not collect that permission."
+          ]
+        },
+        {
+          "id": "providers",
+          "title": "Providers, sharing and location",
+          "paragraphs": [
+            "The deployment supplied for review is Railway; the repository also contains a Sites hosting configuration. The active production host and region have not been verified. The listed Gmail mailbox involves Google’s email service if you send a message, alongside your own email provider. Hosting and email infrastructure can process data; we do not claim data is never shared or stored only in India.",
+            "External map or social links contact those providers only when followed. Provider terms govern those destinations. Any additional processors, lawful disclosures or international transfers must be assessed and documented before the associated processing is introduced."
+          ]
+        },
+        {
+          "id": "retention",
+          "title": "Retention and access",
+          "paragraphs": [
+            "No contact or complaint database is implemented here. Email messages and hosting logs may persist with their respective operators. A verified retention schedule, deletion process and authorized access list are BUSINESS_VERIFICATION_REQUIRED. The merchant must determine retention from actual support, contract, dispute and legal needs rather than adopt an arbitrary duration.",
+            "Only personnel and service providers with a legitimate need should have access, with appropriate account permissions and security controls. This is an operational requirement for review, not a claim that mailbox or hosting permissions have been audited."
+          ]
+        },
+        {
+          "id": "security",
+          "title": "Security and sensitive information",
+          "paragraphs": [
+            "Forms validate required input and render text through React. Production hosting must use HTTPS. These measures do not guarantee absolute security. Do not include health records, identity documents, payment credentials or unrelated customer data in a request. If evidence is needed, share a minimal redacted description first and agree an appropriate secure channel."
+          ]
+        },
+        {
+          "id": "choices",
+          "title": "Access, correction, deletion and complaints",
+          "paragraphs": [
+            "Use the support request tool under “Privacy request” to request access, correction, deletion or withdrawal of previously given consent. Identify the relevant correspondence; do not send an identity document unless a proportionate verification method is agreed. The merchant should explain any lawful retention obligation or other reason a request cannot be fully fulfilled.",
+            "The site does not have a self-service account or automatic deletion API. Operational response targets and the designated privacy/grievance contact require confirmation. Applicable statutory remedies remain available; see the Grievance page."
+          ]
+        },
+        {
+          "id": "children",
+          "title": "Children and representative enquiries",
+          "paragraphs": [
+            "The marketing site is intended for business product and service enquiries and has no age-verified accounts. A parent or lawful guardian should handle a minor’s proposed purchase. Do not submit children’s or patients’ personal data in free-text enquiries. Any future processing involving children requires a separate legal and technical review."
+          ]
+        },
+        {
+          "id": "changes",
+          "title": "Changes and phased law",
+          "paragraphs": [
+            "This draft is designed for review against applicable Indian privacy law. DPDP obligations have phased commencement; implementation of this notice does not establish full DPDP compliance. Future obligations, processor verification, breach response and rights-handling readiness are recorded in the repository privacy checklist. Material changes require notice, versioning and approval."
+          ]
+        }
+      ],
+      "version": "2026-10-22-draft.1",
+      "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+      "lastUpdated": "2026-10-22",
+      "publicUrl": "https://smvmsoftwares.up.railway.app/privacy",
+      "changeSummary": "Initial review drafts reflecting the static marketing site and email-draft support. No live sales enabled.",
+      "archiveUrl": "/legal/archive/2026-10-22-draft.1.json"
+    },
+    {
+      "id": "refund",
+      "path": "/refund-policy",
+      "title": "Cancellation and Refund Policy",
+      "description": "Draft refund terms distinguishing digital software purchases from commissioned professional services.",
+      "sections": [
+        {
+          "id": "scope",
+          "title": "Scope and current availability",
+          "paragraphs": [
+            "This is a proposed policy for merchant and legal review. Online checkout and automated refunds are not enabled on this site. Existing customer rights and any applicable agreed contract continue to apply. Use the request tool below for an enquiry about an actual purchase or project; preparing a draft does not file or approve a refund.",
+            "Nothing in this policy excludes rights, remedies or liabilities that cannot lawfully be excluded, including remedies for defective software, misleading descriptions, non-delivery or deficient services."
+          ]
+        },
+        {
+          "id": "software",
+          "title": "Digital software purchases",
+          "paragraphs": [
+            "Report payment without delivery, a wrong or unusable license, activation failure, material differences from the advertised description, misleading claims or verified technical defects. Appropriate remedies may include correct delivery, repair, replacement or refund, according to the facts, agreed terms and applicable law. Diagnostic cooperation must be reasonable and must not delay a mandatory remedy.",
+            "Duplicate charges and accidental duplicate orders should be reconciled promptly; the merchant must not retain an unintended duplicate payment without a lawful basis. Do not pay again while a pending debit is being checked.",
+            "Compatibility must be clearly disclosed before purchase. An incompatibility that was not adequately disclosed must not automatically be treated as the customer’s fault. Where disclosed requirements were not met, or the customer changes their mind, review the agreed voluntary terms and mandatory rights. There is no blanket non-refundable exclusion for activated or downloaded software."
+          ]
+        },
+        {
+          "id": "services",
+          "title": "Professional services and partially completed work",
+          "paragraphs": [
+            "Before work begins, review cancellation against the accepted SOW and any specifically approved, unavoidable expenses. After work begins, provide an itemized account of work actually performed, delivered milestones and customer-approved third-party costs. Only fair, disclosed, contractually supported and legally permissible deductions may be applied.",
+            "Undelivered milestones, deficient services, material delays and disputed acceptance require a reasoned review and an appropriate remedy. A custom deliverable or an advance payment does not automatically make the entire payment non-refundable. Do not deduct twice for the same work or impose undisclosed cancellation penalties. Agree any revised delivery plan with the customer."
+          ]
+        },
+        {
+          "id": "window",
+          "title": "Request period and later-discovered problems",
+          "paragraphs": [
+            "For a future Instamojo sale, the proposed policy permits refund requests for at least three business days from the transaction, or any longer period stated in the offer or required by law. This is a request period, not a guarantee of bank settlement or automatic approval.",
+            "For this provider-linked minimum, business days follow the applicable Instamojo agreement: Monday to Friday, excluding days when Indian banking institutions are authorized or required to close. Three business days are not three calendar days. A minimum voluntary window does not bar later claims for latent defects, non-delivery, misrepresentation or other statutory remedies. The final calculation and any longer product-specific period require legal approval."
+          ]
+        },
+        {
+          "id": "request",
+          "title": "How to request a refund",
+          "paragraphs": [
+            "Prepare an email below with your contact email, product or service, reason and any available order and payment references. If a reference is unavailable, explain that in the reason; it should not prevent raising a complaint. Keep your sent email and relevant purchase evidence. Supply redacted supporting evidence only where reasonably necessary.",
+            "Do not send card numbers, CVV, bank passwords or OTPs. There is no ticket-tracking backend: the email application must send the message, and the merchant must acknowledge it separately."
+          ]
+        },
+        {
+          "id": "review",
+          "title": "Review, decision and escalation",
+          "paragraphs": [
+            "Acknowledgment, investigation, decision and refund-initiation targets remain BUSINESS_VERIFICATION_REQUIRED. They must be operationally achievable and no slower than applicable legal obligations. The final published policy must identify those timelines before transactions open. No bank credit date is guaranteed by this draft.",
+            "The merchant should explain the decision and any calculation, request only necessary evidence and provide an escalation route through the grievance contact. A customer may challenge a rejection or partial refund and pursue applicable consumer or payment dispute remedies."
+          ]
+        },
+        {
+          "id": "method",
+          "title": "Refund method and status",
+          "paragraphs": [
+            "Approved refunds should normally return through the original payment method where supported, following provider requirements and applicable law. Merchant initiation, gateway confirmation and bank credit are different events. Only confirmed provider results may be described as a completed refund; an internal request is not proof that money has moved.",
+            "No live refund API or status portal exists here. Authorized merchant staff must handle any actual refund through the approved provider process and communicate its reference and current status accurately. Do not issue an invented refund reference or simulated receipt."
+          ]
+        },
+        {
+          "id": "license",
+          "title": "Effect on a refunded license",
+          "paragraphs": [
+            "Only where permitted by the approved license terms and law, the specifically refunded license may be deactivated after the appropriate refund decision. Explain the effect to the customer and any lawful data export arrangements. Never revoke unrelated paid purchases. No automatic deactivation service is implemented in this website."
+          ]
+        }
+      ],
+      "version": "2026-10-22-draft.1",
+      "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+      "lastUpdated": "2026-10-22",
+      "publicUrl": "https://smvmsoftwares.up.railway.app/refund-policy",
+      "changeSummary": "Initial review drafts reflecting the static marketing site and email-draft support. No live sales enabled.",
+      "archiveUrl": "/legal/archive/2026-10-22-draft.1.json"
+    },
+    {
+      "id": "delivery",
+      "path": "/shipping-and-delivery",
+      "title": "Digital Delivery and Shipping Policy",
+      "description": "Electronic delivery, installation support and project handover terms for SMVM software and services.",
+      "sections": [
+        {
+          "id": "digital",
+          "title": "Digital-only scope",
+          "paragraphs": [
+            "The catalogue covers software and professional services. No physical goods are sold by this website, so physical shipping, courier charges and parcel returns are not applicable. Hardware and retail goods shown in product demonstrations illustrate POS use; they are not items for sale here."
+          ]
+        },
+        {
+          "id": "current",
+          "title": "Current delivery capability",
+          "paragraphs": [
+            "The site currently offers enquiries and product tours. It does not issue downloadable software, paid license keys, activation access or automatic purchase emails. Demo requests are not downloads. Fulfilment methods and estimated times are BUSINESS_VERIFICATION_REQUIRED for each product before sale."
+          ]
+        },
+        {
+          "id": "software",
+          "title": "Software handover after a verified order",
+          "paragraphs": [
+            "An approved offer must identify whether delivery is manual or automatic, the delivery channel, file/version, download access period if limited, installation instructions, system requirements and any license or activation steps. Only authoritative payment verification and order acceptance may trigger paid delivery.",
+            "A purchase confirmation or receipt should identify the order, product and verified payment, while delivery confirmation should describe what was supplied. An email draft or payment browser redirect is neither. Do not assume a key will be issued if that product uses a different agreed license mechanism."
+          ]
+        },
+        {
+          "id": "failure",
+          "title": "Missing or incorrect delivery",
+          "paragraphs": [
+            "If delivery is late, absent, corrupted, incorrect or a link is broken, contact support with the order reference if available and a description. Check the supplied email address and spam folder where email delivery was agreed. The merchant should investigate, resend or correct the delivery, provide reasonable installation assistance within the agreed scope, or arrange an appropriate remedy.",
+            "Activation failures and unusable files are also covered by the Refund Policy and applicable law. Do not send credentials or sensitive customer data. No unverified delivery-time guarantee is made."
+          ]
+        },
+        {
+          "id": "services",
+          "title": "Professional services and acceptance",
+          "paragraphs": [
+            "The SOW must specify milestones, delivery format, testing and acceptance criteria, customer dependencies and handover procedure. Hosting/domain access, source code, documentation, training and maintenance are included only as agreed. Material delays or scope changes require communication and an agreed resolution; silence alone should not substitute for an undisclosed acceptance process."
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "Customer remedies",
+          "paragraphs": [
+            "Nothing in this policy excludes rights, remedies or liabilities that cannot lawfully be excluded, including remedies for defective software, misleading descriptions, non-delivery or deficient services."
+          ]
+        }
+      ],
+      "version": "2026-10-22-draft.1",
+      "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+      "lastUpdated": "2026-10-22",
+      "publicUrl": "https://smvmsoftwares.up.railway.app/shipping-and-delivery",
+      "changeSummary": "Initial review drafts reflecting the static marketing site and email-draft support. No live sales enabled.",
+      "archiveUrl": "/legal/archive/2026-10-22-draft.1.json"
+    },
+    {
+      "id": "license",
+      "path": "/license-agreement",
+      "title": "Software License Agreement",
+      "description": "Draft EULA framework and product addenda requirements for SMVM software licenses.",
+      "sections": [
+        {
+          "id": "grant",
+          "title": "License grant and product addendum",
+          "paragraphs": [
+            "After an accepted order and any required verified payment, the customer receives the usage rights expressly set out in the approved product addendum. This draft grants no paid access by itself. CamStore POS, CamBill POS, MediBill POS and MediBill Pro each require confirmation of their actual license model; they are not assumed to be subscriptions.",
+            "For each product, license duration, edition/version, installations, users/devices, branches, transfer rights, activation method and renewal terms are BUSINESS_VERIFICATION_REQUIRED. These material terms must be provided before purchase; no unagreed limit may be introduced retrospectively."
+          ]
+        },
+        {
+          "id": "ownership",
+          "title": "Ownership and permitted use",
+          "paragraphs": [
+            "Software copyright and other intellectual property remain with their respective owners. A license purchase does not convey source code or copyright. Use the product for the purposes and environments specified in the accepted offer. Customer-owned data remains the customer’s; any necessary processing rights must be limited to the agreed service."
+          ]
+        },
+        {
+          "id": "activation",
+          "title": "Installation, activation and transfers",
+          "paragraphs": [
+            "Follow the supplied installation instructions and verified system requirements. Any activation requirement, offline capability, license transfer restriction or hardware replacement process must be disclosed in the product addendum. This marketing site has no license activation backend and does not collect device identifiers for activation."
+          ]
+        },
+        {
+          "id": "restrictions",
+          "title": "Redistribution and lawful exceptions",
+          "paragraphs": [
+            "Do not pirate, resell or distribute software or license credentials without authorization. Do not bypass access controls for unlawful use. Any restrictions on copying, modification or reverse engineering remain subject to applicable statutory permissions and third-party license rights. Honest reviews and lawful security reporting are permitted."
+          ]
+        },
+        {
+          "id": "updates",
+          "title": "Updates, upgrades and maintenance",
+          "paragraphs": [
+            "The offer must identify included updates, supported versions, maintenance scope and any upgrade charges. No universal lifetime upgrade entitlement or perpetual support is created by this draft. Changes to future versions must not silently reduce rights already granted. Existing agreed commitments remain enforceable."
+          ]
+        },
+        {
+          "id": "dependencies",
+          "title": "Requirements and third-party components",
+          "paragraphs": [
+            "Confirm operating system, hardware, database, network and other dependency requirements before purchase. Applicable open-source notices and third-party licenses should accompany the relevant distribution. No full component inventory is available in this marketing repository; the product owner must supply it."
+          ]
+        },
+        {
+          "id": "data",
+          "title": "Data, backups and privacy",
+          "paragraphs": [
+            "Customers should keep backups and validate migration or updates in a suitable environment. This responsibility does not remove the merchant’s responsibility for defects or deficient services. Product telemetry, remote support, activation data and any cloud processing must be disclosed in a product-specific notice; the website Privacy Policy describes only this marketing site."
+          ]
+        },
+        {
+          "id": "remedies",
+          "title": "Warranty and remedies",
+          "paragraphs": [
+            "Any commercial warranty must be stated in the accepted offer. Report material defects, activation failures or misdescription through support. Repair, replacement, refund and other remedies depend on applicable law and the agreed terms; no blanket exclusion applies.",
+            "Nothing in this policy excludes rights, remedies or liabilities that cannot lawfully be excluded, including remedies for defective software, misleading descriptions, non-delivery or deficient services."
+          ]
+        },
+        {
+          "id": "termination",
+          "title": "Termination and refunds",
+          "paragraphs": [
+            "Material breach may justify proportionate restriction or termination, with notice and an opportunity to remedy where appropriate. An urgent security threat may require earlier action followed by explanation. Refund-related deactivation may affect only the relevant license and only where law and the approved contract permit. Explain any applicable access or data handover effects."
+          ]
+        },
+        {
+          "id": "law",
+          "title": "Law, disputes and custom development",
+          "paragraphs": [
+            "Applicable Indian law and the complaint process in the Terms apply, without excluding consumer remedies. Venue and dispute wording need legal approval. Custom development ownership, source handover and licensing are governed by a separate accepted SOW, not automatically by this ready-made software EULA."
+          ]
+        }
+      ],
+      "version": "2026-10-22-draft.1",
+      "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+      "lastUpdated": "2026-10-22",
+      "publicUrl": "https://smvmsoftwares.up.railway.app/license-agreement",
+      "changeSummary": "Initial review drafts reflecting the static marketing site and email-draft support. No live sales enabled.",
+      "archiveUrl": "/legal/archive/2026-10-22-draft.1.json"
+    },
+    {
+      "id": "cookies",
+      "path": "/cookies",
+      "title": "Cookie and Tracking Policy",
+      "description": "The local theme preference and actual tracking behavior of the SMVM marketing site.",
+      "sections": [
+        {
+          "id": "inventory",
+          "title": "What this site uses",
+          "paragraphs": [
+            "The application stores the selected light or dark theme in localStorage under smvm-theme. It is a browser preference, not an advertising identifier, and remains until you change it or clear site data. If storage is unavailable, the site still works and can use your system theme.",
+            "This source implements no optional analytics cookies, marketing pixels, authentication cookies, session storage identifiers or embedded third-party tracking scripts. There is therefore no optional-cookie banner or pretend analytics consent control."
+          ]
+        },
+        {
+          "id": "controls",
+          "title": "Your controls",
+          "paragraphs": [
+            "Use the theme button in the site header to change appearance. Clear site data in your browser settings to remove the saved preference. Search and automated guide entries are held only in page memory. Rejecting browser storage must not prevent reading policies or preparing support correspondence."
+          ]
+        },
+        {
+          "id": "providers",
+          "title": "Hosting and external services",
+          "paragraphs": [
+            "Hosting request logs are separate from browser cookies; deployed infrastructure behavior still needs verification. Links to external services take you to those providers when selected, where their own storage and privacy terms apply. This policy does not certify that an uninspected deployment adds no cookies."
+          ]
+        },
+        {
+          "id": "future",
+          "title": "If optional tracking is introduced",
+          "paragraphs": [
+            "Before adding optional tracking, update this inventory and obtain any required consent before loading it. Provide equally accessible acceptance, rejection, customization and a way to reopen settings. Essential functions must remain available after rejection. These controls are future requirements, not features that are already needed for a nonexistent tracker."
+          ]
+        }
+      ],
+      "version": "2026-10-22-draft.1",
+      "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+      "lastUpdated": "2026-10-22",
+      "publicUrl": "https://smvmsoftwares.up.railway.app/cookies",
+      "changeSummary": "Initial review drafts reflecting the static marketing site and email-draft support. No live sales enabled.",
+      "archiveUrl": "/legal/archive/2026-10-22-draft.1.json"
+    },
+    {
+      "id": "acceptable-use",
+      "path": "/acceptable-use",
+      "title": "Acceptable Use Policy",
+      "description": "Lawful and responsible use of SMVM website, software and support channels.",
+      "sections": [
+        {
+          "id": "permitted",
+          "title": "Responsible use",
+          "paragraphs": [
+            "Use this website and agreed software access for lawful enquiries and business activities. Respect others’ privacy, intellectual property and security. Submit accurate information needed for the service and obtain authority before sharing someone else’s materials."
+          ]
+        },
+        {
+          "id": "prohibited",
+          "title": "Prohibited conduct",
+          "paragraphs": [
+            "Do not commit fraud, distribute malware, pirate software, redistribute paid licenses without permission, steal credentials, attempt unauthorized access, disrupt systems or use services for unlawful conduct. Do not use support channels for threats, harassment, impersonation or automated spam. Legitimate repeated follow-up on an unresolved issue is not itself abuse."
+          ]
+        },
+        {
+          "id": "report",
+          "title": "Security reports and complaints",
+          "paragraphs": [
+            "Report suspected vulnerabilities through the support email with a minimal description, without exposing other people’s data. Do not exploit an issue or access data beyond authorization. Responsible reports, honest negative reviews, lawful criticism and consumer complaints are permitted; this policy does not restrict them."
+          ]
+        },
+        {
+          "id": "action",
+          "title": "Proportionate action and remedies",
+          "paragraphs": [
+            "The merchant may take proportionate protective action for verified misuse, with reasons, notice and a way to challenge the decision where appropriate. Urgent security response may precede notice. Statutory remedies and unrelated paid purchases must be respected. These drafts do not establish a customer account or enforcement backend on the marketing website."
+          ]
+        }
+      ],
+      "version": "2026-10-22-draft.1",
+      "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+      "lastUpdated": "2026-10-22",
+      "publicUrl": "https://smvmsoftwares.up.railway.app/acceptable-use",
+      "changeSummary": "Initial review drafts reflecting the static marketing site and email-draft support. No live sales enabled.",
+      "archiveUrl": "/legal/archive/2026-10-22-draft.1.json"
+    },
+    {
+      "id": "grievance",
+      "path": "/grievance",
+      "title": "Complaints and Grievance Redressal",
+      "description": "Prepare a complaint, refund, payment, license, delivery or privacy request for SMVM support.",
+      "sections": [
+        {
+          "id": "channels",
+          "title": "How to raise an issue",
+          "paragraphs": [
+            "Use the email-draft tool below for purchase questions, refunds, payment failures, incorrect charges, technical issues, license problems, digital delivery, privacy requests or complaints. Add the available reference and explain the outcome you seek. The tool does not submit a ticket; review and send the message in your email application, or copy it into your preferred email service."
+          ]
+        },
+        {
+          "id": "responsibility",
+          "title": "Responsible contact",
+          "paragraphs": [
+            "Grievance officer name and designated contact: BUSINESS_VERIFICATION_REQUIRED. The existing general support email is displayed below with its verification status. It is not presented as an appointed grievance officer. Telephone details are not published at the owner’s request. Merchant identity, officer appointment and support arrangements must be resolved before online sales."
+          ]
+        },
+        {
+          "id": "process",
+          "title": "Acknowledgment, investigation and resolution",
+          "paragraphs": [
+            "Retain your sent message and relevant evidence. The merchant should acknowledge receipt, identify the issue, request only necessary information, investigate and provide a reasoned outcome and any available escalation. No reference number is generated by this site, and no complaint is marked received or resolved automatically.",
+            "Operational acknowledgment, review and resolution targets are BUSINESS_VERIFICATION_REQUIRED. Applicable legal deadlines must be met; they cannot be displaced by an internal target. The final reviewed policy must state the applicable timelines before transactions open. No round-the-clock staffing is claimed."
+          ]
+        },
+        {
+          "id": "escalation",
+          "title": "Escalation and independent remedies",
+          "paragraphs": [
+            "If the response does not address the issue, reply with the previous correspondence and request review by the designated grievance contact once appointed. A consumer may also approach the National Consumer Helpline or other competent statutory forum. Seeking support does not waive consumer commission, court, privacy or payment dispute remedies."
+          ]
+        },
+        {
+          "id": "privacy",
+          "title": "Minimum information and privacy",
+          "paragraphs": [
+            "Use your email address and available order/payment references. Do not send card credentials, OTPs, passwords, patient records or unnecessary identity documents. Evidence should be limited and redacted where possible. The Privacy Policy explains email handoff and the absence of a complaint database."
+          ]
+        }
+      ],
+      "version": "2026-10-22-draft.1",
+      "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+      "lastUpdated": "2026-10-22",
+      "publicUrl": "https://smvmsoftwares.up.railway.app/grievance",
+      "changeSummary": "Initial review drafts reflecting the static marketing site and email-draft support. No live sales enabled.",
+      "archiveUrl": "/legal/archive/2026-10-22-draft.1.json"
+    },
+    {
+      "id": "disclaimer",
+      "path": "/disclaimer",
+      "title": "Website, Product and Services Disclaimer",
+      "description": "Limits of marketing demonstrations and the status of SMVM legal and payment readiness.",
+      "sections": [
+        {
+          "id": "illustrations",
+          "title": "Marketing demonstrations",
+          "paragraphs": [
+            "Product screens, sample customer records, retail amounts and example invoices illustrate software workflows. They are not live merchant orders, payment receipts or proof of SMVM’s GST registration. Confirm the actual edition, features, requirements and license terms in a written offer before purchase."
+          ]
+        },
+        {
+          "id": "advice",
+          "title": "Professional judgment",
+          "paragraphs": [
+            "POS and pharmacy workflow tools do not replace professional medical, legal, accounting or tax judgment. No marketing description certifies a customer’s tax compliance or guarantees a business outcome. The merchant remains responsible for accurate product representations and the services it agrees to provide."
+          ]
+        },
+        {
+          "id": "external",
+          "title": "Availability and external links",
+          "paragraphs": [
+            "External destinations have their own terms and may change. Site availability depends on hosting and network conditions. No uninterrupted-service guarantee is made in these drafts. Any contracted support or service-level commitment remains subject to its lawful agreed terms."
+          ]
+        },
+        {
+          "id": "approval",
+          "title": "Review and payment status",
+          "paragraphs": [
+            "These legal texts are drafts requiring approval by an appropriately qualified Indian legal professional and verification by the business owner. They are not a legal certification, regulatory approval or Instamojo approval. Online checkout, payment verification, automatic licensing and refunds are not enabled."
+          ]
+        },
+        {
+          "id": "rights",
+          "title": "Rights preserved",
+          "paragraphs": [
+            "Nothing in this policy excludes rights, remedies or liabilities that cannot lawfully be excluded, including remedies for defective software, misleading descriptions, non-delivery or deficient services."
+          ]
+        }
+      ],
+      "version": "2026-10-22-draft.1",
+      "effectiveDate": "LEGAL_APPROVAL_REQUIRED",
+      "lastUpdated": "2026-10-22",
+      "publicUrl": "https://smvmsoftwares.up.railway.app/disclaimer",
+      "changeSummary": "Initial review drafts reflecting the static marketing site and email-draft support. No live sales enabled.",
+      "archiveUrl": "/legal/archive/2026-10-22-draft.1.json"
+    }
+  ]
+}

@@ -76,9 +76,13 @@ export function ProductsHero() {
             </div>
             <div className="products-hero-analytics" aria-hidden="true"><BarChart3 /></div>
             <img
-              src="/images/products/camstore-pos-card.png"
+              src="/images/products/camstore-pos-card.webp"
+              srcSet="/images/products/camstore-pos-card-mobile.webp 600w, /images/products/camstore-pos-card.webp 1200w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               alt="CamStore POS dashboard with desktop display, mobile device, receipt printer and barcode scanner"
               loading="eager"
+              fetchpriority="high"
+              decoding="async"
             />
           </motion.div>
         </div>

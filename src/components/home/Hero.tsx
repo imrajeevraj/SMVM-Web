@@ -12,9 +12,9 @@ export function Hero() {
   const tourDialogRef = useRef<HTMLDivElement>(null);
 
   const tourSlides = [
-    { src: '/images/products/cambill-pos/dashboard.png', title: 'Business overview', alt: 'CamStore POS dashboard with sales, inventory and reporting panels' },
-    { src: '/images/products/cambill-pos/billing.png', title: 'Fast billing workflow', alt: 'CamStore POS billing workspace' },
-    { src: '/images/products/cambill-pos/reports.png', title: 'Clear reporting', alt: 'CamStore POS reporting workspace' },
+    { src: '/images/products/cambill-pos/dashboard.webp', title: 'Business overview', alt: 'CamStore POS dashboard with sales, inventory and reporting panels' },
+    { src: '/images/products/cambill-pos/billing.webp', title: 'Fast billing workflow', alt: 'CamStore POS billing workspace' },
+    { src: '/images/products/cambill-pos/reports.webp', title: 'Clear reporting', alt: 'CamStore POS reporting workspace' },
   ];
 
   useEffect(() => {
@@ -50,10 +50,14 @@ export function Hero() {
     <section className="hero-shell relative isolate overflow-hidden pb-14 pt-28 sm:pt-32 lg:min-h-[650px] lg:pb-16 lg:pt-32">
       <div className="hero-grid absolute inset-0 -z-20" />
       <img
-        src="/images/brand/hero-retail-showroom.png"
+        src="/images/brand/hero-retail-showroom.webp"
         alt=""
         aria-hidden="true"
         className="hero-store-scene absolute inset-y-0 right-0 -z-[15] hidden h-full w-[72%] object-cover object-right lg:block"
+        fetchpriority="high"
+        decoding="async"
+        width={1920}
+        height={1080}
       />
       <div className="hero-store-shade absolute inset-0 -z-10 hidden lg:block" />
       <div className="hero-orb hero-orb-one" />
@@ -118,9 +122,13 @@ export function Hero() {
             </div>
             <div className="overflow-hidden bg-slate-100">
               <img
-                src="/images/products/cambill-pos/dashboard.png"
+                src="/images/products/cambill-pos/dashboard.webp"
                 alt="CamStore POS dashboard showing sales, inventory and reporting panels"
                 className="aspect-[1.78] w-full object-cover object-top"
+                loading="eager"
+                decoding="async"
+                width={1200}
+                height={675}
               />
             </div>
             <div className="monitor-neck" /><div className="monitor-base" />
@@ -131,7 +139,7 @@ export function Hero() {
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             className="device-tablet"
           >
-            <img src="/images/products/cambill-pos/billing.png" alt="CamStore POS billing interface on a tablet" />
+            <img src="/images/products/cambill-pos/billing.webp" alt="CamStore POS billing interface on a tablet" loading="lazy" decoding="async" width={800} height={600} />
           </motion.div>
 
           <motion.div
@@ -140,7 +148,7 @@ export function Hero() {
             className="device-phone"
           >
             <div className="mx-auto mb-2 h-1 w-10 rounded-full bg-slate-600" />
-            <img src="/images/products/cambill-pos/reports.png" alt="CamStore POS reporting interface on mobile" />
+            <img src="/images/products/cambill-pos/reports.webp" alt="CamStore POS reporting interface on mobile" loading="lazy" decoding="async" width={400} height={800} />
           </motion.div>
 
           <div className="device-status-card">

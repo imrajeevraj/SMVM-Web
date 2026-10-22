@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import { Clock3, ExternalLink, Mail, MapPin, Phone } from 'lucide-react';
+import { ExternalLink, Mail, MessageSquareText } from 'lucide-react';
 import { contactConfig } from '@/config/contact';
 
 const cards = [
@@ -13,33 +13,16 @@ const cards = [
     accent: '22 119 255',
   },
   {
-    title: 'Call us directly',
-    description: 'Speak with our team when you need a quick conversation about your needs.',
-    value: contactConfig.phone.display,
-    href: `tel:${contactConfig.phone.dial}`,
-    action: 'Call now',
-    icon: Phone,
+    title: 'Support and complaints',
+    description: 'Prepare a refund, license, delivery or privacy request.',
+    value: 'Email-based assistance',
+    href: '/grievance',
+    action: 'Prepare a request',
+    icon: MessageSquareText,
     accent: '126 76 255',
   },
-  {
-    title: 'Visit our office',
-    description: 'Find our location and plan an in-person discussion with the SMVM team.',
-    value: contactConfig.office.label,
-    href: contactConfig.office.mapUrl,
-    action: 'Open map',
-    icon: MapPin,
-    accent: '0 187 171',
-    external: true,
-  },
-  {
-    title: 'Business hours',
-    description: 'Reach out during business hours for project and product conversations.',
-    value: contactConfig.hours,
-    href: '#project-enquiry',
-    action: 'Send an enquiry',
-    icon: Clock3,
-    accent: '255 133 31',
-  },
+
+
 ] as const;
 
 export function ContactInfoCards() {

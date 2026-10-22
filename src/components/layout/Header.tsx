@@ -36,7 +36,8 @@ export function Header() {
   const overHero = location.pathname === '/' && !isScrolled && !mobileMenuOpen;
 
   useEffect(() => {
-    const saved = localStorage.getItem('smvm-theme');
+    let saved: string | null = null;
+    try { saved = localStorage.getItem('smvm-theme'); } catch { /* Storage may be blocked. */ }
     const shouldUseDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
     document.documentElement.classList.toggle('dark', shouldUseDark);
     setIsDark(shouldUseDark);
@@ -103,7 +104,7 @@ export function Header() {
     const next = !isDark;
     setIsDark(next);
     document.documentElement.classList.toggle('dark', next);
-    localStorage.setItem('smvm-theme', next ? 'dark' : 'light');
+    try { localStorage.setItem('smvm-theme', next ? 'dark' : 'light'); } catch { /* Keep theme functional without persistence. */ }
   };
 
   const chooseSearchItem = (href: string) => {
@@ -120,7 +121,15 @@ export function Header() {
       <header className={cn('fixed inset-x-0 top-0 z-50 transition-all duration-300', overHero ? 'py-4 text-white' : 'border-b border-border/70 bg-surface/90 py-2.5 text-text shadow-[0_8px_30px_rgba(4,15,34,.06)] backdrop-blur-xl')}>
         <div className="site-container flex h-14 items-center justify-between gap-5">
           <Link to="/" className="flex shrink-0 items-center gap-2.5 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand" aria-label="SMVM Softwares home">
-            <img src="/images/brand/smvm-mark-3d-smooth.png" alt="" className="h-10 w-10 object-contain" />
+            <img
+              src="/images/brand/smvm-mark-3d-smooth.webp"
+              alt=""
+              className="h-10 w-10 object-contain"
+              width={40}
+              height={40}
+              fetchpriority="high"
+              decoding="async"
+            />
             <span className="leading-none"><strong className="block text-[15px] font-extrabold tracking-[0.08em]">SMVM</strong><small className={cn('mt-1 block text-[9px] font-bold uppercase tracking-[0.24em]', overHero ? 'text-slate-300' : 'text-text-muted')}>Softwares</small></span>
           </Link>
 

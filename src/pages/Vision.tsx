@@ -23,9 +23,9 @@ const heroCards = [
   { label: 'Better Businesses', icon: Building2, accent: '16 185 129', mod: 'business' },
 ] as const;
 const heroStats = [
-  { value: '100+', label: 'Happy Clients', icon: UsersRound },
-  { value: '50+', label: 'Projects Delivered', icon: Layers },
-  { value: '24/7', label: 'Support', icon: ShieldCheck },
+  { value: 'Business', label: 'Focused solutions', icon: UsersRound },
+  { value: 'Projects', label: 'Agreed deliverables', icon: Layers },
+  { value: 'Support', label: 'As agreed in scope', icon: ShieldCheck },
 ] as const;
 const reveal = { initial: { opacity: 0, y: 18 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: '-50px' }, transition: { duration: .45 } };
 
@@ -34,7 +34,17 @@ export function Vision() {
     <main className="vision-page">
       <section className="vision-hero" aria-labelledby="vision-hero-title">
         <div className="vision-hero__scene">
-          <img className="vision-hero__image" src="/images/company/vision-hero-sky.jpg" alt="Mountain peak with a luminous connected path representing business progress" />
+          <img
+            className="vision-hero__image"
+            src="/images/company/vision-hero-sky.webp"
+            srcSet="/images/company/vision-hero-sky-mobile.webp 768w, /images/company/vision-hero-sky.webp 1920w"
+            sizes="100vw"
+            alt="Mountain peak with a luminous connected path representing business progress"
+            fetchpriority="high"
+            decoding="async"
+            width={1920}
+            height={1080}
+          />
           <svg className="vision-hero__links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <line x1="52" y1="38" x2="70.5" y2="39" /><line x1="50" y1="66" x2="63.3" y2="68.8" /><line x1="85" y1="18" x2="74.6" y2="23" /><line x1="88" y1="46" x2="76" y2="48" />
           </svg>
@@ -79,14 +89,14 @@ export function Vision() {
                 <div className="vision-purpose__card-head"><span className="vision-purpose__icon"><Target aria-hidden="true" /></span><h3>Our Mission</h3></div>
                 <p>To make useful technology accessible to businesses by building reliable, user-friendly, and scalable digital solutions that address real operational challenges.</p>
               </div>
-              <img src="/images/company/mission-3d.png" alt="" className="vision-purpose__3d-art" aria-hidden="true" />
+              <img src="/images/company/mission-3d.webp" alt="" className="vision-purpose__3d-art" aria-hidden="true" loading="lazy" decoding="async" />
             </motion.article>
             <motion.article {...reveal} transition={{ delay: .08, duration: .45 }} className="vision-purpose__card" style={{ '--purpose-rgb': '124 77 255' } as CSSProperties}>
               <div className="vision-purpose__card-content">
                 <div className="vision-purpose__card-head"><span className="vision-purpose__icon"><Eye aria-hidden="true" /></span><h3>Our Vision</h3></div>
                 <p>To become a trusted technology partner for businesses seeking smarter workflows, better digital experiences, and sustainable growth through innovation.</p>
               </div>
-              <img src="/images/company/vision-3d.png" alt="" className="vision-purpose__3d-art" aria-hidden="true" />
+              <img src="/images/company/vision-3d.webp" alt="" className="vision-purpose__3d-art" aria-hidden="true" loading="lazy" decoding="async" />
             </motion.article>
           </div>
         </div>
@@ -216,7 +226,7 @@ export function Vision() {
           </div>
         </div>
       </section>
-      <section className="vision-page__final" aria-labelledby="vision-final-title"><div className="vision-page__shell"><div><p className="vision-page__eyebrow">Let&apos;s build a better tomorrow</p><h2 id="vision-final-title">Turn Your Vision Into Reality</h2><p>Partner with SMVM Softwares and let&apos;s create smarter, more innovative solutions together.</p><div><Link className="vision-page__button vision-page__button--light" to="/contact">Get in Touch <ArrowRight aria-hidden="true" /></Link><Link className="vision-page__button vision-page__button--dark-outline" to="/services">Explore Our Services <ArrowRight aria-hidden="true" /></Link></div></div><img src="/images/company/vision-hero-ecosystem.png" alt="" aria-hidden="true" /></div></section>
+      <section className="vision-page__final" aria-labelledby="vision-final-title"><div className="vision-page__shell"><div><p className="vision-page__eyebrow">Let&apos;s build a better tomorrow</p><h2 id="vision-final-title">Turn Your Vision Into Reality</h2><p>Partner with SMVM Softwares and let&apos;s create smarter, more innovative solutions together.</p><div><Link className="vision-page__button vision-page__button--light" to="/contact">Get in Touch <ArrowRight aria-hidden="true" /></Link><Link className="vision-page__button vision-page__button--dark-outline" to="/services">Explore Our Services <ArrowRight aria-hidden="true" /></Link></div></div><img src="/images/company/vision-hero-ecosystem.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div></section>
     </main>
   );
 }

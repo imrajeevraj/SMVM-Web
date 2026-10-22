@@ -18,7 +18,7 @@ const invoiceCapabilities: Array<{
   description: string;
   icon: LucideIcon;
 }> = [
-  { number: '01', title: 'GST Ready', description: 'Generate GST-compliant invoices automatically.', icon: FileCheck2 },
+  { number: '01', title: 'GST Ready', description: 'Tax invoice tools; configure for applicable requirements.', icon: FileCheck2 },
   { number: '02', title: 'Auto Calculation', description: 'Automatic tax, discount and total calculation.', icon: Calculator },
   { number: '03', title: 'Print & PDF', description: 'Print or save invoices as PDF instantly.', icon: Printer },
   { number: '04', title: 'Invoice History', description: 'Keep track of all invoices and transactions.', icon: History },
@@ -39,10 +39,11 @@ export function InvoiceShowcase() {
             <div className="cs-invoicing__paper-stack">
               <div className="cs-invoicing__paper-back" aria-hidden="true" />
               <div className="cs-invoicing__paper" aria-label="CamStore POS sample tax invoice">
+                <p className="p-3 text-sm font-bold">Illustrative invoice only ? not an SMVM receipt or GST registration.</p>
                 <InvoiceScreen minScale={0.35} />
               </div>
               <span className="cs-invoicing__camera" role="img" aria-label="Professional camera and lenses" />
-              <img className="cs-invoicing__printer" src="/images/products/camstore/scanner-printer.jpg" alt="Receipt printer and barcode scanner" loading="lazy" />
+              <img className="cs-invoicing__printer" src="/images/products/camstore/scanner-printer.webp" alt="Receipt printer and barcode scanner" loading="lazy" decoding="async" width={480} height={360} />
             </div>
           </Reveal>
 

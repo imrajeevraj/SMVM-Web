@@ -70,7 +70,7 @@ export function Footer() {
         <div className="footer-main-grid">
           <div className="footer-brand-block">
             <Link to="/" className="footer-logo" aria-label="SMVM Softwares home">
-              <img src="/images/brand/smvm-mark-3d-smooth.png" alt="" />
+              <img src="/images/brand/smvm-mark-3d-smooth.webp" alt="" width={44} height={44} loading="lazy" decoding="async" />
               <span>
                 <strong>SMVM</strong>
                 <small>Softwares</small>
@@ -102,7 +102,7 @@ export function Footer() {
             <span className="footer-glass-plate footer-glass-plate-back" />
             <span className="footer-glass-plate footer-glass-plate-mid" />
             <span className="footer-glass-plate footer-glass-plate-front">
-              <img src="/images/brand/smvm-mark-3d-smooth.png" alt="" />
+              <img src="/images/brand/smvm-mark-3d-smooth.webp" alt="" width={80} height={80} loading="lazy" decoding="async" />
             </span>
             <span className="footer-visual-orbit" />
           </div>
@@ -121,7 +121,7 @@ export function Footer() {
 
           <div className="footer-social-row">
             {socialLinks.map(({ label, href, icon: Icon }) => (
-              <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={`Open SMVM ${label} page`}>
+              <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={`Open ${label} (external website)`}>
                 <Icon className="h-5 w-5" />
               </a>
             ))}

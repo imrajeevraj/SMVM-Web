@@ -25,10 +25,10 @@ import { ServicesSection } from '@/components/home/ServicesSection';
 import './ServicesPage.css';
 
 const processSteps = [
-  { number: '01', title: 'Discover & Analyze', description: 'We understand your goals, workflows, requirements, and challenges.', icon: FileSearch, image: '/images/services/process-discover.png', accent: '22 119 255' },
-  { number: '02', title: 'Plan & Design', description: 'We define a clear scope, technical approach, milestones, and user experience.', icon: Target, image: '/images/services/process-plan-design.png', accent: '142 70 242' },
-  { number: '03', title: 'Develop & Implement', description: 'We build, integrate, and test the solution around the agreed project scope.', icon: Code2, image: '/images/services/process-develop.png', accent: '5 190 174' },
-  { number: '04', title: 'Support & Grow', description: 'We assist with deployment, handover, maintenance, and future improvements as agreed.', icon: Headphones, image: '/images/services/process-support.png', accent: '255 112 20' },
+  { number: '01', title: 'Discover & Analyze', description: 'We understand your goals, workflows, requirements, and challenges.', icon: FileSearch, image: '/images/services/process-discover.webp', accent: '22 119 255' },
+  { number: '02', title: 'Plan & Design', description: 'We define a clear scope, technical approach, milestones, and user experience.', icon: Target, image: '/images/services/process-plan-design.webp', accent: '142 70 242' },
+  { number: '03', title: 'Develop & Implement', description: 'We build, integrate, and test the solution around the agreed project scope.', icon: Code2, image: '/images/services/process-develop.webp', accent: '5 190 174' },
+  { number: '04', title: 'Support & Grow', description: 'We assist with deployment, handover, maintenance, and future improvements as agreed.', icon: Headphones, image: '/images/services/process-support.webp', accent: '255 112 20' },
 ] as const;
 
 const benefits = [
@@ -95,7 +95,16 @@ export function Services() {
           <div className="services-hero-art" aria-label="Software development and business technology illustration">
             <span className="services-hero-orbit" aria-hidden="true" />
             {serviceBadges.map(({ label, icon: Icon, className }) => <span className={`services-hero-badge ${className}`} key={label}><Icon aria-hidden="true" /><small>{label}</small></span>)}
-            <img src="/images/services/web-development.png" alt="Software development workspace displayed on a laptop" />
+            <img
+              src="/images/services/web-development.webp"
+              srcSet="/images/services/web-development-mobile.webp 480w, /images/services/web-development.webp 1200w"
+              sizes="(max-width: 768px) 100vw, 560px"
+              alt="Software development workspace displayed on a laptop"
+              fetchpriority="high"
+              decoding="async"
+              width={1200}
+              height={800}
+            />
           </div>
         </div>
       </section>
@@ -106,7 +115,7 @@ export function Services() {
         <div className="services-page-shell">
           <div className="services-section-heading services-process-heading"><div><p className="services-eyebrow">How we work</p><h2 id="services-process-title">Our <span>Service Process</span></h2><p>A transparent and collaborative process to deliver the right solution for your business.</p></div><p>We follow a clear and collaborative approach to understand, build, and support solutions that create real value for your business.</p></div>
           <ol className="services-process-list">
-            {processSteps.map(({ number, title, description, icon: Icon, image, accent }, index) => <li key={number} style={{ '--process-rgb': accent } as CSSProperties}><article><div className="services-process-card-top"><span className="services-process-icon"><Icon aria-hidden="true" /></span><strong>{number}</strong></div><div className="services-process-visual"><img src={image} alt={`${title} process illustration`} loading="lazy" /></div><div className="services-process-copy"><h3>{title}</h3><p>{description}</p></div><span className="services-process-progress" aria-hidden="true"><span /></span></article>{index < processSteps.length - 1 && <span className="services-process-connector" aria-hidden="true"><span /><ArrowRight /></span>}</li>)}
+            {processSteps.map(({ number, title, description, icon: Icon, image, accent }, index) => <li key={number} style={{ '--process-rgb': accent } as CSSProperties}><article><div className="services-process-card-top"><span className="services-process-icon"><Icon aria-hidden="true" /></span><strong>{number}</strong></div><div className="services-process-visual"><img src={image} alt={`${title} process illustration`} loading="lazy" decoding="async" width={480} height={320} /></div><div className="services-process-copy"><h3>{title}</h3><p>{description}</p></div><span className="services-process-progress" aria-hidden="true"><span /></span></article>{index < processSteps.length - 1 && <span className="services-process-connector" aria-hidden="true"><span /><ArrowRight /></span>}</li>)}
           </ol>
         </div>
       </section>
@@ -124,7 +133,7 @@ export function Services() {
 
       <section className="services-section services-faq" aria-labelledby="services-faq-title">
         <div className="services-page-shell services-faq-layout">
-          <div className="services-faq-intro"><p className="services-eyebrow">Frequently asked questions</p><h2 id="services-faq-title">Questions about <span>our services?</span></h2><p>Find quick answers to common questions about our service offerings.</p><Link className="services-faq-team-link" to="/contact">Talk to our team <ArrowRight aria-hidden="true" /></Link><div className="services-faq-art" aria-hidden="true"><img src="/images/faq-support-illustration.png" alt="" /></div></div>
+          <div className="services-faq-intro"><p className="services-eyebrow">Frequently asked questions</p><h2 id="services-faq-title">Questions about <span>our services?</span></h2><p>Find quick answers to common questions about our service offerings.</p><Link className="services-faq-team-link" to="/contact">Talk to our team <ArrowRight aria-hidden="true" /></Link><div className="services-faq-art" aria-hidden="true"><img src="/images/faq-support-illustration.webp" alt="" loading="lazy" decoding="async" width={480} height={360} /></div></div>
           <div className="services-faq-list">{serviceFaqs.map((faq, index) => {
             const isOpen = openFaq === index;
             const buttonId = `${idPrefix}-service-faq-button-${index}`;

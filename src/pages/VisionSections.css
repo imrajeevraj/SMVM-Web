@@ -60,7 +60,7 @@
 .vision-page__beliefs-new {
   background-image:
     linear-gradient(180deg, rgb(247 251 255 / .78), rgb(239 248 255 / .9)),
-    url('/images/company/beliefs-bg.jpg');
+    url('/images/company/beliefs-bg.webp');
   background-position: center;
   background-size: cover;
 }
@@ -87,7 +87,7 @@
 .vision-impact-new {
   background-image:
     linear-gradient(100deg, rgb(247 251 255 / .95) 0%, rgb(241 249 255 / .88) 43%, rgb(238 248 255 / .72) 100%),
-    url('/images/company/impact-bg.jpg');
+    url('/images/company/impact-bg.webp');
   background-position: center;
   background-size: cover;
 }
@@ -139,7 +139,7 @@
 .dark .vision-page__beliefs-new {
   background-image:
     linear-gradient(180deg, rgb(4 17 39 / .9), rgb(6 27 58 / .94)),
-    url('/images/company/beliefs-bg.jpg');
+    url('/images/company/beliefs-bg.webp');
   background-blend-mode: multiply, luminosity;
 }
 
@@ -161,7 +161,7 @@
 .dark .vision-impact-new {
   background-image:
     linear-gradient(100deg, rgb(4 17 39 / .97) 0%, rgb(6 27 58 / .93) 48%, rgb(8 36 75 / .84) 100%),
-    url('/images/company/impact-bg.jpg');
+    url('/images/company/impact-bg.webp');
   background-blend-mode: normal, luminosity;
 }
 

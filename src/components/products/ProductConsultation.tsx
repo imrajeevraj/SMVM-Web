@@ -124,7 +124,16 @@ export function ProductConsultation() {
               </ul>
             </div>
             <div className="products-consultation-art">
-              <img src="/images/services/consulting-support.png" alt="Digital consulting and software support illustration" loading="lazy" />
+              <img
+                src="/images/services/consulting-support.webp"
+                srcSet="/images/services/consulting-support-mobile.webp 480w, /images/services/consulting-support.webp 1200w"
+                sizes="(max-width: 640px) 100vw, 480px"
+                alt="Digital consulting and software support illustration"
+                loading="lazy"
+                decoding="async"
+                width={800}
+                height={500}
+              />
             </div>
           </div>
         </div>

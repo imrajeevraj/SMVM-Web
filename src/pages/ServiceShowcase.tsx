@@ -83,7 +83,7 @@ const serviceConfigs: Record<ServiceSlug, ServiceConfig> = {
     title: 'Build a faster, clearer',
     titleAccent: 'digital presence.',
     intro: 'We design and develop responsive business websites and web applications that communicate clearly, perform reliably, and make it easier for customers to take the next step.',
-    image: '/images/services/web-development-home.png',
+    image: '/images/services/web-development-home.webp',
     imageAlt: 'Responsive website development workspace displayed across laptop, browser and mobile screens',
     primary: '22 119 255',
     secondary: '45 214 255',
@@ -127,7 +127,7 @@ const serviceConfigs: Record<ServiceSlug, ServiceConfig> = {
     title: 'Turn complex workflows into',
     titleAccent: 'clear business software.',
     intro: 'We design tailored systems around the way your team works—connecting information, reducing repetitive steps, and giving people a more dependable operating workspace.',
-    image: '/images/services/custom-software-development-home.png',
+    image: '/images/services/custom-software-development-home.webp',
     imageAlt: 'Connected custom software system with application modules, database and analytics',
     primary: '126 74 255',
     secondary: '49 174 255',
@@ -171,7 +171,7 @@ const serviceConfigs: Record<ServiceSlug, ServiceConfig> = {
     title: 'Put your service where',
     titleAccent: 'your users already are.',
     intro: 'We create Android and cross-platform mobile applications with clear journeys, reliable integrations, and interfaces designed for the way people use phones every day.',
-    image: '/images/services/mobile-app-development-home.png',
+    image: '/images/services/mobile-app-development-home.webp',
     imageAlt: 'Modern mobile application interfaces displayed across two smartphones',
     primary: '0 179 190',
     secondary: '38 144 255',
@@ -215,7 +215,7 @@ const serviceConfigs: Record<ServiceSlug, ServiceConfig> = {
     title: 'Move forward with',
     titleAccent: 'clear technical direction.',
     intro: 'We help businesses understand technology choices, plan implementation, troubleshoot issues, and keep agreed systems useful through practical, context-aware support.',
-    image: '/images/services/consulting-support-home.png',
+    image: '/images/services/consulting-support-home.webp',
     imageAlt: 'Friendly digital support assistant with headset, communication and settings symbols',
     primary: '255 126 31',
     secondary: '35 139 255',
@@ -349,7 +349,16 @@ export function ServiceShowcase({ service }: { service: ServiceSlug }) {
             </div>
             <motion.div className="service-showcase-hero__visual" initial={shouldReduceMotion ? false : { opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .55 }}>
               <span className="service-showcase-hero__glow" aria-hidden="true" />
-              <img src={config.image} alt={config.imageAlt} />
+              <img
+                src={config.image}
+                srcSet={`${config.image.replace('.webp', '-mobile.webp')} 480w, ${config.image} 1200w`}
+                sizes="(max-width: 768px) 100vw, 580px"
+                alt={config.imageAlt}
+                fetchpriority="high"
+                decoding="async"
+                width={1200}
+                height={800}
+              />
               {config.notes.map(({ label, icon: Icon, accent }, index) => <span className={`service-visual-note service-visual-note--${index + 1}`} style={{ '--card-rgb': accent } as CSSProperties} key={label}><Icon aria-hidden="true" /><small>{label}</small></span>)}
             </motion.div>
           </div>

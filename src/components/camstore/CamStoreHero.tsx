@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { Camera, Download, Headphones, Rocket, ShieldCheck, Zap } from 'lucide-react';
+import { Camera, MessageSquareText, Headphones, Rocket, ShieldCheck, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CAMSTORE_CONTACT_PATH, CAMSTORE_IMAGES } from '@/data/camstore';
 
@@ -10,8 +10,8 @@ const heroBenefits: Array<{
 }> = [
   { title: 'New & Growing', description: 'Built for modern camera stores.', icon: Rocket },
   { title: 'Easy Setup', description: 'Quick installation and ready to use.', icon: Zap },
-  { title: '99% Secure', description: 'Your data is safe and protected.', icon: ShieldCheck },
-  { title: '24/5 Expert Support', description: 'Always here to help you.', icon: Headphones },
+  { title: 'Security Matters', description: 'Discuss access and backup requirements.', icon: ShieldCheck },
+  { title: 'Product Support', description: 'Scope and hours agreed in your quotation.', icon: Headphones },
 ];
 
 function HeroBenefits() {
@@ -50,7 +50,7 @@ export function CamStoreHero() {
 
             <div className="cs-hero__actions">
               <Link to={CAMSTORE_CONTACT_PATH} className="button-primary">
-                <Download aria-hidden="true" /> Download Now
+                <MessageSquareText aria-hidden="true" /> Request a demo
               </Link>
               <Link to="/contact" className="button-outline">
                 <Headphones aria-hidden="true" /> Contact Us
@@ -65,6 +65,9 @@ export function CamStoreHero() {
               alt="CamStore POS dashboard on a laptop alongside a camera, lenses, memory card and camera bag"
               width={1152}
               height={768}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
             />
             <span className="cs-hero__callout cs-hero__callout--inventory"><Camera aria-hidden="true" /> Manage Inventory</span>
             <span className="cs-hero__callout cs-hero__callout--billing"><Zap aria-hidden="true" /> Fast Billing</span>

@@ -50,7 +50,7 @@ export function ProductFAQ() {
           <p>Find answers to common questions about features, pricing, and more.</p>
           <Link className="products-text-link" to="/contact">Talk to our team <span aria-hidden="true">→</span></Link>
           <div className="products-faq-art" aria-hidden="true">
-            <img src="/images/faq-support-illustration.png" alt="" loading="lazy" />
+            <img src="/images/faq-support-illustration.webp" alt="" loading="lazy" decoding="async" width={480} height={360} />
           </div>
         </div>
         <div className="products-faq-list">

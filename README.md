@@ -94,9 +94,17 @@ npm run dev
 | `/about` | About SMVM Softwares |
 | `/vision` | Company vision |
 | `/contact` | Contact and project enquiry |
-| `/privacy` | Privacy policy placeholder |
-| `/terms` | Terms of service placeholder |
-| `/cookies` | Cookie policy placeholder |
+| `/privacy` | Privacy policy review draft |
+| `/terms` | Terms and Conditions review draft |
+| `/cookies` | Canonical cookie and tracking policy draft |
+| `/cookie-policy` | Redirect to `/cookies` |
+| `/refund-policy` | Cancellation/refund draft and email request preparation |
+| `/shipping-and-delivery` | Digital delivery policy draft |
+| `/license-agreement` | Software EULA draft |
+| `/acceptable-use` | Acceptable use policy draft |
+| `/grievance` | Complaint/privacy/support email-draft tool |
+| `/disclaimer` | Website/product disclaimer draft |
+| `/checkout` | Purchase-information review; payments unavailable |
 
 Unknown routes render the custom not-found page.
 
@@ -268,15 +276,33 @@ To remove a file from the staging area without discarding its edits:
 git restore --staged <file>
 ```
 
+## Update your GitHub Repo with the latest changes
+
+``` powershell
+git push github main
+```
+
 ## Current Limitations
 
 - The enquiry experience is frontend-only; no server-side CRM or email integration is configured.
 - The chatbot uses local guided responses rather than an external AI service.
-- Legal pages contain placeholder content until approved policies are supplied.
-- Automated unit and end-to-end tests have not yet been added.
+- Legal pages contain versioned review drafts; merchant verification and qualified Indian legal approval are required before publication and live transactions.
+- Automated policy/support and local HTTP route tests are available; browser end-to-end verification remains outstanding.
 - The project does not currently include an ESLint command.
 
 ## Contributing
+
+### Legal and payment review workflow
+
+See [the final release report](SMVM_FINAL_RELEASE_REPORT.md), [acceptance matrix](SMVM_LEGAL_ACCEPTANCE_MATRIX.md), [approval checklist](SMVM_LEGAL_APPROVAL_REQUIRED.md) and [Railway checklist](SMVM_RAILWAY_DEPLOYMENT_CHECKLIST.md).
+
+Internal merchant verification status and policy version live in `src/config/legal.json`; customer-facing policy text is in `src/data/policies.ts`. At the owner's request, public pages omit the merchant details table, verification placeholders and internal review notices. The footer retains its existing Privacy Policy, Terms of Service and Cookie Policy links without an additional policy section. Contact uses the existing email only; the owner requested no telephone contact. Checkout is unavailable by design: this repository does not process payments, persist orders, issue licenses or execute refunds. The `/checkout` acknowledgment is local review only, not recorded purchase acceptance.
+
+`npm run build` now also prerenders legal HTML, creates an immutable full-text policy archive in `docs/legal/archive` for internal review, and generates sitemap/robots output. Archives are not copied into the published website or linked from policy pages. Existing archives cannot be overwritten under the same version. Increment `policyVersion` for changed archived text/identity, retain old files, and obtain explicit owner/legal approval for material changes. Draft policies remain noindex until approved. The configured canonical origin follows the supplied Railway URL; verify it before deployment.
+
+Run `npm test` for policy/support tests and, after building, `npm run test:routes` for direct-route/static-host tests. Use `npm start` to serve the built site with SPA routing; `PORT` and `HOST` are the only runtime configuration. A reviewable Railway example is in `docs/railway.example.json`; the existing Sites manifest has not been replaced. No new production deployment is authorized by these scripts.
+
+### Source contributions
 
 1. Create a branch from `main`.
 2. Make focused changes and preserve responsive light/dark behavior.

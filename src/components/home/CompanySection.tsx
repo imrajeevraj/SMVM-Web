@@ -25,7 +25,9 @@ export function CompanySection() {
             <div className="about-product-stage" aria-label="SMVM product ecosystem across desktop, tablet, and mobile">
               <div className="about-product-orbit" aria-hidden="true" />
               <img
-                src="/images/products/cambill-pos-card.png"
+                src="/images/products/cambill-pos-card.webp"
+                srcSet="/images/products/cambill-pos-card-mobile.webp 600w, /images/products/cambill-pos-card.webp 1200w"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 alt="CamBill POS workspace across desktop, tablet, mobile, and billing hardware"
                 className="about-product-art"
                 loading="lazy"
@@ -95,7 +97,9 @@ export function CompanySection() {
           <div className="vision-art-stage">
             <div className="vision-art-glow" aria-hidden="true" />
             <img
-              src="/images/company/vision-growth.png"
+              src="/images/company/vision-growth.webp"
+              srcSet="/images/company/vision-growth-mobile.webp 600w, /images/company/vision-growth.webp 1200w"
+              sizes="(max-width: 768px) 100vw, 50vw"
               alt="Futuristic ascending technology pillars and arrow representing sustainable business growth"
               className="vision-growth-art"
               loading="lazy"

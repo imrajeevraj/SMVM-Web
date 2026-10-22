@@ -24,7 +24,15 @@ export function FinalCTA() {
             <span className="cta-floating-icon cta-floating-chart" aria-hidden="true"><BarChart3 /></span>
             <span className="cta-floating-icon cta-floating-product" aria-hidden="true"><Box /></span>
             <span className="cta-floating-icon cta-floating-cart" aria-hidden="true"><ShoppingCart /></span>
-            <img src="/images/products/cambill-pos-card.png" alt="CamBill POS workspace across desktop, laptop, tablet, and mobile devices" className="cta-product-art" loading="lazy" />
+            <img
+              src="/images/products/cambill-pos-card.webp"
+              srcSet="/images/products/cambill-pos-card-mobile.webp 600w, /images/products/cambill-pos-card.webp 1200w"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              alt="CamBill POS workspace across desktop, laptop, tablet, and mobile devices"
+              className="cta-product-art"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </div>

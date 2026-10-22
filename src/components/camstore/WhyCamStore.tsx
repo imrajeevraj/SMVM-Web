@@ -34,7 +34,7 @@ function CenterProductShowcase() {
       </div>
       <div className="cs-why__monitor-stand" aria-hidden="true" />
       <span className="cs-why__camera-products" role="img" aria-label="Camera and lenses" />
-      <img className="cs-why__printer" src="/images/products/camstore/scanner-printer.jpg" alt="Receipt printer and barcode scanner" loading="lazy" />
+      <img className="cs-why__printer" src="/images/products/camstore/scanner-printer.webp" alt="Receipt printer and barcode scanner" loading="lazy" decoding="async" width={480} height={360} />
     </figure>
   );
 }

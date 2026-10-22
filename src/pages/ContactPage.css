@@ -189,7 +189,7 @@
 .contact-details__heading h2 { max-width: 850px; margin: 1rem 0 0; color: var(--contact-navy); font-size: clamp(2.65rem, 4.5vw, 4.8rem); font-weight: 880; letter-spacing: -.065em; line-height: .98; }
 .contact-details__heading h2 span { background: linear-gradient(100deg, #147fff, #4a91ff 52%, #7c4dff); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .contact-details__heading>p { margin: 0 0 .4rem; padding-left: 1.25rem; border-left: 4px solid #2386ff; color: var(--contact-muted); font-size: 1.04rem; line-height: 1.7; }
-.contact-details__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1rem, 1.6vw, 1.7rem); margin-top: clamp(2.5rem, 4vw, 4rem); }
+.contact-details__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 1.6vw, 1.7rem); margin-top: clamp(2.5rem, 4vw, 4rem); }
 .contact-detail-card {
   --contact-accent: 22 119 255;
   position: relative;

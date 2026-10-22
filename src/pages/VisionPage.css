@@ -52,7 +52,7 @@
 .dark .vision-purpose__icon{border-color:rgb(var(--purpose-rgb)/.3);background:rgb(var(--purpose-rgb)/.18);color:color-mix(in srgb,rgb(var(--purpose-rgb)) 65%,#fff)}
 @media(max-width:720px){.vision-purpose__grid{grid-template-columns:1fr}}@media(max-width:640px){.vision-page__purpose{padding-block:3.25rem}.vision-purpose__card{gap:14px;padding:22px;border-radius:20px}.vision-purpose__card-head{gap:14px}.vision-purpose__icon{width:46px;height:46px;border-radius:12px}.vision-purpose__icon svg{width:23px;height:23px}}
 .vision-page__brighter-full { position: relative; overflow: hidden; background: #f7fbff; padding: clamp(5rem, 8vw, 8rem) 0; min-height: 700px; display: flex; align-items: center; }
-.vision-page__brighter-full::before { content: ''; position: absolute; inset: 0; width: 100%; background: url('/images/company/brighter-future-bg.jpg') center right / cover no-repeat; z-index: 0; }
+.vision-page__brighter-full::before { content: ''; position: absolute; inset: 0; width: 100%; background: url('/images/company/brighter-future-bg.webp') center right / cover no-repeat; z-index: 0; }
 .vision-brighter__layout { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(2rem, 5vw, 6rem); align-items: center; }
 .vision-brighter__copy p:not(.vision-page__eyebrow) { max-width: 630px; margin: 18px 0 0; color: var(--v-muted); line-height: 1.65; }
 .vision-brighter__copy .vision-page__button { margin-top: 30px; }
@@ -139,7 +139,7 @@
 @media(max-width: 1100px) { .vision-beliefs__grid { grid-template-columns: repeat(2, 1fr); } }
 @media(max-width: 640px) { .vision-beliefs__grid { grid-template-columns: 1fr; } }
 
-.vision-ecosystem-new { position: relative; overflow: hidden; background: #eaf3fb url('/images/company/ecosystem-bg.jpg') center right / cover no-repeat; padding: clamp(5rem, 8vw, 8rem) 0; min-height: 700px; display: flex; align-items: center; }
+.vision-ecosystem-new { position: relative; overflow: hidden; background: #eaf3fb url('/images/company/ecosystem-bg.webp') center right / cover no-repeat; padding: clamp(5rem, 8vw, 8rem) 0; min-height: 700px; display: flex; align-items: center; }
 .vision-ecosystem__layout { position: relative; z-index: 1; max-width: 1300px; margin: 0 auto; width: 100%; padding: 0 clamp(1.5rem, 5vw, 4rem); display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(2rem, 5vw, 6rem); align-items: center; }
 .vision-ecosystem__copy p.vision-page__eyebrow--line { display: flex; align-items: center; color: #1677ff; }
 .vision-ecosystem__copy p.vision-page__eyebrow--line::after { content: ''; display: block; width: 40px; height: 2px; background: #1677ff; margin-left: 15px; opacity: 0.5; }
@@ -176,7 +176,7 @@
 .vision-ecosystem__card--br .vision-ecosystem__connector { right: 100%; transform: translate(50%, -50%); color: #ff8a00; background: #ff8a00; }
 .vision-ecosystem__card--br .vision-ecosystem__connector::after { content: ''; position: absolute; width: 120px; height: 2px; background: linear-gradient(270deg, #ff8a00, transparent); right: 10px; top: 5px; transform-origin: right; transform: rotate(10deg); }
 
-.dark .vision-ecosystem-new { background: #061631 url('/images/company/ecosystem-bg.jpg') center right / cover no-repeat; }
+.dark .vision-ecosystem-new { background: #061631 url('/images/company/ecosystem-bg.webp') center right / cover no-repeat; }
 .dark .vision-ecosystem-new::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, #061631 35%, transparent 100%); z-index: 0; pointer-events: none; }
 .dark .vision-ecosystem__copy h2 { color: #fff; }
 .dark .vision-ecosystem__card { background: rgba(10, 35, 75, 0.85); border-color: rgba(100, 180, 255, 0.2); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); }

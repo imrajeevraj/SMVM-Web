@@ -65,9 +65,14 @@ export function BillingShowcase() {
             <figure className="cs-billing__device">
               <img
                 className="cs-billing__screen-image"
-                src="/images/products/camstore/camstore-pos-live-billing-laptop.png"
+                src="/images/products/camstore/camstore-pos-live-billing-laptop.webp"
+                srcSet="/images/products/camstore/camstore-pos-live-billing-laptop-mobile.webp 480w, /images/products/camstore/camstore-pos-live-billing-laptop.webp 1200w"
+                sizes="(max-width: 768px) 100vw, 980px"
                 alt="CamStore POS live billing terminal displayed on a realistic laptop"
                 loading="lazy"
+                decoding="async"
+                width={1200}
+                height={800}
               />
             </figure>
           </Reveal>
@@ -102,7 +107,7 @@ export function BillingShowcase() {
                     <p>{step.description}</p>
                   </div>
                   {step.printer ? (
-                    <img className="cs-billing-step__printer" src="/images/products/camstore/scanner-printer.jpg" alt={step.artLabel} loading="lazy" />
+                    <img className="cs-billing-step__printer" src="/images/products/camstore/scanner-printer.webp" alt={step.artLabel} loading="lazy" decoding="async" width={480} height={360} />
                   ) : (
                     <span className="cs-billing-step__art" style={style} role="img" aria-label={step.artLabel} />
                   )}

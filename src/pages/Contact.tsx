@@ -1,4 +1,6 @@
-import { CheckCircle2, Mail, Phone, ShieldCheck, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import './Legal.css';
+import { CheckCircle2, Mail, ShieldCheck, Sparkles } from 'lucide-react';
 import { ContactHero } from '@/components/contact/ContactHero';
 import { ContactInfoCards } from '@/components/contact/ContactInfoCards';
 import { ProjectEnquiryForm } from '@/components/contact/ProjectEnquiryForm';
@@ -13,9 +15,10 @@ const reassurancePoints = [
 
 export function Contact() {
   return (
-    <main className="contact-page">
+    <div className="contact-page">
       <ContactHero />
       <ContactInfoCards />
+      <div className="site-container contact-legal"><p className="mt-6"><Link className="button-outline" to="/grievance#support-request">Refund, payment, license or privacy request</Link></p></div>
 
       <section id="project-enquiry" className="contact-enquiry" aria-labelledby="contact-enquiry-title">
         <div className="contact-enquiry__orb" aria-hidden="true" />
@@ -32,19 +35,27 @@ export function Contact() {
             </ul>
 
             <div className="contact-enquiry__visual">
-              <img src="/images/contact/project-enquiry.png" alt="Project dashboard prepared for a software enquiry" loading="lazy" />
+              <img
+                src="/images/contact/project-enquiry.webp"
+                srcSet="/images/contact/project-enquiry-mobile.webp 480w, /images/contact/project-enquiry.webp 1200w"
+                sizes="(max-width: 640px) 100vw, 480px"
+                alt="Project dashboard prepared for a software enquiry"
+                loading="lazy"
+                decoding="async"
+                width={800}
+                height={500}
+              />
               <div className="contact-enquiry__trust"><ShieldCheck aria-hidden="true" /><span><strong>Private by design</strong><small>Your details stay focused on this conversation.</small></span></div>
             </div>
 
             <div className="contact-enquiry__quick-links">
               <a href={`mailto:${contactConfig.email}`}><Mail aria-hidden="true" /><span><small>Email</small><strong>{contactConfig.email}</strong></span></a>
-              <a href={`tel:${contactConfig.phone.dial}`}><Phone aria-hidden="true" /><span><small>Phone</small><strong>{contactConfig.phone.display}</strong></span></a>
             </div>
           </aside>
 
           <ProjectEnquiryForm />
         </div>
       </section>
-    </main>
+    </div>
   );
 }

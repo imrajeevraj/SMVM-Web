@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FormEvent, ReactNode, useRef, useState } from 'react';
 import { AlertTriangle, CheckCircle2, Loader2, LockKeyhole, MailCheck, Send } from 'lucide-react';
 import { contactConfig } from '@/config/contact';
@@ -5,7 +6,6 @@ import { contactConfig } from '@/config/contact';
 type FormValues = {
   fullName: string;
   email: string;
-  phone: string;
   company: string;
   service: string;
   budget: string;
@@ -17,7 +17,7 @@ type FormValues = {
 type FormStatus = 'idle' | 'success' | 'error' | 'handoff';
 
 const initialValues: FormValues = {
-  fullName: '', email: '', phone: '', company: '', service: '', budget: '', timeline: '', details: '', consent: false,
+  fullName: '', email: '', company: '', service: '', budget: '', timeline: '', details: '', consent: false,
 };
 
 const fieldClass = 'contact-form-control';
@@ -71,7 +71,7 @@ export function ProjectEnquiryForm() {
         await new Promise((resolve) => window.setTimeout(resolve, 450));
         const subject = encodeURIComponent(`Project enquiry from ${values.fullName}`);
         const body = encodeURIComponent([
-          `Name: ${values.fullName}`, `Work email: ${values.email}`, `Phone: ${values.phone || 'Not provided'}`,
+          `Name: ${values.fullName}`, `Work email: ${values.email}`,
           `Company: ${values.company || 'Not provided'}`, `Service: ${values.service}`, `Budget: ${values.budget || 'Not specified'}`,
           `Timeline: ${values.timeline || 'Not specified'}`, '', 'Project details:', values.details,
         ].join('\n'));
@@ -100,9 +100,6 @@ export function ProjectEnquiryForm() {
         <FormField id="email" label="Work Email" required error={errors.email}>
           <input id="email" name="email" type="email" autoComplete="email" value={values.email} onChange={(e) => update('email', e.target.value)} className={fieldClass} aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'email-error' : undefined} placeholder="Enter your email address" />
         </FormField>
-        <FormField id="phone" label="Phone Number" error={errors.phone}>
-          <input id="phone" name="phone" type="tel" autoComplete="tel" value={values.phone} onChange={(e) => update('phone', e.target.value)} className={fieldClass} aria-invalid={Boolean(errors.phone)} placeholder="Enter your phone number" />
-        </FormField>
         <FormField id="company" label="Company / Organization" error={errors.company}>
           <input id="company" name="company" autoComplete="organization" value={values.company} onChange={(e) => update('company', e.target.value)} className={fieldClass} aria-invalid={Boolean(errors.company)} placeholder="Enter company name" />
         </FormField>
@@ -125,10 +122,11 @@ export function ProjectEnquiryForm() {
 
       <div className="contact-form__details">
         <FormField id="details" label="Project Details" required error={errors.details}>
-          <textarea id="details" name="details" rows={5} value={values.details} onChange={(e) => update('details', e.target.value)} className={`${fieldClass} resize-y py-3`} aria-invalid={Boolean(errors.details)} aria-describedby={errors.details ? 'details-error' : undefined} placeholder="Tell us about your project requirements…" />
+          <textarea maxLength={2000} id="details" name="details" rows={5} value={values.details} onChange={(e) => update('details', e.target.value)} className={`${fieldClass} resize-y py-3`} aria-invalid={Boolean(errors.details)} aria-describedby={errors.details ? 'details-error' : undefined} placeholder="Tell us about your project requirements…" />
         </FormField>
       </div>
 
+      <p className="contact-form__privacy">Read the <Link to="/privacy" className="underline">Privacy Policy</Link>. Avoid passwords, payment credentials and sensitive customer data.</p>
       <div className="contact-form__consent">
         <label>
           <input type="checkbox" checked={values.consent} onChange={(e) => update('consent', e.target.checked)} aria-invalid={Boolean(errors.consent)} aria-describedby={errors.consent ? 'consent-error' : undefined} />
@@ -141,8 +139,8 @@ export function ProjectEnquiryForm() {
         {isSubmitting ? <><Loader2 className="animate-spin" /> Preparing enquiry…</> : <><Send /> Prepare Project Enquiry</>}
       </button>
 
-      <p className="contact-form__privacy"><LockKeyhole /> Your information will be used only to respond to your enquiry.</p>
-      {!contactConfig.submissionEndpoint && <p className="contact-form__handoff-note">The form securely prepares an email draft for you to review before sending it to {contactConfig.email}.</p>}
+      <p className="contact-form__privacy"><LockKeyhole /> Details stay in this page until email handoff. Sending shares them with email providers and SMVM.</p>
+      {!contactConfig.submissionEndpoint && <p className="contact-form__handoff-note">The form prepares an email draft for you to review before sending it to {contactConfig.email}.</p>}
 
       <div className="contact-form__status" aria-live="polite">
         {status === 'handoff' && <StatusMessage icon={MailCheck} tone="text-brand bg-brand/10" text="Your email app should open with a prepared draft. Review it and choose Send there to complete the enquiry." />}

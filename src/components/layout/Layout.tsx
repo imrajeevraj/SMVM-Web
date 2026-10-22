@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, Suspense, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
@@ -32,10 +32,12 @@ export function Layout({ children }: LayoutProps) {
         Skip to content
       </a>
       <Header />
-      <main id="main-content" className="flex flex-1 flex-col" tabIndex={-1}>
-        <div className="site-route" key={location.pathname}>{children}</div>
-      </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <main id="main-content" className="flex flex-1 flex-col" tabIndex={-1}>
+          <div className="site-route" key={location.pathname}>{children}</div>
+        </main>
+        <Footer />
+      </Suspense>
       <Chatbot />
     </div>
   );

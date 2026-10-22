@@ -51,9 +51,14 @@ export function SmartStoreManagement() {
             <figure className="cs-smart__device">
               <img
                 className="cs-smart__dashboard-image"
-                src="/images/products/camstore/camstore-pos-dashboard-laptop.png"
+                src="/images/products/camstore/camstore-pos-dashboard-laptop.webp"
+                srcSet="/images/products/camstore/camstore-pos-dashboard-laptop-mobile.webp 480w, /images/products/camstore/camstore-pos-dashboard-laptop.webp 1200w"
+                sizes="(max-width: 768px) 100vw, 980px"
                 alt="CamStore POS dashboard displayed on a realistic laptop"
                 loading="lazy"
+                decoding="async"
+                width={1200}
+                height={800}
               />
             </figure>
           </Reveal>

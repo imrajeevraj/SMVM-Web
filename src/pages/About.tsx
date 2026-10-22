@@ -20,10 +20,10 @@ const aboutBenefits = [
 ] as const;
 
 const approachSteps = [
-  { number: '01', title: 'Discover & Analyze', description: 'Understand the business goals, users, requirements, workflows, and challenges.', icon: FileSearch, image: '/images/services/process-discover.png', accent: '22 119 255' },
-  { number: '02', title: 'Plan & Design', description: 'Define the project scope, user experience, technical approach, and milestones.', icon: Target, image: '/images/services/process-plan-design.png', accent: '142 70 242' },
-  { number: '03', title: 'Develop & Implement', description: 'Build, integrate, test, and refine the solution against the agreed requirements.', icon: Code2, image: '/images/services/process-develop.png', accent: '0 191 174' },
-  { number: '04', title: 'Support & Grow', description: 'Assist with deployment, handover, maintenance, and future improvements as agreed.', icon: Headphones, image: '/images/services/process-support.png', accent: '255 121 0' },
+  { number: '01', title: 'Discover & Analyze', description: 'Understand the business goals, users, requirements, workflows, and challenges.', icon: FileSearch, image: '/images/services/process-discover.webp', accent: '22 119 255' },
+  { number: '02', title: 'Plan & Design', description: 'Define the project scope, user experience, technical approach, and milestones.', icon: Target, image: '/images/services/process-plan-design.webp', accent: '142 70 242' },
+  { number: '03', title: 'Develop & Implement', description: 'Build, integrate, test, and refine the solution against the agreed requirements.', icon: Code2, image: '/images/services/process-develop.webp', accent: '0 191 174' },
+  { number: '04', title: 'Support & Grow', description: 'Assist with deployment, handover, maintenance, and future improvements as agreed.', icon: Headphones, image: '/images/services/process-support.webp', accent: '255 121 0' },
 ] as const;
 
 const technologies = [
@@ -67,13 +67,13 @@ export function About() {
             </ul>
             <div className="about-page__hero-actions"><Link className="about-page__button about-page__button--primary" to="/contact">Let&apos;s Talk <ArrowRight aria-hidden="true" /></Link><Link className="about-page__button about-page__button--outline" to="/services">Explore Our Services <ArrowRight aria-hidden="true" /></Link></div>
           </motion.div>
-          <motion.div initial={false} animate={{ opacity: 1, scale: 1 }} transition={{ duration: shouldReduceMotion ? 0 : .55 }} className="about-page__hero-art"><img src="/images/about/about-hero-transparent.png" alt="Laptop development workspace with code, cloud, media, and analytics panels" /></motion.div>
+          <motion.div initial={false} animate={{ opacity: 1, scale: 1 }} transition={{ duration: shouldReduceMotion ? 0 : .55 }} className="about-page__hero-art"><img src="/images/about/about-hero-transparent.webp" alt="Laptop development workspace with code, cloud, media, and analytics panels" decoding="async" /></motion.div>
         </div>
       </section>
 
       <section id="who-we-are" className="about-page__section about-page__who" aria-labelledby="about-who-title">
         <div className="about-page__shell about-page__who-layout">
-          <motion.div {...reveal} initial={false} className="about-page__who-art"><img src="/images/about/about-who-technology-transparent.png" alt="Connected laptop and mobile development workspace with cloud, analytics, database, and automation tools" /></motion.div>
+          <motion.div {...reveal} initial={false} className="about-page__who-art"><img src="/images/about/about-who-technology-transparent.webp" alt="Connected laptop and mobile development workspace with cloud, analytics, database, and automation tools" loading="lazy" decoding="async" /></motion.div>
           <motion.div {...reveal} initial={false} className="about-page__who-copy">
             <p className="about-page__eyebrow">Who we are</p>
             <h2 id="about-who-title"><span className="about-page__who-line">Technology Built</span><span className="about-page__who-line">Around Your</span><span className="about-page__who-line about-page__who-line--gradient">Business</span></h2>
@@ -130,14 +130,14 @@ export function About() {
             </ul>
           </div>
           <motion.figure {...reveal} initial={false} className="about-page__technology-art">
-            <img src="/images/about/about-technologies-transparent.png" alt="Connected technology platform with React, TypeScript, JavaScript, utility CSS, and development symbols" loading="lazy" />
+            <img src="/images/about/about-technologies-transparent.webp" alt="Connected technology platform with React, TypeScript, JavaScript, utility CSS, and development symbols" loading="lazy" decoding="async" />
           </motion.figure>
         </div>
       </section>
 
-      <section className="about-page__section about-page__faq" aria-labelledby="about-faq-title"><div className="about-page__shell about-page__faq-layout"><div><p className="about-page__eyebrow">Frequently asked questions</p><h2 id="about-faq-title">Questions about <span>our services?</span></h2><p>Find quick answers to common questions about our service offerings.</p><Link className="about-page__text-link" to="/contact">Talk to our team <ArrowRight aria-hidden="true" /></Link><img src="/images/faq-support-illustration.png" alt="" aria-hidden="true" /></div><div className="about-page__faq-list">{aboutFaqs.map((faq, index) => { const isOpen = openFaq === index; const buttonId = `${idPrefix}-faq-button-${index}`; const panelId = `${idPrefix}-faq-panel-${index}`; return <article className={isOpen ? 'is-open' : ''} key={faq.question}><h3><button id={buttonId} type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={() => setOpenFaq(isOpen ? null : index)}><span><HelpCircle aria-hidden="true" />{faq.question}</span><ChevronDown aria-hidden="true" /></button></h3><AnimatePresence initial={false}>{isOpen && <motion.div id={panelId} role="region" aria-labelledby={buttonId} initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: shouldReduceMotion ? 0 : .2 }}><p>{faq.answer}</p></motion.div>}</AnimatePresence></article>; })}</div></div></section>
+      <section className="about-page__section about-page__faq" aria-labelledby="about-faq-title"><div className="about-page__shell about-page__faq-layout"><div><p className="about-page__eyebrow">Frequently asked questions</p><h2 id="about-faq-title">Questions about <span>our services?</span></h2><p>Find quick answers to common questions about our service offerings.</p><Link className="about-page__text-link" to="/contact">Talk to our team <ArrowRight aria-hidden="true" /></Link><img src="/images/faq-support-illustration.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div><div className="about-page__faq-list">{aboutFaqs.map((faq, index) => { const isOpen = openFaq === index; const buttonId = `${idPrefix}-faq-button-${index}`; const panelId = `${idPrefix}-faq-panel-${index}`; return <article className={isOpen ? 'is-open' : ''} key={faq.question}><h3><button id={buttonId} type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={() => setOpenFaq(isOpen ? null : index)}><span><HelpCircle aria-hidden="true" />{faq.question}</span><ChevronDown aria-hidden="true" /></button></h3><AnimatePresence initial={false}>{isOpen && <motion.div id={panelId} role="region" aria-labelledby={buttonId} initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: shouldReduceMotion ? 0 : .2 }}><p>{faq.answer}</p></motion.div>}</AnimatePresence></article>; })}</div></div></section>
 
-      <section className="about-page__cta" aria-labelledby="about-cta-title"><div className="about-page__shell"><div><p className="about-page__eyebrow">Let&apos;s build something great</p><h2 id="about-cta-title">Have an Idea? Let&apos;s Bring It to Life.</h2><p>Tell us about your business goals and we&apos;ll help you explore the right digital solution.</p><div><Link className="about-page__button about-page__button--primary" to="/contact">Get in Touch <ArrowRight aria-hidden="true" /></Link><Link className="about-page__button about-page__button--dark-outline" to="/services">Explore Our Services <ArrowRight aria-hidden="true" /></Link></div></div><img src="/images/services/web-development.png" alt="" aria-hidden="true" /></div></section>
+      <section className="about-page__cta" aria-labelledby="about-cta-title"><div className="about-page__shell"><div><p className="about-page__eyebrow">Let&apos;s build something great</p><h2 id="about-cta-title">Have an Idea? Let&apos;s Bring It to Life.</h2><p>Tell us about your business goals and we&apos;ll help you explore the right digital solution.</p><div><Link className="about-page__button about-page__button--primary" to="/contact">Get in Touch <ArrowRight aria-hidden="true" /></Link><Link className="about-page__button about-page__button--dark-outline" to="/services">Explore Our Services <ArrowRight aria-hidden="true" /></Link></div></div><img src="/images/services/web-development.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div></section>
     </main>
   );
 }

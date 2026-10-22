@@ -37,17 +37,17 @@ export const CAMSTORE_CONTACT_PATH = '/contact?product=camstore-pos';
 export const CAMSTORE_DEMO_URL: string | null = null;
 
 export const CAMSTORE_IMAGES = {
-  hero: '/images/products/camstore/camstore-hero-products.png',
-  storeAmbience: '/images/products/camstore/store-ambience.jpg',
-  cameraGear: '/images/products/camstore/camera-gear.jpg',
-  scannerPrinter: '/images/products/camstore/scanner-printer.jpg',
+  hero: '/images/products/camstore/camstore-hero-products.webp',
+  storeAmbience: '/images/products/camstore/store-ambience.webp',
+  cameraGear: '/images/products/camstore/camera-gear.webp',
+  scannerPrinter: '/images/products/camstore/scanner-printer.webp',
 } as const;
 
 export const trustIndicators = [
-  { value: '1000+', label: 'Stores Trust Us', icon: Users },
-  { value: '50+', label: 'Powerful Features', icon: Settings },
+  { value: 'Retail Focus', label: 'Built for store workflows', icon: Users },
+  { value: 'Product Tour', label: 'Explore the capabilities', icon: Settings },
   { value: 'Easy Setup', label: 'Quick Installation', icon: Zap },
-  { value: 'Lifetime Updates', label: 'Always Up To Date', icon: Cloud },
+  { value: 'Update Options', label: 'Confirm in your quotation', icon: Cloud },
 ] as const;
 
 export type FeatureItem = { title: string; copy: string; icon: LucideIcon; accent?: string };
@@ -146,7 +146,7 @@ export const sampleSale = {
   store: {
     name: 'Lens & Light Camera Store',
     address: '12, Camera Market Road, Bengaluru 560001',
-    gstin: 'GSTIN 29ABCDE1234F1Z5',
+    gstin: 'DEMONSTRATION ? NOT A TAX INVOICE',
     phone: '+91 80XXX 45678',
   },
 };

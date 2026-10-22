@@ -18,7 +18,16 @@ export function CamStoreCTA() {
               </div>
             </div>
             <div className="cs-cta__visual" aria-hidden="true">
-              <img src="/images/products/camstore-pos-card.png" alt="" width={1536} height={1024} loading="lazy" />
+              <img
+                src="/images/products/camstore-pos-card.webp"
+                srcSet="/images/products/camstore-pos-card-mobile.webp 600w, /images/products/camstore-pos-card.webp 1200w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                alt=""
+                width={1536}
+                height={1024}
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </Reveal>
